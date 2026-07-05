@@ -3,6 +3,7 @@ package com.vladmihalcea.phd.pool.experiment;
 import com.vladmihalcea.phd.pool.controller.ReactiveTimeoutPolicy;
 import com.vladmihalcea.phd.pool.controller.ScalingPolicy;
 import com.vladmihalcea.phd.pool.controller.StaticPolicy;
+import com.vladmihalcea.phd.pool.controller.ThroughputProbePolicy;
 import com.vladmihalcea.phd.pool.controller.UslAutoScalingController;
 import com.vladmihalcea.phd.pool.sim.PolicyRunner;
 import com.vladmihalcea.phd.pool.sim.SimulatedSystem;
@@ -56,6 +57,11 @@ public class RegimeShiftExperimentTest {
         policies.put("static-oracle-phase1", () -> new StaticPolicy("static-oracle-phase1", nStar1));
         policies.put("reactive", () -> new ReactiveTimeoutPolicy(
                 MIN, MAX, new SimulatedSystem(PHASE1, CLIENT_THREADS, 0, 0).reactiveTimeoutNanos()));
+        // Model-free baseline: it too re-tracks after the shift (flushes its history and re-climbs, so it
+        // can shrink), unlike grow-only reactive — but it must re-explore the new curve by visiting sizes,
+        // where the USL controller re-fits and jumps to the new N*. This is the sharpest USL-vs-model-free
+        // contrast: both recover, but with different exploration cost.
+        policies.put("probe", () -> new ThroughputProbePolicy(MIN, MAX));
         policies.put("usl", () -> new UslAutoScalingController(MIN, MAX));
 
         Map<String, double[]> avgSize = new LinkedHashMap<>();
@@ -140,7 +146,7 @@ public class RegimeShiftExperimentTest {
     private void writeGnuplot() {
         String sizeGp = ("""
                 # Experiment E5: pool size vs. time across a regime shift at window %d.
-                # Input:  regime-poolsize.csv (window, static-oracle-phase1, reactive, usl)
+                # Input:  regime-poolsize.csv (window, static-oracle-phase1, reactive, probe, usl)
                 # Output: regime-poolsize.svg / .pdf
                 set datafile separator ","
                 set title "Pool size across a workload regime shift" font ",13"
@@ -151,10 +157,11 @@ public class RegimeShiftExperimentTest {
                 set arrow from %d, graph 0 to %d, graph 1 nohead dt 2 lc rgb "#888888"
                 set style line 1 lw 2 lc rgb "#2E7D32"
                 set style line 2 lw 2 lc rgb "#F9A825"
-                set style line 3 lw 2 lc rgb "#1565C0"
+                set style line 3 lw 2 lc rgb "#6A1B9A"
+                set style line 4 lw 2 lc rgb "#1565C0"
                 set terminal svg enhanced font "arial,11" size 1000,560
                 set output 'regime-poolsize.svg'
-                plot for [i=2:4] 'regime-poolsize.csv' using 1:i with lines ls (i-1) title columnheader
+                plot for [i=2:5] 'regime-poolsize.csv' using 1:i with lines ls (i-1) title columnheader
                 set terminal pdfcairo enhanced font "arial,10" size 8,4.5
                 set output 'regime-poolsize.pdf'
                 replot
@@ -164,7 +171,7 @@ public class RegimeShiftExperimentTest {
 
         String tpsGp = ("""
                 # Experiment E5: throughput vs. time across a regime shift at window %d.
-                # Input:  regime-tps.csv (window, static-oracle-phase1, reactive, usl)
+                # Input:  regime-tps.csv (window, static-oracle-phase1, reactive, probe, usl)
                 # Output: regime-tps.svg / .pdf
                 set datafile separator ","
                 set title "Throughput across a workload regime shift" font ",13"
@@ -175,10 +182,11 @@ public class RegimeShiftExperimentTest {
                 set arrow from %d, graph 0 to %d, graph 1 nohead dt 2 lc rgb "#888888"
                 set style line 1 lw 2 lc rgb "#2E7D32"
                 set style line 2 lw 2 lc rgb "#F9A825"
-                set style line 3 lw 2 lc rgb "#1565C0"
+                set style line 3 lw 2 lc rgb "#6A1B9A"
+                set style line 4 lw 2 lc rgb "#1565C0"
                 set terminal svg enhanced font "arial,11" size 1000,560
                 set output 'regime-tps.svg'
-                plot for [i=2:4] 'regime-tps.csv' using 1:i with lines ls (i-1) title columnheader
+                plot for [i=2:5] 'regime-tps.csv' using 1:i with lines ls (i-1) title columnheader
                 set terminal pdfcairo enhanced font "arial,10" size 8,4.5
                 set output 'regime-tps.pdf'
                 replot

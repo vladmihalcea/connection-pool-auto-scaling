@@ -3,6 +3,7 @@ package com.vladmihalcea.phd.pool.experiment;
 import com.vladmihalcea.phd.pool.controller.ReactiveTimeoutPolicy;
 import com.vladmihalcea.phd.pool.controller.ScalingPolicy;
 import com.vladmihalcea.phd.pool.controller.StaticPolicy;
+import com.vladmihalcea.phd.pool.controller.ThroughputProbePolicy;
 import com.vladmihalcea.phd.pool.controller.UslAutoScalingController;
 import com.vladmihalcea.phd.pool.sim.PolicyRunner;
 import com.vladmihalcea.phd.pool.sim.SimulatedSystem;
@@ -58,6 +59,10 @@ public class AutoScalingConvergenceExperimentTest {
         policies.put("static-large", () -> new StaticPolicy("static-large", MAX));
         policies.put("reactive", () -> new ReactiveTimeoutPolicy(
                 MIN, MAX, new SimulatedSystem(TRUTH, CLIENT_THREADS, 0, 0).reactiveTimeoutNanos()));
+        // Model-free baseline: hill-climbs on measured throughput. It reaches the same N* as the USL
+        // controller but must physically visit sizes near the peak to find it — the head-to-head that
+        // isolates the USL model's advantage (predicts N* without visiting it; steadier under noise).
+        policies.put("probe", () -> new ThroughputProbePolicy(MIN, MAX));
         policies.put("usl", () -> new UslAutoScalingController(MIN, MAX));
 
         // policy -> per-window averaged pool size and throughput
@@ -149,7 +154,7 @@ public class AutoScalingConvergenceExperimentTest {
     private void writeGnuplot() {
         String sizeGp = """
                 # Experiment E4: configured pool size vs. time per policy (stationary workload).
-                # Input:  convergence-poolsize.csv (window, static-small, static-oracle, static-large, reactive, usl)
+                # Input:  convergence-poolsize.csv (window, static-small, static-oracle, static-large, reactive, probe, usl)
                 # Output: convergence-poolsize.svg / .pdf
                 set datafile separator ","
                 set title "Pool size convergence per policy" font ",13"
@@ -161,10 +166,11 @@ public class AutoScalingConvergenceExperimentTest {
                 set style line 2 lw 2 lc rgb "#2E7D32"
                 set style line 3 lw 2 lc rgb "#C62828"
                 set style line 4 lw 2 lc rgb "#F9A825"
-                set style line 5 lw 2 lc rgb "#1565C0"
+                set style line 5 lw 2 lc rgb "#6A1B9A"
+                set style line 6 lw 2 lc rgb "#1565C0"
                 set terminal svg enhanced font "arial,11" size 1000,560
                 set output 'convergence-poolsize.svg'
-                plot for [i=2:6] 'convergence-poolsize.csv' using 1:i with lines ls (i-1) title columnheader
+                plot for [i=2:7] 'convergence-poolsize.csv' using 1:i with lines ls (i-1) title columnheader
                 set terminal pdfcairo enhanced font "arial,10" size 8,4.5
                 set output 'convergence-poolsize.pdf'
                 replot
@@ -174,7 +180,7 @@ public class AutoScalingConvergenceExperimentTest {
 
         String tpsGp = """
                 # Experiment E4: throughput vs. time per policy (stationary workload).
-                # Input:  convergence-tps.csv (window, static-small, static-oracle, static-large, reactive, usl)
+                # Input:  convergence-tps.csv (window, static-small, static-oracle, static-large, reactive, probe, usl)
                 # Output: convergence-tps.svg / .pdf
                 set datafile separator ","
                 set title "Throughput convergence per policy" font ",13"
@@ -186,10 +192,11 @@ public class AutoScalingConvergenceExperimentTest {
                 set style line 2 lw 2 lc rgb "#2E7D32"
                 set style line 3 lw 2 lc rgb "#C62828"
                 set style line 4 lw 2 lc rgb "#F9A825"
-                set style line 5 lw 2 lc rgb "#1565C0"
+                set style line 5 lw 2 lc rgb "#6A1B9A"
+                set style line 6 lw 2 lc rgb "#1565C0"
                 set terminal svg enhanced font "arial,11" size 1000,560
                 set output 'convergence-tps.svg'
-                plot for [i=2:6] 'convergence-tps.csv' using 1:i with lines ls (i-1) title columnheader
+                plot for [i=2:7] 'convergence-tps.csv' using 1:i with lines ls (i-1) title columnheader
                 set terminal pdfcairo enhanced font "arial,10" size 8,4.5
                 set output 'convergence-tps.pdf'
                 replot
