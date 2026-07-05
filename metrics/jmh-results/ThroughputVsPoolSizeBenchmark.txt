@@ -1,0 +1,3072 @@
+Microsoft Windows [Version 10.0.26200.8655]
+(c) Microsoft Corporation. All rights reserved.
+
+d:\Vlad\Work\GitHub\connection-pool-auto-scaling>run-benchmark.bat ThroughputVsPoolSize
+[WARNING]
+[WARNING] Some problems were encountered while building the effective settings
+[WARNING] 'usePluginRegistry' is deprecated and has no effect. @ d:\Programs\apache-maven-3.8.6\conf\settings.xml
+[WARNING] 'usePluginRegistry' is deprecated and has no effect. @ C:\Users\mihal\.m2\settings.xml
+[WARNING]
+[INFO] Scanning for projects...
+[INFO]
+[INFO] ---------< com.vladmihalcea:connection-pool-auto-scaling-core >---------
+[INFO] Building connection-pool-auto-scaling-core 1.0.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ connection-pool-auto-scaling-core ---
+[INFO] Deleting d:\Vlad\Work\GitHub\connection-pool-auto-scaling\core\target
+[INFO]
+[INFO] --- maven-resources-plugin:3.3.1:resources (default-resources) @ connection-pool-auto-scaling-core ---
+[INFO] skip non existing resourceDirectory d:\Vlad\Work\GitHub\connection-pool-auto-scaling\core\src\main\resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.13.0:compile (default-compile) @ connection-pool-auto-scaling-core ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 22 source files with javac [debug release 21] to target\classes
+[INFO]
+[INFO] --- maven-resources-plugin:3.3.1:testResources (default-testResources) @ connection-pool-auto-scaling-core ---
+[INFO] Copying 1 resource from src\test\resources to target\test-classes
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.702 s
+[INFO] Finished at: 2026-07-05T20:24:33+03:00
+[INFO] ------------------------------------------------------------------------
+[WARNING]
+[WARNING] Some problems were encountered while building the effective settings
+[WARNING] 'usePluginRegistry' is deprecated and has no effect. @ d:\Programs\apache-maven-3.8.6\conf\settings.xml
+[WARNING] 'usePluginRegistry' is deprecated and has no effect. @ C:\Users\mihal\.m2\settings.xml
+[WARNING]
+[INFO] Scanning for projects...
+[INFO]
+[INFO] ---------< com.vladmihalcea:connection-pool-auto-scaling-core >---------
+[INFO] Building connection-pool-auto-scaling-core 1.0.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- maven-resources-plugin:3.3.1:resources (default-resources) @ connection-pool-auto-scaling-core ---
+[INFO] skip non existing resourceDirectory d:\Vlad\Work\GitHub\connection-pool-auto-scaling\core\src\main\resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.13.0:compile (default-compile) @ connection-pool-auto-scaling-core ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO]
+[INFO] --- maven-resources-plugin:3.3.1:testResources (default-testResources) @ connection-pool-auto-scaling-core ---
+[INFO] Copying 1 resource from src\test\resources to target\test-classes
+[INFO]
+[INFO] --- maven-compiler-plugin:3.13.0:testCompile (default-testCompile) @ connection-pool-auto-scaling-core ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 24 source files with javac [debug release 21] to target\test-classes
+[INFO]
+[INFO] --- maven-surefire-plugin:3.5.5:test (default-test) @ connection-pool-auto-scaling-core ---
+[INFO] Tests are skipped.
+[INFO]
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ connection-pool-auto-scaling-core ---
+[INFO] Building jar: d:\Vlad\Work\GitHub\connection-pool-auto-scaling\core\target\connection-pool-auto-scaling-core-1.0.0-SNAPSHOT.jar
+[INFO]
+[INFO] --- maven-failsafe-plugin:3.5.5:integration-test (default) @ connection-pool-auto-scaling-core ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO]
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmarkTest
+20:24:38.619 [main] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+# JMH version: 1.37
+# VM version: JDK 21.0.10, OpenJDK 64-Bit Server VM, 21.0.10+7-LTS
+# VM invoker: c:\Program Files\Eclipse Adoptium\jdk-21.0.10.7-hotspot\bin\java.exe
+# VM options: <none>
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 3 s each
+# Measurement: 9 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 128 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction
+# Parameters: (pool = hikari, poolSize = 4, workload = readMostly)
+
+# Run progress: 0.00% complete, ETA 01:04:48
+# Fork: 1 of 2
+# Warmup Iteration   1: 20:24:41.232 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-22] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+20:24:41.465 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-22] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 122 ms
+14759.627 ops/s
+# Warmup Iteration   2: 16240.385 ops/s
+# Warmup Iteration   3: 16455.113 ops/s
+Iteration   1: 16140.384 ops/s
+Iteration   2: 15508.797 ops/s
+Iteration   3: 15304.634 ops/s
+Iteration   4: 15313.936 ops/s
+Iteration   5: 15105.497 ops/s
+Iteration   6: 16951.632 ops/s
+Iteration   7: 16112.109 ops/s
+Iteration   8: 16605.379 ops/s
+Iteration   9: 17184.571 ops/s
+
+# Run progress: 0.93% complete, ETA 01:09:10
+# Fork: 2 of 2
+# Warmup Iteration   1: 20:25:20.808 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-49] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+20:25:21.123 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-49] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 132 ms
+15313.662 ops/s
+# Warmup Iteration   2: 17306.593 ops/s
+# Warmup Iteration   3: 16539.609 ops/s
+Iteration   1: 16488.979 ops/s
+Iteration   2: 16909.440 ops/s
+Iteration   3: 16985.481 ops/s
+Iteration   4: 16676.012 ops/s
+Iteration   5: 16774.627 ops/s
+Iteration   6: 17017.289 ops/s
+Iteration   7: 16859.592 ops/s
+Iteration   8: 16762.868 ops/s
+Iteration   9: 16920.028 ops/s
+
+
+Result "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction":
+  16423.403 ┬▒(99.9%) 631.959 ops/s [Average]
+  (min, avg, max) = (15105.497, 16423.403, 17184.571), stdev = 676.189
+  CI (99.9%): [15791.444, 17055.362] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.10, OpenJDK 64-Bit Server VM, 21.0.10+7-LTS
+# VM invoker: c:\Program Files\Eclipse Adoptium\jdk-21.0.10.7-hotspot\bin\java.exe
+# VM options: <none>
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 3 s each
+# Measurement: 9 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 128 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction
+# Parameters: (pool = hikari, poolSize = 4, workload = writeHeavy)
+
+# Run progress: 1.85% complete, ETA 01:09:17
+# Fork: 1 of 2
+# Warmup Iteration   1: 20:25:59.678 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-58] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+20:25:59.975 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-58] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 142 ms
+10667.307 ops/s
+# Warmup Iteration   2: 11931.867 ops/s
+# Warmup Iteration   3: 11815.741 ops/s
+Iteration   1: 11879.642 ops/s
+Iteration   2: 11986.962 ops/s
+Iteration   3: 11739.188 ops/s
+Iteration   4: 11688.130 ops/s
+Iteration   5: 11895.285 ops/s
+Iteration   6: 11793.055 ops/s
+Iteration   7: 12192.871 ops/s
+Iteration   8: 12071.313 ops/s
+Iteration   9: 11944.787 ops/s
+
+# Run progress: 2.78% complete, ETA 01:08:27
+# Fork: 2 of 2
+# Warmup Iteration   1: 20:26:39.365 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-11] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+20:26:39.598 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-11] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 126 ms
+10584.501 ops/s
+# Warmup Iteration   2: 12058.575 ops/s
+# Warmup Iteration   3: 12039.573 ops/s
+Iteration   1: 11914.722 ops/s
+Iteration   2: 12007.032 ops/s
+Iteration   3: 12195.454 ops/s
+Iteration   4: 11761.460 ops/s
+Iteration   5: 11905.024 ops/s
+Iteration   6: 11667.186 ops/s
+Iteration   7: 11546.193 ops/s
+Iteration   8: 11918.015 ops/s
+Iteration   9: 11924.425 ops/s
+
+
+Result "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction":
+  11890.597 ┬▒(99.9%) 160.954 ops/s [Average]
+  (min, avg, max) = (11546.193, 11890.597, 12195.454), stdev = 172.219
+  CI (99.9%): [11729.643, 12051.551] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.10, OpenJDK 64-Bit Server VM, 21.0.10+7-LTS
+# VM invoker: c:\Program Files\Eclipse Adoptium\jdk-21.0.10.7-hotspot\bin\java.exe
+# VM options: <none>
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 3 s each
+# Measurement: 9 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 128 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction
+# Parameters: (pool = hikari, poolSize = 4, workload = longTx)
+
+# Run progress: 3.70% complete, ETA 01:08:01
+# Fork: 1 of 2
+# Warmup Iteration   1: 20:27:18.220 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-63] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+20:27:18.484 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-63] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 115 ms
+253.748 ops/s
+# Warmup Iteration   2: 255.078 ops/s
+# Warmup Iteration   3: 256.048 ops/s
+Iteration   1: 255.494 ops/s
+Iteration   2: 254.308 ops/s
+Iteration   3: 255.795 ops/s
+Iteration   4: 255.390 ops/s
+Iteration   5: 255.027 ops/s
+Iteration   6: 255.792 ops/s
+Iteration   7: 255.284 ops/s
+Iteration   8: 255.927 ops/s
+Iteration   9: 255.197 ops/s
+
+# Run progress: 4.63% complete, ETA 01:11:26
+# Fork: 2 of 2
+# Warmup Iteration   1: 20:28:10.071 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-32] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+20:28:10.301 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-32] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 123 ms
+253.602 ops/s
+# Warmup Iteration   2: 254.025 ops/s
+# Warmup Iteration   3: 255.131 ops/s
+Iteration   1: 255.297 ops/s
+Iteration   2: 254.894 ops/s
+Iteration   3: 254.183 ops/s
+Iteration   4: 255.067 ops/s
+Iteration   5: 254.859 ops/s
+Iteration   6: 255.180 ops/s
+Iteration   7: 254.666 ops/s
+Iteration   8: 255.219 ops/s
+Iteration   9: 255.257 ops/s
+
+
+Result "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction":
+  255.158 ┬▒(99.9%) 0.437 ops/s [Average]
+  (min, avg, max) = (254.183, 255.158, 255.927), stdev = 0.468
+  CI (99.9%): [254.721, 255.594] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.10, OpenJDK 64-Bit Server VM, 21.0.10+7-LTS
+# VM invoker: c:\Program Files\Eclipse Adoptium\jdk-21.0.10.7-hotspot\bin\java.exe
+# VM options: <none>
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 3 s each
+# Measurement: 9 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 128 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction
+# Parameters: (pool = hikari, poolSize = 8, workload = readMostly)
+
+# Run progress: 5.56% complete, ETA 01:13:43
+# Fork: 1 of 2
+# Warmup Iteration   1: 20:29:01.403 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-44] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+20:29:01.624 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-44] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 119 ms
+24375.780 ops/s
+# Warmup Iteration   2: 33136.227 ops/s
+# Warmup Iteration   3: 32621.081 ops/s
+Iteration   1: 32913.339 ops/s
+Iteration   2: 32982.790 ops/s
+Iteration   3: 32813.822 ops/s
+Iteration   4: 31121.619 ops/s
+Iteration   5: 31933.354 ops/s
+Iteration   6: 32379.252 ops/s
+Iteration   7: 32017.379 ops/s
+Iteration   8: 31356.866 ops/s
+Iteration   9: 30339.325 ops/s
+
+# Run progress: 6.48% complete, ETA 01:11:52
+# Fork: 2 of 2
+# Warmup Iteration   1: 20:29:40.866 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-16] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+20:29:41.096 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-16] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 130 ms
+23449.696 ops/s
+# Warmup Iteration   2: 30399.733 ops/s
+# Warmup Iteration   3: 31303.529 ops/s
+Iteration   1: 30707.971 ops/s
+Iteration   2: 31752.406 ops/s
+Iteration   3: 32143.734 ops/s
+Iteration   4: 31308.346 ops/s
+Iteration   5: 31529.450 ops/s
+Iteration   6: 31440.665 ops/s
+Iteration   7: 32420.801 ops/s
+Iteration   8: 31395.221 ops/s
+Iteration   9: 31655.024 ops/s
+
+
+Result "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction":
+  31789.520 ┬▒(99.9%) 686.867 ops/s [Average]
+  (min, avg, max) = (30339.325, 31789.520, 32982.790), stdev = 734.940
+  CI (99.9%): [31102.653, 32476.387] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.10, OpenJDK 64-Bit Server VM, 21.0.10+7-LTS
+# VM invoker: c:\Program Files\Eclipse Adoptium\jdk-21.0.10.7-hotspot\bin\java.exe
+# VM options: <none>
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 3 s each
+# Measurement: 9 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 128 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction
+# Parameters: (pool = hikari, poolSize = 8, workload = writeHeavy)
+
+# Run progress: 7.41% complete, ETA 01:10:28
+# Fork: 1 of 2
+# Warmup Iteration   1: 20:30:19.490 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-29] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+20:30:19.719 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-29] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 121 ms
+16191.136 ops/s
+# Warmup Iteration   2: 19347.674 ops/s
+# Warmup Iteration   3: 19351.311 ops/s
+Iteration   1: 19101.829 ops/s
+Iteration   2: 19168.035 ops/s
+Iteration   3: 19163.122 ops/s
+Iteration   4: 19460.104 ops/s
+Iteration   5: 18822.622 ops/s
+Iteration   6: 19705.459 ops/s
+Iteration   7: 19456.946 ops/s
+Iteration   8: 19305.608 ops/s
+Iteration   9: 19018.073 ops/s
+
+# Run progress: 8.33% complete, ETA 01:09:06
+# Fork: 2 of 2
+# Warmup Iteration   1: 20:30:59.069 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-15] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+20:30:59.299 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-15] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 126 ms
+15630.593 ops/s
+# Warmup Iteration   2: 18304.412 ops/s
+# Warmup Iteration   3: 18644.672 ops/s
+Iteration   1: 19608.422 ops/s
+Iteration   2: 19859.583 ops/s
+Iteration   3: 20647.258 ops/s
+Iteration   4: 21059.983 ops/s
+Iteration   5: 20142.804 ops/s
+Iteration   6: 20116.153 ops/s
+Iteration   7: 18768.182 ops/s
+Iteration   8: 20051.421 ops/s
+Iteration   9: 19551.270 ops/s
+
+
+Result "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction":
+  19611.493 ┬▒(99.9%) 576.071 ops/s [Average]
+  (min, avg, max) = (18768.182, 19611.493, 21059.983), stdev = 616.389
+  CI (99.9%): [19035.422, 20187.564] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.10, OpenJDK 64-Bit Server VM, 21.0.10+7-LTS
+# VM invoker: c:\Program Files\Eclipse Adoptium\jdk-21.0.10.7-hotspot\bin\java.exe
+# VM options: <none>
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 3 s each
+# Measurement: 9 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 128 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction
+# Parameters: (pool = hikari, poolSize = 8, workload = longTx)
+
+# Run progress: 9.26% complete, ETA 01:08:02
+# Fork: 1 of 2
+# Warmup Iteration   1: 20:31:37.851 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-57] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+20:31:38.085 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-57] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 135 ms
+488.732 ops/s
+# Warmup Iteration   2: 510.843 ops/s
+# Warmup Iteration   3: 510.934 ops/s
+Iteration   1: 509.746 ops/s
+Iteration   2: 510.151 ops/s
+Iteration   3: 510.435 ops/s
+Iteration   4: 510.696 ops/s
+Iteration   5: 509.906 ops/s
+Iteration   6: 509.908 ops/s
+Iteration   7: 510.329 ops/s
+Iteration   8: 509.824 ops/s
+Iteration   9: 510.513 ops/s
+
+# Run progress: 10.19% complete, ETA 01:07:49
+# Fork: 2 of 2
+# Warmup Iteration   1: 20:32:23.475 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-55] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+20:32:23.717 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-55] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 132 ms
+489.935 ops/s
+# Warmup Iteration   2: 509.543 ops/s
+# Warmup Iteration   3: 509.259 ops/s
+Iteration   1: 510.420 ops/s
+Iteration   2: 509.363 ops/s
+Iteration   3: 509.716 ops/s
+Iteration   4: 509.850 ops/s
+Iteration   5: 509.883 ops/s
+Iteration   6: 510.596 ops/s
+Iteration   7: 508.693 ops/s
+Iteration   8: 508.757 ops/s
+Iteration   9: 510.321 ops/s
+
+
+Result "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction":
+  509.950 ┬▒(99.9%) 0.534 ops/s [Average]
+  (min, avg, max) = (508.693, 509.950, 510.696), stdev = 0.571
+  CI (99.9%): [509.416, 510.484] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.10, OpenJDK 64-Bit Server VM, 21.0.10+7-LTS
+# VM invoker: c:\Program Files\Eclipse Adoptium\jdk-21.0.10.7-hotspot\bin\java.exe
+# VM options: <none>
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 3 s each
+# Measurement: 9 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 128 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction
+# Parameters: (pool = hikari, poolSize = 16, workload = readMostly)
+
+# Run progress: 11.11% complete, ETA 01:07:36
+# Fork: 1 of 2
+# Warmup Iteration   1: 20:33:08.307 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-16] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+20:33:08.543 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-16] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 122 ms
+29921.759 ops/s
+# Warmup Iteration   2: 39355.694 ops/s
+# Warmup Iteration   3: 39127.961 ops/s
+Iteration   1: 39120.002 ops/s
+Iteration   2: 39308.163 ops/s
+Iteration   3: 39019.097 ops/s
+Iteration   4: 39224.501 ops/s
+Iteration   5: 39005.269 ops/s
+Iteration   6: 38692.137 ops/s
+Iteration   7: 38708.673 ops/s
+Iteration   8: 38458.732 ops/s
+Iteration   9: 38317.072 ops/s
+
+# Run progress: 12.04% complete, ETA 01:06:28
+# Fork: 2 of 2
+# Warmup Iteration   1: 20:33:47.782 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-54] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+20:33:48.019 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-54] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 112 ms
+28629.805 ops/s
+# Warmup Iteration   2: 37977.486 ops/s
+# Warmup Iteration   3: 37734.585 ops/s
+Iteration   1: 37312.968 ops/s
+Iteration   2: 36350.134 ops/s
+Iteration   3: 36613.280 ops/s
+Iteration   4: 36617.444 ops/s
+Iteration   5: 36820.631 ops/s
+Iteration   6: 36748.063 ops/s
+Iteration   7: 36923.112 ops/s
+Iteration   8: 36700.456 ops/s
+Iteration   9: 36771.807 ops/s
+
+
+Result "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction":
+  37817.308 ┬▒(99.9%) 1052.239 ops/s [Average]
+  (min, avg, max) = (36350.134, 37817.308, 39308.163), stdev = 1125.883
+  CI (99.9%): [36765.069, 38869.546] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.10, OpenJDK 64-Bit Server VM, 21.0.10+7-LTS
+# VM invoker: c:\Program Files\Eclipse Adoptium\jdk-21.0.10.7-hotspot\bin\java.exe
+# VM options: <none>
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 3 s each
+# Measurement: 9 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 128 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction
+# Parameters: (pool = hikari, poolSize = 16, workload = writeHeavy)
+
+# Run progress: 12.96% complete, ETA 01:05:29
+# Fork: 1 of 2
+# Warmup Iteration   1: 20:34:26.469 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-3] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+20:34:26.687 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-3] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 113 ms
+20868.820 ops/s
+# Warmup Iteration   2: 26969.200 ops/s
+# Warmup Iteration   3: 27864.040 ops/s
+Iteration   1: 27392.057 ops/s
+Iteration   2: 27415.210 ops/s
+Iteration   3: 27688.802 ops/s
+Iteration   4: 27544.045 ops/s
+Iteration   5: 27625.139 ops/s
+Iteration   6: 26856.771 ops/s
+Iteration   7: 27063.402 ops/s
+Iteration   8: 27448.433 ops/s
+Iteration   9: 27189.448 ops/s
+
+# Run progress: 13.89% complete, ETA 01:04:28
+# Fork: 2 of 2
+# Warmup Iteration   1: 20:35:05.934 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-20] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+20:35:06.159 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-20] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 107 ms
+18888.951 ops/s
+# Warmup Iteration   2: 26830.055 ops/s
+# Warmup Iteration   3: 27143.248 ops/s
+Iteration   1: 26209.068 ops/s
+Iteration   2: 26520.456 ops/s
+Iteration   3: 26886.486 ops/s
+Iteration   4: 26899.854 ops/s
+Iteration   5: 26991.203 ops/s
+Iteration   6: 26123.221 ops/s
+Iteration   7: 26665.014 ops/s
+Iteration   8: 26632.125 ops/s
+Iteration   9: 26691.583 ops/s
+
+
+Result "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction":
+  26991.240 ┬▒(99.9%) 438.210 ops/s [Average]
+  (min, avg, max) = (26123.221, 26991.240, 27688.802), stdev = 468.879
+  CI (99.9%): [26553.030, 27429.450] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.10, OpenJDK 64-Bit Server VM, 21.0.10+7-LTS
+# VM invoker: c:\Program Files\Eclipse Adoptium\jdk-21.0.10.7-hotspot\bin\java.exe
+# VM options: <none>
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 3 s each
+# Measurement: 9 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 128 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction
+# Parameters: (pool = hikari, poolSize = 16, workload = longTx)
+
+# Run progress: 14.81% complete, ETA 01:03:34
+# Fork: 1 of 2
+# Warmup Iteration   1: 20:35:44.634 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-10] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+20:35:44.876 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-10] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 129 ms
+836.261 ops/s
+# Warmup Iteration   2: 1020.604 ops/s
+# Warmup Iteration   3: 1018.660 ops/s
+Iteration   1: 1017.794 ops/s
+Iteration   2: 1018.608 ops/s
+Iteration   3: 1019.445 ops/s
+Iteration   4: 1020.093 ops/s
+Iteration   5: 1018.775 ops/s
+Iteration   6: 1019.432 ops/s
+Iteration   7: 1017.551 ops/s
+Iteration   8: 1021.509 ops/s
+Iteration   9: 1019.847 ops/s
+
+# Run progress: 15.74% complete, ETA 01:02:54
+# Fork: 2 of 2
+# Warmup Iteration   1: 20:36:27.113 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-35] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+20:36:27.327 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-35] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 112 ms
+827.666 ops/s
+# Warmup Iteration   2: 1023.945 ops/s
+# Warmup Iteration   3: 1018.542 ops/s
+Iteration   1: 1019.370 ops/s
+Iteration   2: 1021.095 ops/s
+Iteration   3: 1020.799 ops/s
+Iteration   4: 1022.023 ops/s
+Iteration   5: 1017.430 ops/s
+Iteration   6: 1019.593 ops/s
+Iteration   7: 1020.759 ops/s
+Iteration   8: 1017.871 ops/s
+Iteration   9: 1018.795 ops/s
+
+
+Result "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction":
+  1019.488 ┬▒(99.9%) 1.286 ops/s [Average]
+  (min, avg, max) = (1017.430, 1019.488, 1022.023), stdev = 1.376
+  CI (99.9%): [1018.202, 1020.774] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.10, OpenJDK 64-Bit Server VM, 21.0.10+7-LTS
+# VM invoker: c:\Program Files\Eclipse Adoptium\jdk-21.0.10.7-hotspot\bin\java.exe
+# VM options: <none>
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 3 s each
+# Measurement: 9 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 128 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction
+# Parameters: (pool = hikari, poolSize = 32, workload = readMostly)
+
+# Run progress: 16.67% complete, ETA 01:02:17
+# Fork: 1 of 2
+# Warmup Iteration   1: 20:37:08.841 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-7] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+20:37:09.053 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-7] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 112 ms
+29298.545 ops/s
+# Warmup Iteration   2: 40017.636 ops/s
+# Warmup Iteration   3: 40230.723 ops/s
+Iteration   1: 40783.398 ops/s
+Iteration   2: 40962.657 ops/s
+Iteration   3: 40672.294 ops/s
+Iteration   4: 40725.977 ops/s
+Iteration   5: 40215.082 ops/s
+Iteration   6: 38926.617 ops/s
+Iteration   7: 40107.144 ops/s
+Iteration   8: 40097.758 ops/s
+Iteration   9: 40299.463 ops/s
+
+# Run progress: 17.59% complete, ETA 01:01:23
+# Fork: 2 of 2
+# Warmup Iteration   1: 20:37:48.357 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-23] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+20:37:48.580 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-23] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 119 ms
+28642.411 ops/s
+# Warmup Iteration   2: 38491.898 ops/s
+# Warmup Iteration   3: 38931.692 ops/s
+Iteration   1: 39069.382 ops/s
+Iteration   2: 39152.267 ops/s
+Iteration   3: 37633.512 ops/s
+Iteration   4: 38525.664 ops/s
+Iteration   5: 38771.505 ops/s
+Iteration   6: 38401.559 ops/s
+Iteration   7: 38684.906 ops/s
+Iteration   8: 38492.051 ops/s
+Iteration   9: 38431.051 ops/s
+
+
+Result "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction":
+  39441.794 ┬▒(99.9%) 964.557 ops/s [Average]
+  (min, avg, max) = (37633.512, 39441.794, 40962.657), stdev = 1032.065
+  CI (99.9%): [38477.237, 40406.351] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.10, OpenJDK 64-Bit Server VM, 21.0.10+7-LTS
+# VM invoker: c:\Program Files\Eclipse Adoptium\jdk-21.0.10.7-hotspot\bin\java.exe
+# VM options: <none>
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 3 s each
+# Measurement: 9 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 128 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction
+# Parameters: (pool = hikari, poolSize = 32, workload = writeHeavy)
+
+# Run progress: 18.52% complete, ETA 01:00:33
+# Fork: 1 of 2
+# Warmup Iteration   1: 20:38:27.118 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-34] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+20:38:27.415 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-34] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 125 ms
+20266.460 ops/s
+# Warmup Iteration   2: 30765.320 ops/s
+# Warmup Iteration   3: 32401.252 ops/s
+Iteration   1: 32282.284 ops/s
+Iteration   2: 32453.675 ops/s
+Iteration   3: 32440.731 ops/s
+Iteration   4: 32686.391 ops/s
+Iteration   5: 31785.754 ops/s
+Iteration   6: 32176.020 ops/s
+Iteration   7: 31651.120 ops/s
+Iteration   8: 31275.319 ops/s
+Iteration   9: 31179.611 ops/s
+
+# Run progress: 19.44% complete, ETA 00:59:42
+# Fork: 2 of 2
+# Warmup Iteration   1: 20:39:06.679 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-55] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+20:39:06.906 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-55] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 120 ms
+19465.364 ops/s
+# Warmup Iteration   2: 29807.334 ops/s
+# Warmup Iteration   3: 32482.711 ops/s
+Iteration   1: 32070.084 ops/s
+Iteration   2: 32144.026 ops/s
+Iteration   3: 32268.013 ops/s
+Iteration   4: 31811.828 ops/s
+Iteration   5: 32282.169 ops/s
+Iteration   6: 31608.735 ops/s
+Iteration   7: 31901.128 ops/s
+Iteration   8: 31961.121 ops/s
+Iteration   9: 31675.080 ops/s
+
+
+Result "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction":
+  31980.727 ┬▒(99.9%) 380.879 ops/s [Average]
+  (min, avg, max) = (31179.611, 31980.727, 32686.391), stdev = 407.536
+  CI (99.9%): [31599.848, 32361.606] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.10, OpenJDK 64-Bit Server VM, 21.0.10+7-LTS
+# VM invoker: c:\Program Files\Eclipse Adoptium\jdk-21.0.10.7-hotspot\bin\java.exe
+# VM options: <none>
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 3 s each
+# Measurement: 9 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 128 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction
+# Parameters: (pool = hikari, poolSize = 32, workload = longTx)
+
+# Run progress: 20.37% complete, ETA 00:58:54
+# Fork: 1 of 2
+# Warmup Iteration   1: 20:39:45.493 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-22] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+20:39:45.702 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-22] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 103 ms
+1011.567 ops/s
+# Warmup Iteration   2: 2036.240 ops/s
+# Warmup Iteration   3: 2042.048 ops/s
+Iteration   1: 2045.051 ops/s
+Iteration   2: 2039.059 ops/s
+Iteration   3: 2046.500 ops/s
+Iteration   4: 2044.779 ops/s
+Iteration   5: 2043.246 ops/s
+Iteration   6: 2043.637 ops/s
+Iteration   7: 2043.312 ops/s
+Iteration   8: 2040.199 ops/s
+Iteration   9: 2041.481 ops/s
+
+# Run progress: 21.30% complete, ETA 00:58:10
+# Fork: 2 of 2
+# Warmup Iteration   1: 20:40:26.410 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-24] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+20:40:26.648 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-24] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 103 ms
+1012.850 ops/s
+# Warmup Iteration   2: 2029.972 ops/s
+# Warmup Iteration   3: 2036.776 ops/s
+Iteration   1: 2037.653 ops/s
+Iteration   2: 2035.184 ops/s
+Iteration   3: 2039.215 ops/s
+Iteration   4: 2037.766 ops/s
+Iteration   5: 2044.498 ops/s
+Iteration   6: 2038.948 ops/s
+Iteration   7: 2038.674 ops/s
+Iteration   8: 2035.509 ops/s
+Iteration   9: 2040.680 ops/s
+
+
+Result "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction":
+  2040.855 ┬▒(99.9%) 3.152 ops/s [Average]
+  (min, avg, max) = (2035.184, 2040.855, 2046.500), stdev = 3.372
+  CI (99.9%): [2037.703, 2044.007] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.10, OpenJDK 64-Bit Server VM, 21.0.10+7-LTS
+# VM invoker: c:\Program Files\Eclipse Adoptium\jdk-21.0.10.7-hotspot\bin\java.exe
+# VM options: <none>
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 3 s each
+# Measurement: 9 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 128 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction
+# Parameters: (pool = hikari, poolSize = 64, workload = readMostly)
+
+# Run progress: 22.22% complete, ETA 00:57:28
+# Fork: 1 of 2
+# Warmup Iteration   1: 20:41:06.469 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-1] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+20:41:06.724 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-1] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 121 ms
+28819.438 ops/s
+# Warmup Iteration   2: 37633.574 ops/s
+# Warmup Iteration   3: 39024.766 ops/s
+Iteration   1: 38919.206 ops/s
+Iteration   2: 38636.368 ops/s
+Iteration   3: 38908.458 ops/s
+Iteration   4: 38529.573 ops/s
+Iteration   5: 38008.477 ops/s
+Iteration   6: 37532.059 ops/s
+Iteration   7: 38448.532 ops/s
+Iteration   8: 38258.921 ops/s
+Iteration   9: 38410.156 ops/s
+
+# Run progress: 23.15% complete, ETA 00:56:39
+# Fork: 2 of 2
+# Warmup Iteration   1: 20:41:46.000 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-51] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+20:41:46.285 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-51] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 113 ms
+27578.504 ops/s
+# Warmup Iteration   2: 37941.286 ops/s
+# Warmup Iteration   3: 38398.426 ops/s
+Iteration   1: 38249.907 ops/s
+Iteration   2: 37577.144 ops/s
+Iteration   3: 37308.285 ops/s
+Iteration   4: 37377.645 ops/s
+Iteration   5: 37210.140 ops/s
+Iteration   6: 37295.313 ops/s
+Iteration   7: 37320.792 ops/s
+Iteration   8: 37458.739 ops/s
+Iteration   9: 36833.215 ops/s
+
+
+Result "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction":
+  37904.607 ┬▒(99.9%) 607.823 ops/s [Average]
+  (min, avg, max) = (36833.215, 37904.607, 38919.206), stdev = 650.363
+  CI (99.9%): [37296.785, 38512.430] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.10, OpenJDK 64-Bit Server VM, 21.0.10+7-LTS
+# VM invoker: c:\Program Files\Eclipse Adoptium\jdk-21.0.10.7-hotspot\bin\java.exe
+# VM options: <none>
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 3 s each
+# Measurement: 9 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 128 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction
+# Parameters: (pool = hikari, poolSize = 64, workload = writeHeavy)
+
+# Run progress: 24.07% complete, ETA 00:55:54
+# Fork: 1 of 2
+# Warmup Iteration   1: 20:42:24.766 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-43] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+20:42:25.006 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-43] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 128 ms
+19820.597 ops/s
+# Warmup Iteration   2: 30652.998 ops/s
+# Warmup Iteration   3: 32035.618 ops/s
+Iteration   1: 32549.769 ops/s
+Iteration   2: 32475.531 ops/s
+Iteration   3: 32899.972 ops/s
+Iteration   4: 33051.622 ops/s
+Iteration   5: 33180.918 ops/s
+Iteration   6: 33053.412 ops/s
+Iteration   7: 32844.824 ops/s
+Iteration   8: 32878.657 ops/s
+Iteration   9: 32979.565 ops/s
+
+# Run progress: 25.00% complete, ETA 00:55:06
+# Fork: 2 of 2
+# Warmup Iteration   1: 20:43:04.297 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-62] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+20:43:04.523 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-62] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 114 ms
+18778.680 ops/s
+# Warmup Iteration   2: 30092.727 ops/s
+# Warmup Iteration   3: 31650.028 ops/s
+Iteration   1: 32253.921 ops/s
+Iteration   2: 32628.277 ops/s
+Iteration   3: 32192.953 ops/s
+Iteration   4: 32418.687 ops/s
+Iteration   5: 32691.729 ops/s
+Iteration   6: 32764.316 ops/s
+Iteration   7: 32393.813 ops/s
+Iteration   8: 32577.945 ops/s
+Iteration   9: 32713.222 ops/s
+
+
+Result "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction":
+  32697.174 ┬▒(99.9%) 265.995 ops/s [Average]
+  (min, avg, max) = (32192.953, 32697.174, 33180.918), stdev = 284.611
+  CI (99.9%): [32431.179, 32963.169] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.10, OpenJDK 64-Bit Server VM, 21.0.10+7-LTS
+# VM invoker: c:\Program Files\Eclipse Adoptium\jdk-21.0.10.7-hotspot\bin\java.exe
+# VM options: <none>
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 3 s each
+# Measurement: 9 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 128 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction
+# Parameters: (pool = hikari, poolSize = 64, workload = longTx)
+
+# Run progress: 25.93% complete, ETA 00:54:22
+# Fork: 1 of 2
+# Warmup Iteration   1: 20:43:43.080 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-52] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+20:43:43.317 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-52] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 129 ms
+1022.050 ops/s
+# Warmup Iteration   2: 2682.848 ops/s
+# Warmup Iteration   3: 3973.505 ops/s
+Iteration   1: 4080.055 ops/s
+Iteration   2: 4094.372 ops/s
+Iteration   3: 4074.751 ops/s
+Iteration   4: 4072.464 ops/s
+Iteration   5: 4091.898 ops/s
+Iteration   6: 4088.128 ops/s
+Iteration   7: 4085.640 ops/s
+Iteration   8: 4088.974 ops/s
+Iteration   9: 4083.793 ops/s
+
+# Run progress: 26.85% complete, ETA 00:53:38
+# Fork: 2 of 2
+# Warmup Iteration   1: 20:44:23.437 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-11] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+20:44:23.663 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-11] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 116 ms
+1018.574 ops/s
+# Warmup Iteration   2: 2615.372 ops/s
+# Warmup Iteration   3: 3948.219 ops/s
+Iteration   1: 4079.473 ops/s
+Iteration   2: 4089.227 ops/s
+Iteration   3: 4079.725 ops/s
+Iteration   4: 4072.859 ops/s
+Iteration   5: 4083.851 ops/s
+Iteration   6: 4078.199 ops/s
+Iteration   7: 4071.746 ops/s
+Iteration   8: 4084.323 ops/s
+Iteration   9: 4090.162 ops/s
+
+
+Result "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction":
+  4082.758 ┬▒(99.9%) 6.542 ops/s [Average]
+  (min, avg, max) = (4071.746, 4082.758, 4094.372), stdev = 7.000
+  CI (99.9%): [4076.216, 4089.300] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.10, OpenJDK 64-Bit Server VM, 21.0.10+7-LTS
+# VM invoker: c:\Program Files\Eclipse Adoptium\jdk-21.0.10.7-hotspot\bin\java.exe
+# VM options: <none>
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 3 s each
+# Measurement: 9 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 128 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction
+# Parameters: (pool = hikari, poolSize = 96, workload = readMostly)
+
+# Run progress: 27.78% complete, ETA 00:52:56
+# Fork: 1 of 2
+# Warmup Iteration   1: 20:45:02.883 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-24] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+20:45:03.112 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-24] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 120 ms
+27966.312 ops/s
+# Warmup Iteration   2: 38030.028 ops/s
+# Warmup Iteration   3: 38702.737 ops/s
+Iteration   1: 38653.413 ops/s
+Iteration   2: 38571.679 ops/s
+Iteration   3: 38398.286 ops/s
+Iteration   4: 38179.356 ops/s
+Iteration   5: 37696.757 ops/s
+Iteration   6: 37853.339 ops/s
+Iteration   7: 36720.125 ops/s
+Iteration   8: 37525.280 ops/s
+Iteration   9: 36897.685 ops/s
+
+# Run progress: 28.70% complete, ETA 00:52:10
+# Fork: 2 of 2
+# Warmup Iteration   1: 20:45:42.459 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-21] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+20:45:42.683 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-21] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 124 ms
+27313.491 ops/s
+# Warmup Iteration   2: 37388.629 ops/s
+# Warmup Iteration   3: 37836.659 ops/s
+Iteration   1: 37533.218 ops/s
+Iteration   2: 37116.465 ops/s
+Iteration   3: 36962.819 ops/s
+Iteration   4: 37110.034 ops/s
+Iteration   5: 36546.211 ops/s
+Iteration   6: 36204.815 ops/s
+Iteration   7: 36260.715 ops/s
+Iteration   8: 36103.194 ops/s
+Iteration   9: 36077.013 ops/s
+
+
+Result "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction":
+  37245.023 ┬▒(99.9%) 798.194 ops/s [Average]
+  (min, avg, max) = (36077.013, 37245.023, 38653.413), stdev = 854.059
+  CI (99.9%): [36446.828, 38043.217] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.10, OpenJDK 64-Bit Server VM, 21.0.10+7-LTS
+# VM invoker: c:\Program Files\Eclipse Adoptium\jdk-21.0.10.7-hotspot\bin\java.exe
+# VM options: <none>
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 3 s each
+# Measurement: 9 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 128 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction
+# Parameters: (pool = hikari, poolSize = 96, workload = writeHeavy)
+
+# Run progress: 29.63% complete, ETA 00:51:27
+# Fork: 1 of 2
+# Warmup Iteration   1: 20:46:21.194 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-44] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+20:46:21.417 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-44] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 120 ms
+19632.464 ops/s
+# Warmup Iteration   2: 30268.572 ops/s
+# Warmup Iteration   3: 31379.373 ops/s
+Iteration   1: 31637.513 ops/s
+Iteration   2: 32576.282 ops/s
+Iteration   3: 32972.825 ops/s
+Iteration   4: 32877.407 ops/s
+Iteration   5: 32610.713 ops/s
+Iteration   6: 32225.858 ops/s
+Iteration   7: 32001.683 ops/s
+Iteration   8: 32157.978 ops/s
+Iteration   9: 31674.431 ops/s
+
+# Run progress: 30.56% complete, ETA 00:50:42
+# Fork: 2 of 2
+# Warmup Iteration   1: 20:47:00.734 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-64] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+20:47:00.958 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-64] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 122 ms
+18251.190 ops/s
+# Warmup Iteration   2: 28890.835 ops/s
+# Warmup Iteration   3: 31570.615 ops/s
+Iteration   1: 31804.400 ops/s
+Iteration   2: 31783.935 ops/s
+Iteration   3: 32216.594 ops/s
+Iteration   4: 31770.302 ops/s
+Iteration   5: 32059.864 ops/s
+Iteration   6: 32054.010 ops/s
+Iteration   7: 31135.703 ops/s
+Iteration   8: 31270.126 ops/s
+Iteration   9: 31508.454 ops/s
+
+
+Result "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction":
+  32018.782 ┬▒(99.9%) 477.668 ops/s [Average]
+  (min, avg, max) = (31135.703, 32018.782, 32972.825), stdev = 511.099
+  CI (99.9%): [31541.114, 32496.450] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.10, OpenJDK 64-Bit Server VM, 21.0.10+7-LTS
+# VM invoker: c:\Program Files\Eclipse Adoptium\jdk-21.0.10.7-hotspot\bin\java.exe
+# VM options: <none>
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 3 s each
+# Measurement: 9 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 128 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction
+# Parameters: (pool = hikari, poolSize = 96, workload = longTx)
+
+# Run progress: 31.48% complete, ETA 00:49:59
+# Fork: 1 of 2
+# Warmup Iteration   1: 20:47:39.472 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-14] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+20:47:39.725 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-14] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 138 ms
+1016.690 ops/s
+# Warmup Iteration   2: 2693.813 ops/s
+# Warmup Iteration   3: 4310.729 ops/s
+Iteration   1: 5800.881 ops/s
+Iteration   2: 6145.641 ops/s
+Iteration   3: 6179.641 ops/s
+Iteration   4: 6155.087 ops/s
+Iteration   5: 6127.934 ops/s
+Iteration   6: 6151.431 ops/s
+Iteration   7: 6134.771 ops/s
+Iteration   8: 6148.799 ops/s
+Iteration   9: 6161.567 ops/s
+
+# Run progress: 32.41% complete, ETA 00:49:17
+# Fork: 2 of 2
+# Warmup Iteration   1: 20:48:19.803 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-28] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+20:48:20.030 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-28] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 120 ms
+1002.714 ops/s
+# Warmup Iteration   2: 2663.904 ops/s
+# Warmup Iteration   3: 4238.970 ops/s
+Iteration   1: 5728.786 ops/s
+Iteration   2: 6164.248 ops/s
+Iteration   3: 6155.035 ops/s
+Iteration   4: 6138.208 ops/s
+Iteration   5: 6151.364 ops/s
+Iteration   6: 6149.473 ops/s
+Iteration   7: 6144.881 ops/s
+Iteration   8: 6160.071 ops/s
+Iteration   9: 6151.738 ops/s
+
+
+Result "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction":
+  6108.309 ┬▒(99.9%) 117.847 ops/s [Average]
+  (min, avg, max) = (5728.786, 6108.309, 6179.641), stdev = 126.095
+  CI (99.9%): [5990.462, 6226.155] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.10, OpenJDK 64-Bit Server VM, 21.0.10+7-LTS
+# VM invoker: c:\Program Files\Eclipse Adoptium\jdk-21.0.10.7-hotspot\bin\java.exe
+# VM options: <none>
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 3 s each
+# Measurement: 9 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 128 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction
+# Parameters: (pool = dbcp2, poolSize = 4, workload = readMostly)
+
+# Run progress: 33.33% complete, ETA 00:48:36
+# Fork: 1 of 2
+# Warmup Iteration   1: 20:48:59.406 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-39] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+20:48:59.662 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-39] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 126 ms
+12128.456 ops/s
+# Warmup Iteration   2: 13627.280 ops/s
+# Warmup Iteration   3: 12279.435 ops/s
+Iteration   1: 12772.857 ops/s
+Iteration   2: 12697.289 ops/s
+Iteration   3: 13424.404 ops/s
+Iteration   4: 12967.006 ops/s
+Iteration   5: 13292.244 ops/s
+Iteration   6: 12949.007 ops/s
+Iteration   7: 12921.328 ops/s
+Iteration   8: 13328.577 ops/s
+Iteration   9: 13332.281 ops/s
+
+# Run progress: 34.26% complete, ETA 00:47:52
+# Fork: 2 of 2
+# Warmup Iteration   1: 20:49:38.952 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-13] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+20:49:39.235 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-13] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 119 ms
+11874.734 ops/s
+# Warmup Iteration   2: 13477.448 ops/s
+# Warmup Iteration   3: 13119.433 ops/s
+Iteration   1: 12555.694 ops/s
+Iteration   2: 13046.556 ops/s
+Iteration   3: 13311.246 ops/s
+Iteration   4: 12904.344 ops/s
+Iteration   5: 13106.530 ops/s
+Iteration   6: 13236.790 ops/s
+Iteration   7: 12735.502 ops/s
+Iteration   8: 12935.761 ops/s
+Iteration   9: 12801.264 ops/s
+
+
+Result "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction":
+  13017.704 ┬▒(99.9%) 239.668 ops/s [Average]
+  (min, avg, max) = (12555.694, 13017.704, 13424.404), stdev = 256.442
+  CI (99.9%): [12778.036, 13257.372] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.10, OpenJDK 64-Bit Server VM, 21.0.10+7-LTS
+# VM invoker: c:\Program Files\Eclipse Adoptium\jdk-21.0.10.7-hotspot\bin\java.exe
+# VM options: <none>
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 3 s each
+# Measurement: 9 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 128 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction
+# Parameters: (pool = dbcp2, poolSize = 4, workload = writeHeavy)
+
+# Run progress: 35.19% complete, ETA 00:47:08
+# Fork: 1 of 2
+# Warmup Iteration   1: 20:50:16.676 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-3] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+20:50:16.921 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-3] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 133 ms
+8918.599 ops/s
+# Warmup Iteration   2: 9618.013 ops/s
+# Warmup Iteration   3: 9766.308 ops/s
+Iteration   1: 9831.727 ops/s
+Iteration   2: 9672.324 ops/s
+Iteration   3: 9479.590 ops/s
+Iteration   4: 9142.867 ops/s
+Iteration   5: 9753.122 ops/s
+Iteration   6: 9567.607 ops/s
+Iteration   7: 9892.655 ops/s
+Iteration   8: 10023.477 ops/s
+Iteration   9: 9551.734 ops/s
+
+# Run progress: 36.11% complete, ETA 00:46:23
+# Fork: 2 of 2
+# Warmup Iteration   1: 20:50:55.294 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-47] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+20:50:55.569 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-47] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 132 ms
+9203.806 ops/s
+# Warmup Iteration   2: 9713.515 ops/s
+# Warmup Iteration   3: 9926.030 ops/s
+Iteration   1: 9627.420 ops/s
+Iteration   2: 9739.166 ops/s
+Iteration   3: 9465.698 ops/s
+Iteration   4: 9924.574 ops/s
+Iteration   5: 9505.924 ops/s
+Iteration   6: 9728.754 ops/s
+Iteration   7: 9675.955 ops/s
+Iteration   8: 9799.334 ops/s
+Iteration   9: 9394.858 ops/s
+
+
+Result "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction":
+  9654.266 ┬▒(99.9%) 199.897 ops/s [Average]
+  (min, avg, max) = (9142.867, 9654.266, 10023.477), stdev = 213.888
+  CI (99.9%): [9454.369, 9854.163] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.10, OpenJDK 64-Bit Server VM, 21.0.10+7-LTS
+# VM invoker: c:\Program Files\Eclipse Adoptium\jdk-21.0.10.7-hotspot\bin\java.exe
+# VM options: <none>
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 3 s each
+# Measurement: 9 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 128 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction
+# Parameters: (pool = dbcp2, poolSize = 4, workload = longTx)
+
+# Run progress: 37.04% complete, ETA 00:45:42
+# Fork: 1 of 2
+# Warmup Iteration   1: 20:51:34.260 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-57] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+20:51:34.505 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-57] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 126 ms
+255.339 ops/s
+# Warmup Iteration   2: 254.414 ops/s
+# Warmup Iteration   3: 255.868 ops/s
+Iteration   1: 255.351 ops/s
+Iteration   2: 254.881 ops/s
+Iteration   3: 254.646 ops/s
+Iteration   4: 254.543 ops/s
+Iteration   5: 255.994 ops/s
+Iteration   6: 255.217 ops/s
+Iteration   7: 255.796 ops/s
+Iteration   8: 256.821 ops/s
+Iteration   9: 254.775 ops/s
+
+# Run progress: 37.96% complete, ETA 00:45:20
+# Fork: 2 of 2
+# Warmup Iteration   1: 20:52:26.991 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-41] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+20:52:27.230 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-41] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 123 ms
+255.517 ops/s
+# Warmup Iteration   2: 254.678 ops/s
+# Warmup Iteration   3: 255.352 ops/s
+Iteration   1: 254.871 ops/s
+Iteration   2: 254.517 ops/s
+Iteration   3: 255.482 ops/s
+Iteration   4: 255.460 ops/s
+Iteration   5: 255.270 ops/s
+Iteration   6: 254.659 ops/s
+Iteration   7: 255.649 ops/s
+Iteration   8: 255.045 ops/s
+Iteration   9: 255.282 ops/s
+
+
+Result "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction":
+  255.237 ┬▒(99.9%) 0.550 ops/s [Average]
+  (min, avg, max) = (254.517, 255.237, 256.821), stdev = 0.588
+  CI (99.9%): [254.687, 255.786] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.10, OpenJDK 64-Bit Server VM, 21.0.10+7-LTS
+# VM invoker: c:\Program Files\Eclipse Adoptium\jdk-21.0.10.7-hotspot\bin\java.exe
+# VM options: <none>
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 3 s each
+# Measurement: 9 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 128 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction
+# Parameters: (pool = dbcp2, poolSize = 8, workload = readMostly)
+
+# Run progress: 38.89% complete, ETA 00:44:59
+# Fork: 1 of 2
+# Warmup Iteration   1: 20:53:18.971 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-40] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+20:53:19.251 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-40] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 118 ms
+19004.952 ops/s
+# Warmup Iteration   2: 25446.333 ops/s
+# Warmup Iteration   3: 23670.239 ops/s
+Iteration   1: 24109.597 ops/s
+Iteration   2: 25528.236 ops/s
+Iteration   3: 24763.834 ops/s
+Iteration   4: 25123.259 ops/s
+Iteration   5: 19937.545 ops/s
+Iteration   6: 17767.544 ops/s
+Iteration   7: 20354.937 ops/s
+Iteration   8: 19268.578 ops/s
+Iteration   9: 19937.624 ops/s
+
+# Run progress: 39.81% complete, ETA 00:44:13
+# Fork: 2 of 2
+# Warmup Iteration   1: 20:53:57.492 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-5] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+20:53:57.752 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-5] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 117 ms
+17587.111 ops/s
+# Warmup Iteration   2: 24574.901 ops/s
+# Warmup Iteration   3: 23750.288 ops/s
+Iteration   1: 23817.842 ops/s
+Iteration   2: 24182.962 ops/s
+Iteration   3: 23978.485 ops/s
+Iteration   4: 24463.970 ops/s
+Iteration   5: 23591.280 ops/s
+Iteration   6: 20760.997 ops/s
+Iteration   7: 25090.784 ops/s
+Iteration   8: 24228.998 ops/s
+Iteration   9: 25586.000 ops/s
+
+
+Result "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction":
+  22916.248 ┬▒(99.9%) 2325.699 ops/s [Average]
+  (min, avg, max) = (17767.544, 22916.248, 25586.000), stdev = 2488.472
+  CI (99.9%): [20590.549, 25241.947] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.10, OpenJDK 64-Bit Server VM, 21.0.10+7-LTS
+# VM invoker: c:\Program Files\Eclipse Adoptium\jdk-21.0.10.7-hotspot\bin\java.exe
+# VM options: <none>
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 3 s each
+# Measurement: 9 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 128 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction
+# Parameters: (pool = dbcp2, poolSize = 8, workload = writeHeavy)
+
+# Run progress: 40.74% complete, ETA 00:43:29
+# Fork: 1 of 2
+# Warmup Iteration   1: 20:54:35.262 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-1] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+20:54:35.521 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-1] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 131 ms
+14174.673 ops/s
+# Warmup Iteration   2: 18242.282 ops/s
+# Warmup Iteration   3: 16990.749 ops/s
+Iteration   1: 18309.952 ops/s
+Iteration   2: 18849.116 ops/s
+Iteration   3: 18746.544 ops/s
+Iteration   4: 18846.136 ops/s
+Iteration   5: 17987.555 ops/s
+Iteration   6: 18448.662 ops/s
+Iteration   7: 19266.034 ops/s
+Iteration   8: 18443.527 ops/s
+Iteration   9: 19343.877 ops/s
+
+# Run progress: 41.67% complete, ETA 00:42:44
+# Fork: 2 of 2
+# Warmup Iteration   1: 20:55:13.830 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-17] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+20:55:14.055 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-17] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 113 ms
+13550.907 ops/s
+# Warmup Iteration   2: 18895.797 ops/s
+# Warmup Iteration   3: 18140.584 ops/s
+Iteration   1: 18322.753 ops/s
+Iteration   2: 19020.790 ops/s
+Iteration   3: 18091.571 ops/s
+Iteration   4: 18733.877 ops/s
+Iteration   5: 18834.164 ops/s
+Iteration   6: 18287.118 ops/s
+Iteration   7: 18975.409 ops/s
+Iteration   8: 18296.988 ops/s
+Iteration   9: 17651.239 ops/s
+
+
+Result "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction":
+  18580.851 ┬▒(99.9%) 421.453 ops/s [Average]
+  (min, avg, max) = (17651.239, 18580.851, 19343.877), stdev = 450.950
+  CI (99.9%): [18159.398, 19002.304] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.10, OpenJDK 64-Bit Server VM, 21.0.10+7-LTS
+# VM invoker: c:\Program Files\Eclipse Adoptium\jdk-21.0.10.7-hotspot\bin\java.exe
+# VM options: <none>
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 3 s each
+# Measurement: 9 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 128 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction
+# Parameters: (pool = dbcp2, poolSize = 8, workload = longTx)
+
+# Run progress: 42.59% complete, ETA 00:42:02
+# Fork: 1 of 2
+# Warmup Iteration   1: 20:55:52.540 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-36] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+20:55:52.759 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-36] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 115 ms
+514.160 ops/s
+# Warmup Iteration   2: 512.487 ops/s
+# Warmup Iteration   3: 514.131 ops/s
+Iteration   1: 510.884 ops/s
+Iteration   2: 511.803 ops/s
+Iteration   3: 511.291 ops/s
+Iteration   4: 514.909 ops/s
+Iteration   5: 513.341 ops/s
+Iteration   6: 511.908 ops/s
+Iteration   7: 513.426 ops/s
+Iteration   8: 512.607 ops/s
+Iteration   9: 510.267 ops/s
+
+# Run progress: 43.52% complete, ETA 00:41:26
+# Fork: 2 of 2
+# Warmup Iteration   1: 20:56:37.881 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-62] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+20:56:38.103 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-62] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 107 ms
+512.207 ops/s
+# Warmup Iteration   2: 513.282 ops/s
+# Warmup Iteration   3: 513.493 ops/s
+Iteration   1: 512.888 ops/s
+Iteration   2: 512.334 ops/s
+Iteration   3: 510.269 ops/s
+Iteration   4: 511.702 ops/s
+Iteration   5: 512.343 ops/s
+Iteration   6: 513.217 ops/s
+Iteration   7: 510.730 ops/s
+Iteration   8: 513.495 ops/s
+Iteration   9: 510.581 ops/s
+
+
+Result "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction":
+  512.111 ┬▒(99.9%) 1.214 ops/s [Average]
+  (min, avg, max) = (510.267, 512.111, 514.909), stdev = 1.299
+  CI (99.9%): [510.897, 513.325] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.10, OpenJDK 64-Bit Server VM, 21.0.10+7-LTS
+# VM invoker: c:\Program Files\Eclipse Adoptium\jdk-21.0.10.7-hotspot\bin\java.exe
+# VM options: <none>
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 3 s each
+# Measurement: 9 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 128 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction
+# Parameters: (pool = dbcp2, poolSize = 16, workload = readMostly)
+
+# Run progress: 44.44% complete, ETA 00:40:51
+# Fork: 1 of 2
+# Warmup Iteration   1: 20:57:22.186 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-45] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+20:57:22.429 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-45] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 120 ms
+24188.045 ops/s
+# Warmup Iteration   2: 28313.420 ops/s
+# Warmup Iteration   3: 27049.319 ops/s
+Iteration   1: 28238.190 ops/s
+Iteration   2: 28388.280 ops/s
+Iteration   3: 28196.446 ops/s
+Iteration   4: 28999.079 ops/s
+Iteration   5: 27876.257 ops/s
+Iteration   6: 28682.438 ops/s
+Iteration   7: 28684.812 ops/s
+Iteration   8: 27524.768 ops/s
+Iteration   9: 28156.890 ops/s
+
+# Run progress: 45.37% complete, ETA 00:40:06
+# Fork: 2 of 2
+# Warmup Iteration   1: 20:58:00.706 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-20] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+20:58:00.986 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-20] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 113 ms
+22840.144 ops/s
+# Warmup Iteration   2: 26227.514 ops/s
+# Warmup Iteration   3: 26333.944 ops/s
+Iteration   1: 26815.981 ops/s
+Iteration   2: 27241.458 ops/s
+Iteration   3: 27689.468 ops/s
+Iteration   4: 26550.970 ops/s
+Iteration   5: 27400.271 ops/s
+Iteration   6: 25450.111 ops/s
+Iteration   7: 27046.387 ops/s
+Iteration   8: 27384.039 ops/s
+Iteration   9: 26047.494 ops/s
+
+
+Result "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction":
+  27576.297 ┬▒(99.9%) 888.058 ops/s [Average]
+  (min, avg, max) = (25450.111, 27576.297, 28999.079), stdev = 950.212
+  CI (99.9%): [26688.239, 28464.354] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.10, OpenJDK 64-Bit Server VM, 21.0.10+7-LTS
+# VM invoker: c:\Program Files\Eclipse Adoptium\jdk-21.0.10.7-hotspot\bin\java.exe
+# VM options: <none>
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 3 s each
+# Measurement: 9 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 128 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction
+# Parameters: (pool = dbcp2, poolSize = 16, workload = writeHeavy)
+
+# Run progress: 46.30% complete, ETA 00:39:23
+# Fork: 1 of 2
+# Warmup Iteration   1: 20:58:38.486 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-39] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+20:58:38.705 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-39] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 117 ms
+18055.638 ops/s
+# Warmup Iteration   2: 21992.632 ops/s
+# Warmup Iteration   3: 22798.566 ops/s
+Iteration   1: 22771.929 ops/s
+Iteration   2: 22837.170 ops/s
+Iteration   3: 23297.872 ops/s
+Iteration   4: 22727.791 ops/s
+Iteration   5: 23099.495 ops/s
+Iteration   6: 22589.969 ops/s
+Iteration   7: 22342.767 ops/s
+Iteration   8: 22771.955 ops/s
+Iteration   9: 21817.321 ops/s
+
+# Run progress: 47.22% complete, ETA 00:38:39
+# Fork: 2 of 2
+# Warmup Iteration   1: 20:59:16.970 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-18] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+20:59:17.199 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-18] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 125 ms
+17411.893 ops/s
+# Warmup Iteration   2: 20259.945 ops/s
+# Warmup Iteration   3: 21537.414 ops/s
+Iteration   1: 22243.329 ops/s
+Iteration   2: 21690.103 ops/s
+Iteration   3: 22208.148 ops/s
+Iteration   4: 22710.853 ops/s
+Iteration   5: 21987.921 ops/s
+Iteration   6: 22839.295 ops/s
+Iteration   7: 21983.973 ops/s
+Iteration   8: 22708.549 ops/s
+Iteration   9: 22867.254 ops/s
+
+
+Result "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction":
+  22527.539 ┬▒(99.9%) 422.128 ops/s [Average]
+  (min, avg, max) = (21690.103, 22527.539, 23297.872), stdev = 451.672
+  CI (99.9%): [22105.410, 22949.667] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.10, OpenJDK 64-Bit Server VM, 21.0.10+7-LTS
+# VM invoker: c:\Program Files\Eclipse Adoptium\jdk-21.0.10.7-hotspot\bin\java.exe
+# VM options: <none>
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 3 s each
+# Measurement: 9 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 128 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction
+# Parameters: (pool = dbcp2, poolSize = 16, workload = longTx)
+
+# Run progress: 48.15% complete, ETA 00:37:57
+# Fork: 1 of 2
+# Warmup Iteration   1: 20:59:55.708 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-39] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+20:59:55.968 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-39] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 125 ms
+1027.091 ops/s
+# Warmup Iteration   2: 1028.885 ops/s
+# Warmup Iteration   3: 1028.001 ops/s
+Iteration   1: 1020.201 ops/s
+Iteration   2: 1029.183 ops/s
+Iteration   3: 1024.296 ops/s
+Iteration   4: 1027.956 ops/s
+Iteration   5: 1025.198 ops/s
+Iteration   6: 1025.002 ops/s
+Iteration   7: 1028.649 ops/s
+Iteration   8: 1026.367 ops/s
+Iteration   9: 1025.864 ops/s
+
+# Run progress: 49.07% complete, ETA 00:37:16
+# Fork: 2 of 2
+# Warmup Iteration   1: 21:00:37.572 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-2] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+21:00:37.804 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-2] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 117 ms
+1023.834 ops/s
+# Warmup Iteration   2: 1024.831 ops/s
+# Warmup Iteration   3: 1025.191 ops/s
+Iteration   1: 1026.116 ops/s
+Iteration   2: 1026.934 ops/s
+Iteration   3: 1028.011 ops/s
+Iteration   4: 1030.021 ops/s
+Iteration   5: 1025.030 ops/s
+Iteration   6: 1026.130 ops/s
+Iteration   7: 1026.277 ops/s
+Iteration   8: 1024.453 ops/s
+Iteration   9: 1023.243 ops/s
+
+
+Result "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction":
+  1026.052 ┬▒(99.9%) 2.167 ops/s [Average]
+  (min, avg, max) = (1020.201, 1026.052, 1030.021), stdev = 2.319
+  CI (99.9%): [1023.885, 1028.219] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.10, OpenJDK 64-Bit Server VM, 21.0.10+7-LTS
+# VM invoker: c:\Program Files\Eclipse Adoptium\jdk-21.0.10.7-hotspot\bin\java.exe
+# VM options: <none>
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 3 s each
+# Measurement: 9 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 128 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction
+# Parameters: (pool = dbcp2, poolSize = 32, workload = readMostly)
+
+# Run progress: 50.00% complete, ETA 00:36:37
+# Fork: 1 of 2
+# Warmup Iteration   1: 21:01:18.708 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-19] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+21:01:18.987 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-19] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 116 ms
+23055.038 ops/s
+# Warmup Iteration   2: 26933.678 ops/s
+# Warmup Iteration   3: 30663.054 ops/s
+Iteration   1: 30659.359 ops/s
+Iteration   2: 29678.566 ops/s
+Iteration   3: 31071.148 ops/s
+Iteration   4: 30171.557 ops/s
+Iteration   5: 31076.499 ops/s
+Iteration   6: 29893.009 ops/s
+Iteration   7: 30856.194 ops/s
+Iteration   8: 29469.458 ops/s
+Iteration   9: 30558.297 ops/s
+
+# Run progress: 50.93% complete, ETA 00:35:53
+# Fork: 2 of 2
+# Warmup Iteration   1: 21:01:57.346 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-34] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+21:01:57.630 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-34] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 116 ms
+22833.424 ops/s
+# Warmup Iteration   2: 26589.473 ops/s
+# Warmup Iteration   3: 29364.688 ops/s
+Iteration   1: 29868.217 ops/s
+Iteration   2: 30518.313 ops/s
+Iteration   3: 29619.230 ops/s
+Iteration   4: 30420.736 ops/s
+Iteration   5: 29087.064 ops/s
+Iteration   6: 30113.603 ops/s
+Iteration   7: 28566.633 ops/s
+Iteration   8: 29675.445 ops/s
+Iteration   9: 27585.332 ops/s
+
+
+Result "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction":
+  29938.259 ┬▒(99.9%) 835.543 ops/s [Average]
+  (min, avg, max) = (27585.332, 29938.259, 31076.499), stdev = 894.021
+  CI (99.9%): [29102.716, 30773.802] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.10, OpenJDK 64-Bit Server VM, 21.0.10+7-LTS
+# VM invoker: c:\Program Files\Eclipse Adoptium\jdk-21.0.10.7-hotspot\bin\java.exe
+# VM options: <none>
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 3 s each
+# Measurement: 9 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 128 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction
+# Parameters: (pool = dbcp2, poolSize = 32, workload = writeHeavy)
+
+# Run progress: 51.85% complete, ETA 00:35:11
+# Fork: 1 of 2
+# Warmup Iteration   1: 21:02:35.155 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-33] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+21:02:35.390 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-33] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 132 ms
+20478.620 ops/s
+# Warmup Iteration   2: 23247.787 ops/s
+# Warmup Iteration   3: 25172.622 ops/s
+Iteration   1: 25528.368 ops/s
+Iteration   2: 25744.313 ops/s
+Iteration   3: 26395.308 ops/s
+Iteration   4: 25513.491 ops/s
+Iteration   5: 26392.006 ops/s
+Iteration   6: 25177.734 ops/s
+Iteration   7: 25864.405 ops/s
+Iteration   8: 24447.612 ops/s
+Iteration   9: 25989.884 ops/s
+
+# Run progress: 52.78% complete, ETA 00:34:28
+# Fork: 2 of 2
+# Warmup Iteration   1: 21:03:13.724 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-44] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+21:03:13.959 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-44] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 109 ms
+20093.005 ops/s
+# Warmup Iteration   2: 23120.193 ops/s
+# Warmup Iteration   3: 25164.017 ops/s
+Iteration   1: 24020.794 ops/s
+Iteration   2: 25725.252 ops/s
+Iteration   3: 24919.712 ops/s
+Iteration   4: 25245.537 ops/s
+Iteration   5: 24577.042 ops/s
+Iteration   6: 25347.089 ops/s
+Iteration   7: 24515.227 ops/s
+Iteration   8: 25000.129 ops/s
+Iteration   9: 25063.822 ops/s
+
+
+Result "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction":
+  25303.763 ┬▒(99.9%) 619.701 ops/s [Average]
+  (min, avg, max) = (24020.794, 25303.763, 26395.308), stdev = 663.073
+  CI (99.9%): [24684.061, 25923.464] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.10, OpenJDK 64-Bit Server VM, 21.0.10+7-LTS
+# VM invoker: c:\Program Files\Eclipse Adoptium\jdk-21.0.10.7-hotspot\bin\java.exe
+# VM options: <none>
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 3 s each
+# Measurement: 9 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 128 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction
+# Parameters: (pool = dbcp2, poolSize = 32, workload = longTx)
+
+# Run progress: 53.70% complete, ETA 00:33:46
+# Fork: 1 of 2
+# Warmup Iteration   1: 21:03:52.488 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-40] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+21:03:52.709 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-40] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 108 ms
+2014.797 ops/s
+# Warmup Iteration   2: 2045.520 ops/s
+# Warmup Iteration   3: 2049.252 ops/s
+Iteration   1: 2048.829 ops/s
+Iteration   2: 2046.399 ops/s
+Iteration   3: 2048.066 ops/s
+Iteration   4: 2050.241 ops/s
+Iteration   5: 2053.782 ops/s
+Iteration   6: 2058.374 ops/s
+Iteration   7: 2051.116 ops/s
+Iteration   8: 2050.830 ops/s
+Iteration   9: 2054.716 ops/s
+
+# Run progress: 54.63% complete, ETA 00:33:05
+# Fork: 2 of 2
+# Warmup Iteration   1: 21:04:32.279 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-29] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+21:04:32.501 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-29] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 104 ms
+2034.397 ops/s
+# Warmup Iteration   2: 2045.906 ops/s
+# Warmup Iteration   3: 2051.594 ops/s
+Iteration   1: 2051.474 ops/s
+Iteration   2: 2046.057 ops/s
+Iteration   3: 2053.244 ops/s
+Iteration   4: 2041.498 ops/s
+Iteration   5: 2054.763 ops/s
+Iteration   6: 2054.421 ops/s
+Iteration   7: 2053.143 ops/s
+Iteration   8: 2053.764 ops/s
+Iteration   9: 2056.379 ops/s
+
+
+Result "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction":
+  2051.505 ┬▒(99.9%) 3.883 ops/s [Average]
+  (min, avg, max) = (2041.498, 2051.505, 2058.374), stdev = 4.155
+  CI (99.9%): [2047.622, 2055.388] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.10, OpenJDK 64-Bit Server VM, 21.0.10+7-LTS
+# VM invoker: c:\Program Files\Eclipse Adoptium\jdk-21.0.10.7-hotspot\bin\java.exe
+# VM options: <none>
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 3 s each
+# Measurement: 9 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 128 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction
+# Parameters: (pool = dbcp2, poolSize = 64, workload = readMostly)
+
+# Run progress: 55.56% complete, ETA 00:32:24
+# Fork: 1 of 2
+# Warmup Iteration   1: 21:05:11.287 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-22] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+21:05:11.546 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-22] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 128 ms
+16955.778 ops/s
+# Warmup Iteration   2: 26930.640 ops/s
+# Warmup Iteration   3: 29701.117 ops/s
+Iteration   1: 30774.877 ops/s
+Iteration   2: 30154.051 ops/s
+Iteration   3: 30546.653 ops/s
+Iteration   4: 29846.062 ops/s
+Iteration   5: 30034.546 ops/s
+Iteration   6: 30685.667 ops/s
+Iteration   7: 30717.957 ops/s
+Iteration   8: 29395.316 ops/s
+Iteration   9: 30651.727 ops/s
+
+# Run progress: 56.48% complete, ETA 00:31:44
+# Fork: 2 of 2
+# Warmup Iteration   1: 21:05:53.160 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-42] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+21:05:53.380 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-42] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 114 ms
+17713.881 ops/s
+# Warmup Iteration   2: 26479.173 ops/s
+# Warmup Iteration   3: 29131.904 ops/s
+Iteration   1: 29925.118 ops/s
+Iteration   2: 29386.470 ops/s
+Iteration   3: 30181.894 ops/s
+Iteration   4: 28610.340 ops/s
+Iteration   5: 29710.285 ops/s
+Iteration   6: 29052.487 ops/s
+Iteration   7: 29294.363 ops/s
+Iteration   8: 28400.785 ops/s
+Iteration   9: 29102.660 ops/s
+
+
+Result "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction":
+  29803.959 ┬▒(99.9%) 688.301 ops/s [Average]
+  (min, avg, max) = (28400.785, 29803.959, 30774.877), stdev = 736.475
+  CI (99.9%): [29115.657, 30492.260] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.10, OpenJDK 64-Bit Server VM, 21.0.10+7-LTS
+# VM invoker: c:\Program Files\Eclipse Adoptium\jdk-21.0.10.7-hotspot\bin\java.exe
+# VM options: <none>
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 3 s each
+# Measurement: 9 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 128 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction
+# Parameters: (pool = dbcp2, poolSize = 64, workload = writeHeavy)
+
+# Run progress: 57.41% complete, ETA 00:31:04
+# Fork: 1 of 2
+# Warmup Iteration   1: 21:06:34.145 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-24] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+21:06:34.405 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-24] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 144 ms
+13821.122 ops/s
+# Warmup Iteration   2: 20231.090 ops/s
+# Warmup Iteration   3: 22787.619 ops/s
+Iteration   1: 22766.872 ops/s
+Iteration   2: 23452.335 ops/s
+Iteration   3: 18735.819 ops/s
+Iteration   4: 17649.579 ops/s
+Iteration   5: 21419.066 ops/s
+Iteration   6: 23709.938 ops/s
+Iteration   7: 24558.474 ops/s
+Iteration   8: 25646.168 ops/s
+Iteration   9: 22007.494 ops/s
+
+# Run progress: 58.33% complete, ETA 00:30:24
+# Fork: 2 of 2
+# Warmup Iteration   1: 21:07:15.958 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-45] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+21:07:16.199 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-45] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 129 ms
+17181.674 ops/s
+# Warmup Iteration   2: 21893.242 ops/s
+# Warmup Iteration   3: 25216.257 ops/s
+Iteration   1: 26077.649 ops/s
+Iteration   2: 25348.801 ops/s
+Iteration   3: 26271.044 ops/s
+Iteration   4: 25713.895 ops/s
+Iteration   5: 26490.340 ops/s
+Iteration   6: 25435.527 ops/s
+Iteration   7: 26618.987 ops/s
+Iteration   8: 25520.507 ops/s
+Iteration   9: 26635.985 ops/s
+
+
+Result "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction":
+  24114.360 ┬▒(99.9%) 2503.406 ops/s [Average]
+  (min, avg, max) = (17649.579, 24114.360, 26635.985), stdev = 2678.616
+  CI (99.9%): [21610.955, 26617.766] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.10, OpenJDK 64-Bit Server VM, 21.0.10+7-LTS
+# VM invoker: c:\Program Files\Eclipse Adoptium\jdk-21.0.10.7-hotspot\bin\java.exe
+# VM options: <none>
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 3 s each
+# Measurement: 9 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 128 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction
+# Parameters: (pool = dbcp2, poolSize = 64, workload = longTx)
+
+# Run progress: 59.26% complete, ETA 00:29:43
+# Fork: 1 of 2
+# Warmup Iteration   1: 21:07:55.662 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-50] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+21:07:55.985 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-50] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 138 ms
+4144.427 ops/s
+# Warmup Iteration   2: 4099.767 ops/s
+# Warmup Iteration   3: 4070.670 ops/s
+Iteration   1: 4082.062 ops/s
+Iteration   2: 4072.196 ops/s
+Iteration   3: 4092.305 ops/s
+Iteration   4: 4101.353 ops/s
+Iteration   5: 4029.539 ops/s
+Iteration   6: 4113.733 ops/s
+Iteration   7: 4097.954 ops/s
+Iteration   8: 4095.349 ops/s
+Iteration   9: 4052.283 ops/s
+
+# Run progress: 60.19% complete, ETA 00:29:02
+# Fork: 2 of 2
+# Warmup Iteration   1: 21:08:36.508 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-21] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+21:08:36.740 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-21] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 124 ms
+4209.949 ops/s
+# Warmup Iteration   2: 4073.851 ops/s
+# Warmup Iteration   3: 4063.686 ops/s
+Iteration   1: 4070.671 ops/s
+Iteration   2: 4085.287 ops/s
+Iteration   3: 4102.195 ops/s
+Iteration   4: 4091.535 ops/s
+Iteration   5: 4078.380 ops/s
+Iteration   6: 4077.922 ops/s
+Iteration   7: 3985.997 ops/s
+Iteration   8: 4090.716 ops/s
+Iteration   9: 4096.934 ops/s
+
+
+Result "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction":
+  4078.689 ┬▒(99.9%) 28.346 ops/s [Average]
+  (min, avg, max) = (3985.997, 4078.689, 4113.733), stdev = 30.329
+  CI (99.9%): [4050.344, 4107.035] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.10, OpenJDK 64-Bit Server VM, 21.0.10+7-LTS
+# VM invoker: c:\Program Files\Eclipse Adoptium\jdk-21.0.10.7-hotspot\bin\java.exe
+# VM options: <none>
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 3 s each
+# Measurement: 9 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 128 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction
+# Parameters: (pool = dbcp2, poolSize = 96, workload = readMostly)
+
+# Run progress: 61.11% complete, ETA 00:28:22
+# Fork: 1 of 2
+# Warmup Iteration   1: 21:09:16.681 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-46] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+21:09:16.980 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-46] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 131 ms
+20028.815 ops/s
+# Warmup Iteration   2: 25158.296 ops/s
+# Warmup Iteration   3: 28411.716 ops/s
+Iteration   1: 29533.198 ops/s
+Iteration   2: 29191.030 ops/s
+Iteration   3: 29851.318 ops/s
+Iteration   4: 29184.152 ops/s
+Iteration   5: 29678.757 ops/s
+Iteration   6: 28641.149 ops/s
+Iteration   7: 29513.017 ops/s
+Iteration   8: 28444.598 ops/s
+Iteration   9: 29547.693 ops/s
+
+# Run progress: 62.04% complete, ETA 00:27:44
+# Fork: 2 of 2
+# Warmup Iteration   1: 21:10:01.838 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-7] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+21:10:02.090 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-7] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 124 ms
+21916.848 ops/s
+# Warmup Iteration   2: 25480.282 ops/s
+# Warmup Iteration   3: 27756.560 ops/s
+Iteration   1: 28907.640 ops/s
+Iteration   2: 28609.891 ops/s
+Iteration   3: 29007.363 ops/s
+Iteration   4: 28317.474 ops/s
+Iteration   5: 28653.359 ops/s
+Iteration   6: 27329.837 ops/s
+Iteration   7: 29110.194 ops/s
+Iteration   8: 27810.457 ops/s
+Iteration   9: 27649.147 ops/s
+
+
+Result "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction":
+  28832.238 ┬▒(99.9%) 673.261 ops/s [Average]
+  (min, avg, max) = (27329.837, 28832.238, 29851.318), stdev = 720.381
+  CI (99.9%): [28158.977, 29505.498] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.10, OpenJDK 64-Bit Server VM, 21.0.10+7-LTS
+# VM invoker: c:\Program Files\Eclipse Adoptium\jdk-21.0.10.7-hotspot\bin\java.exe
+# VM options: <none>
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 3 s each
+# Measurement: 9 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 128 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction
+# Parameters: (pool = dbcp2, poolSize = 96, workload = writeHeavy)
+
+# Run progress: 62.96% complete, ETA 00:27:06
+# Fork: 1 of 2
+# Warmup Iteration   1: 21:10:45.781 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-32] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+21:10:46.005 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-32] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 122 ms
+19215.682 ops/s
+# Warmup Iteration   2: 22640.500 ops/s
+# Warmup Iteration   3: 25789.646 ops/s
+Iteration   1: 25318.595 ops/s
+Iteration   2: 26312.574 ops/s
+Iteration   3: 25840.523 ops/s
+Iteration   4: 26086.933 ops/s
+Iteration   5: 24989.693 ops/s
+Iteration   6: 25888.013 ops/s
+Iteration   7: 26450.685 ops/s
+Iteration   8: 25823.946 ops/s
+Iteration   9: 26633.926 ops/s
+
+# Run progress: 63.89% complete, ETA 00:26:27
+# Fork: 2 of 2
+# Warmup Iteration   1: 21:11:29.866 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-15] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+21:11:30.123 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-15] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 130 ms
+19226.090 ops/s
+# Warmup Iteration   2: 22476.805 ops/s
+# Warmup Iteration   3: 25647.114 ops/s
+Iteration   1: 26175.768 ops/s
+Iteration   2: 26277.540 ops/s
+Iteration   3: 26851.382 ops/s
+Iteration   4: 25945.583 ops/s
+Iteration   5: 26796.243 ops/s
+Iteration   6: 25975.419 ops/s
+Iteration   7: 26633.562 ops/s
+Iteration   8: 26701.443 ops/s
+Iteration   9: 25742.841 ops/s
+
+
+Result "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction":
+  26135.815 ┬▒(99.9%) 473.418 ops/s [Average]
+  (min, avg, max) = (24989.693, 26135.815, 26851.382), stdev = 506.552
+  CI (99.9%): [25662.397, 26609.233] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.10, OpenJDK 64-Bit Server VM, 21.0.10+7-LTS
+# VM invoker: c:\Program Files\Eclipse Adoptium\jdk-21.0.10.7-hotspot\bin\java.exe
+# VM options: <none>
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 3 s each
+# Measurement: 9 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 128 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction
+# Parameters: (pool = dbcp2, poolSize = 96, workload = longTx)
+
+# Run progress: 64.81% complete, ETA 00:25:48
+# Fork: 1 of 2
+# Warmup Iteration   1: 21:12:13.242 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-18] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+21:12:13.476 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-18] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 126 ms
+6577.756 ops/s
+# Warmup Iteration   2: 6121.623 ops/s
+# Warmup Iteration   3: 6149.097 ops/s
+Iteration   1: 6164.173 ops/s
+Iteration   2: 6162.965 ops/s
+Iteration   3: 6002.617 ops/s
+Iteration   4: 6133.933 ops/s
+Iteration   5: 6162.235 ops/s
+Iteration   6: 6057.069 ops/s
+Iteration   7: 6160.055 ops/s
+Iteration   8: 6157.983 ops/s
+Iteration   9: 6159.654 ops/s
+
+# Run progress: 65.74% complete, ETA 00:25:08
+# Fork: 2 of 2
+# Warmup Iteration   1: 21:12:56.340 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-34] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+21:12:56.564 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-34] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 119 ms
+6998.890 ops/s
+# Warmup Iteration   2: 6127.196 ops/s
+# Warmup Iteration   3: 6145.152 ops/s
+Iteration   1: 6142.079 ops/s
+Iteration   2: 6130.040 ops/s
+Iteration   3: 6153.885 ops/s
+Iteration   4: 5988.251 ops/s
+Iteration   5: 6154.424 ops/s
+Iteration   6: 6153.924 ops/s
+Iteration   7: 6056.540 ops/s
+Iteration   8: 6146.548 ops/s
+Iteration   9: 6141.891 ops/s
+
+
+Result "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction":
+  6123.793 ┬▒(99.9%) 52.925 ops/s [Average]
+  (min, avg, max) = (5988.251, 6123.793, 6164.173), stdev = 56.629
+  CI (99.9%): [6070.868, 6176.717] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.10, OpenJDK 64-Bit Server VM, 21.0.10+7-LTS
+# VM invoker: c:\Program Files\Eclipse Adoptium\jdk-21.0.10.7-hotspot\bin\java.exe
+# VM options: <none>
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 3 s each
+# Measurement: 9 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 128 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction
+# Parameters: (pool = agroal, poolSize = 4, workload = readMostly)
+
+# Run progress: 66.67% complete, ETA 00:24:28
+# Fork: 1 of 2
+# Warmup Iteration   1: 21:13:39.022 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-36] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+21:13:39.252 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-36] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 123 ms
+16594.880 ops/s
+# Warmup Iteration   2: 20293.711 ops/s
+# Warmup Iteration   3: 21354.206 ops/s
+Iteration   1: 21481.749 ops/s
+Iteration   2: 21873.382 ops/s
+Iteration   3: 22256.381 ops/s
+Iteration   4: 22071.025 ops/s
+Iteration   5: 21734.338 ops/s
+Iteration   6: 21789.608 ops/s
+Iteration   7: 21483.230 ops/s
+Iteration   8: 21559.830 ops/s
+Iteration   9: 19643.531 ops/s
+
+# Run progress: 67.59% complete, ETA 00:23:47
+# Fork: 2 of 2
+# Warmup Iteration   1: 21:14:18.446 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-10] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+21:14:18.664 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-10] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 116 ms
+16773.429 ops/s
+# Warmup Iteration   2: 19595.818 ops/s
+# Warmup Iteration   3: 20301.072 ops/s
+Iteration   1: 21065.317 ops/s
+Iteration   2: 19983.478 ops/s
+Iteration   3: 21212.683 ops/s
+Iteration   4: 21420.952 ops/s
+Iteration   5: 20465.004 ops/s
+Iteration   6: 21463.496 ops/s
+Iteration   7: 19740.075 ops/s
+Iteration   8: 20529.074 ops/s
+Iteration   9: 20811.536 ops/s
+
+
+Result "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction":
+  21143.594 ┬▒(99.9%) 734.665 ops/s [Average]
+  (min, avg, max) = (19643.531, 21143.594, 22256.381), stdev = 786.083
+  CI (99.9%): [20408.929, 21878.259] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.10, OpenJDK 64-Bit Server VM, 21.0.10+7-LTS
+# VM invoker: c:\Program Files\Eclipse Adoptium\jdk-21.0.10.7-hotspot\bin\java.exe
+# VM options: <none>
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 3 s each
+# Measurement: 9 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 128 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction
+# Parameters: (pool = agroal, poolSize = 4, workload = writeHeavy)
+
+# Run progress: 68.52% complete, ETA 00:23:05
+# Fork: 1 of 2
+# Warmup Iteration   1: 21:14:57.742 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-34] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+21:14:58.086 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-34] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 178 ms
+11764.441 ops/s
+# Warmup Iteration   2: 14565.626 ops/s
+# Warmup Iteration   3: 14416.204 ops/s
+Iteration   1: 14724.104 ops/s
+Iteration   2: 14792.887 ops/s
+Iteration   3: 15269.041 ops/s
+Iteration   4: 14623.579 ops/s
+Iteration   5: 15209.504 ops/s
+Iteration   6: 15260.424 ops/s
+Iteration   7: 14672.580 ops/s
+Iteration   8: 15236.992 ops/s
+Iteration   9: 15621.497 ops/s
+
+# Run progress: 69.44% complete, ETA 00:22:23
+# Fork: 2 of 2
+# Warmup Iteration   1: 21:15:36.330 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-36] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+21:15:36.578 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-36] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 130 ms
+11557.067 ops/s
+# Warmup Iteration   2: 14849.658 ops/s
+# Warmup Iteration   3: 15527.898 ops/s
+Iteration   1: 15380.031 ops/s
+Iteration   2: 15321.683 ops/s
+Iteration   3: 13860.898 ops/s
+Iteration   4: 14892.184 ops/s
+Iteration   5: 15348.459 ops/s
+Iteration   6: 14922.210 ops/s
+Iteration   7: 15188.602 ops/s
+Iteration   8: 15023.313 ops/s
+Iteration   9: 15632.099 ops/s
+
+
+Result "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction":
+  15054.449 ┬▒(99.9%) 396.596 ops/s [Average]
+  (min, avg, max) = (13860.898, 15054.449, 15632.099), stdev = 424.353
+  CI (99.9%): [14657.853, 15451.045] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.10, OpenJDK 64-Bit Server VM, 21.0.10+7-LTS
+# VM invoker: c:\Program Files\Eclipse Adoptium\jdk-21.0.10.7-hotspot\bin\java.exe
+# VM options: <none>
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 3 s each
+# Measurement: 9 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 128 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction
+# Parameters: (pool = agroal, poolSize = 4, workload = longTx)
+
+# Run progress: 70.37% complete, ETA 00:21:42
+# Fork: 1 of 2
+# Warmup Iteration   1: 21:16:14.076 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-20] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+21:16:14.314 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-20] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 120 ms
+254.591 ops/s
+# Warmup Iteration   2: 255.789 ops/s
+# Warmup Iteration   3: 255.943 ops/s
+Iteration   1: 255.494 ops/s
+Iteration   2: 255.243 ops/s
+Iteration   3: 255.658 ops/s
+Iteration   4: 255.825 ops/s
+Iteration   5: 255.905 ops/s
+Iteration   6: 255.598 ops/s
+Iteration   7: 256.021 ops/s
+Iteration   8: 255.952 ops/s
+Iteration   9: 255.058 ops/s
+
+# Run progress: 71.30% complete, ETA 00:21:06
+# Fork: 2 of 2
+# Warmup Iteration   1: 21:17:07.332 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-22] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+21:17:07.565 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-22] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 127 ms
+256.158 ops/s
+# Warmup Iteration   2: 255.829 ops/s
+# Warmup Iteration   3: 254.995 ops/s
+Iteration   1: 255.121 ops/s
+Iteration   2: 255.389 ops/s
+Iteration   3: 255.819 ops/s
+Iteration   4: 254.833 ops/s
+Iteration   5: 254.804 ops/s
+Iteration   6: 255.021 ops/s
+Iteration   7: 255.232 ops/s
+Iteration   8: 254.975 ops/s
+Iteration   9: 254.948 ops/s
+
+
+Result "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction":
+  255.383 ┬▒(99.9%) 0.384 ops/s [Average]
+  (min, avg, max) = (254.804, 255.383, 256.021), stdev = 0.411
+  CI (99.9%): [254.999, 255.767] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.10, OpenJDK 64-Bit Server VM, 21.0.10+7-LTS
+# VM invoker: c:\Program Files\Eclipse Adoptium\jdk-21.0.10.7-hotspot\bin\java.exe
+# VM options: <none>
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 3 s each
+# Measurement: 9 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 128 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction
+# Parameters: (pool = agroal, poolSize = 8, workload = readMostly)
+
+# Run progress: 72.22% complete, ETA 00:20:30
+# Fork: 1 of 2
+# Warmup Iteration   1: 21:17:59.296 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-39] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+21:17:59.539 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-39] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 113 ms
+26784.719 ops/s
+# Warmup Iteration   2: 34662.556 ops/s
+# Warmup Iteration   3: 32642.658 ops/s
+Iteration   1: 33832.090 ops/s
+Iteration   2: 35072.165 ops/s
+Iteration   3: 35478.804 ops/s
+Iteration   4: 35204.698 ops/s
+Iteration   5: 35554.872 ops/s
+Iteration   6: 35146.342 ops/s
+Iteration   7: 35304.485 ops/s
+Iteration   8: 34857.206 ops/s
+Iteration   9: 34858.919 ops/s
+
+# Run progress: 73.15% complete, ETA 00:19:47
+# Fork: 2 of 2
+# Warmup Iteration   1: 21:18:37.700 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-63] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+21:18:37.919 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-63] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 111 ms
+26337.358 ops/s
+# Warmup Iteration   2: 34532.506 ops/s
+# Warmup Iteration   3: 34572.875 ops/s
+Iteration   1: 34779.786 ops/s
+Iteration   2: 34410.434 ops/s
+Iteration   3: 34596.381 ops/s
+Iteration   4: 33520.295 ops/s
+Iteration   5: 33416.797 ops/s
+Iteration   6: 34237.929 ops/s
+Iteration   7: 33998.892 ops/s
+Iteration   8: 33545.139 ops/s
+Iteration   9: 31512.941 ops/s
+
+
+Result "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction":
+  34407.121 ┬▒(99.9%) 931.555 ops/s [Average]
+  (min, avg, max) = (31512.941, 34407.121, 35554.872), stdev = 996.753
+  CI (99.9%): [33475.566, 35338.676] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.10, OpenJDK 64-Bit Server VM, 21.0.10+7-LTS
+# VM invoker: c:\Program Files\Eclipse Adoptium\jdk-21.0.10.7-hotspot\bin\java.exe
+# VM options: <none>
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 3 s each
+# Measurement: 9 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 128 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction
+# Parameters: (pool = agroal, poolSize = 8, workload = writeHeavy)
+
+# Run progress: 74.07% complete, ETA 00:19:05
+# Fork: 1 of 2
+# Warmup Iteration   1: 21:19:15.331 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-15] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+21:19:15.592 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-15] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 143 ms
+18064.903 ops/s
+# Warmup Iteration   2: 22881.757 ops/s
+# Warmup Iteration   3: 23905.884 ops/s
+Iteration   1: 23507.169 ops/s
+Iteration   2: 21725.405 ops/s
+Iteration   3: 22673.347 ops/s
+Iteration   4: 23676.235 ops/s
+Iteration   5: 23560.414 ops/s
+Iteration   6: 23610.260 ops/s
+Iteration   7: 23450.242 ops/s
+Iteration   8: 23505.808 ops/s
+Iteration   9: 23428.555 ops/s
+
+# Run progress: 75.00% complete, ETA 00:18:24
+# Fork: 2 of 2
+# Warmup Iteration   1: 21:19:55.360 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-33] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+21:19:55.733 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-33] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 165 ms
+14355.150 ops/s
+# Warmup Iteration   2: 16374.509 ops/s
+# Warmup Iteration   3: 15700.929 ops/s
+Iteration   1: 15077.372 ops/s
+Iteration   2: 16169.477 ops/s
+Iteration   3: 16018.720 ops/s
+Iteration   4: 16272.535 ops/s
+Iteration   5: 15542.764 ops/s
+Iteration   6: 15310.712 ops/s
+Iteration   7: 15923.696 ops/s
+Iteration   8: 16179.850 ops/s
+Iteration   9: 15868.437 ops/s
+
+
+Result "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction":
+  19527.833 ┬▒(99.9%) 3600.948 ops/s [Average]
+  (min, avg, max) = (15077.372, 19527.833, 23676.235), stdev = 3852.974
+  CI (99.9%): [15926.885, 23128.781] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.10, OpenJDK 64-Bit Server VM, 21.0.10+7-LTS
+# VM invoker: c:\Program Files\Eclipse Adoptium\jdk-21.0.10.7-hotspot\bin\java.exe
+# VM options: <none>
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 3 s each
+# Measurement: 9 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 128 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction
+# Parameters: (pool = agroal, poolSize = 8, workload = longTx)
+
+# Run progress: 75.93% complete, ETA 00:17:42
+# Fork: 1 of 2
+# Warmup Iteration   1: 21:20:33.280 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-62] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+21:20:33.505 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-62] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 124 ms
+510.328 ops/s
+# Warmup Iteration   2: 510.568 ops/s
+# Warmup Iteration   3: 509.825 ops/s
+Iteration   1: 509.703 ops/s
+Iteration   2: 509.112 ops/s
+Iteration   3: 510.120 ops/s
+Iteration   4: 509.085 ops/s
+Iteration   5: 511.456 ops/s
+Iteration   6: 510.925 ops/s
+Iteration   7: 509.647 ops/s
+Iteration   8: 508.670 ops/s
+Iteration   9: 509.566 ops/s
+
+# Run progress: 76.85% complete, ETA 00:17:03
+# Fork: 2 of 2
+# Warmup Iteration   1: 21:21:20.150 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-37] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+21:21:20.394 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-37] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 125 ms
+508.283 ops/s
+# Warmup Iteration   2: 509.991 ops/s
+# Warmup Iteration   3: 509.299 ops/s
+Iteration   1: 508.909 ops/s
+Iteration   2: 509.973 ops/s
+Iteration   3: 509.849 ops/s
+Iteration   4: 510.058 ops/s
+Iteration   5: 507.264 ops/s
+Iteration   6: 508.736 ops/s
+Iteration   7: 509.480 ops/s
+Iteration   8: 511.101 ops/s
+Iteration   9: 509.999 ops/s
+
+
+Result "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction":
+  509.647 ┬▒(99.9%) 0.916 ops/s [Average]
+  (min, avg, max) = (507.264, 509.647, 511.456), stdev = 0.980
+  CI (99.9%): [508.731, 510.563] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.10, OpenJDK 64-Bit Server VM, 21.0.10+7-LTS
+# VM invoker: c:\Program Files\Eclipse Adoptium\jdk-21.0.10.7-hotspot\bin\java.exe
+# VM options: <none>
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 3 s each
+# Measurement: 9 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 128 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction
+# Parameters: (pool = agroal, poolSize = 16, workload = readMostly)
+
+# Run progress: 77.78% complete, ETA 00:16:24
+# Fork: 1 of 2
+# Warmup Iteration   1: 21:22:05.962 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-8] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+21:22:06.185 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-8] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 117 ms
+33243.040 ops/s
+# Warmup Iteration   2: 39941.256 ops/s
+# Warmup Iteration   3: 39614.436 ops/s
+Iteration   1: 39327.961 ops/s
+Iteration   2: 39650.202 ops/s
+Iteration   3: 39866.747 ops/s
+Iteration   4: 39100.089 ops/s
+Iteration   5: 38852.455 ops/s
+Iteration   6: 37640.462 ops/s
+Iteration   7: 38796.129 ops/s
+Iteration   8: 38181.094 ops/s
+Iteration   9: 38821.149 ops/s
+
+# Run progress: 78.70% complete, ETA 00:15:42
+# Fork: 2 of 2
+# Warmup Iteration   1: 21:22:44.353 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-35] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+21:22:44.609 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-35] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 125 ms
+32669.589 ops/s
+# Warmup Iteration   2: 38516.856 ops/s
+# Warmup Iteration   3: 38182.964 ops/s
+Iteration   1: 37807.802 ops/s
+Iteration   2: 38290.967 ops/s
+Iteration   3: 37819.019 ops/s
+Iteration   4: 37752.235 ops/s
+Iteration   5: 37559.220 ops/s
+Iteration   6: 37709.713 ops/s
+Iteration   7: 37338.556 ops/s
+Iteration   8: 37330.206 ops/s
+Iteration   9: 37082.317 ops/s
+
+
+Result "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction":
+  38273.685 ┬▒(99.9%) 793.438 ops/s [Average]
+  (min, avg, max) = (37082.317, 38273.685, 39866.747), stdev = 848.970
+  CI (99.9%): [37480.246, 39067.123] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.10, OpenJDK 64-Bit Server VM, 21.0.10+7-LTS
+# VM invoker: c:\Program Files\Eclipse Adoptium\jdk-21.0.10.7-hotspot\bin\java.exe
+# VM options: <none>
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 3 s each
+# Measurement: 9 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 128 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction
+# Parameters: (pool = agroal, poolSize = 16, workload = writeHeavy)
+
+# Run progress: 79.63% complete, ETA 00:15:00
+# Fork: 1 of 2
+# Warmup Iteration   1: 21:23:22.042 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-1] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+21:23:22.330 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-1] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 157 ms
+23318.516 ops/s
+# Warmup Iteration   2: 29804.234 ops/s
+# Warmup Iteration   3: 30031.163 ops/s
+Iteration   1: 29545.404 ops/s
+Iteration   2: 28073.191 ops/s
+Iteration   3: 28522.613 ops/s
+Iteration   4: 29999.368 ops/s
+Iteration   5: 29826.958 ops/s
+Iteration   6: 29735.772 ops/s
+Iteration   7: 29592.895 ops/s
+Iteration   8: 29621.419 ops/s
+Iteration   9: 29580.636 ops/s
+
+# Run progress: 80.56% complete, ETA 00:14:18
+# Fork: 2 of 2
+# Warmup Iteration   1: 21:24:00.543 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-3] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+21:24:00.802 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-3] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 120 ms
+22519.255 ops/s
+# Warmup Iteration   2: 29024.088 ops/s
+# Warmup Iteration   3: 29050.091 ops/s
+Iteration   1: 29137.191 ops/s
+Iteration   2: 29072.979 ops/s
+Iteration   3: 29045.618 ops/s
+Iteration   4: 29018.014 ops/s
+Iteration   5: 29308.585 ops/s
+Iteration   6: 28582.286 ops/s
+Iteration   7: 27912.737 ops/s
+Iteration   8: 28149.609 ops/s
+Iteration   9: 28798.855 ops/s
+
+
+Result "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction":
+  29084.674 ┬▒(99.9%) 590.916 ops/s [Average]
+  (min, avg, max) = (27912.737, 29084.674, 29999.368), stdev = 632.274
+  CI (99.9%): [28493.757, 29675.590] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.10, OpenJDK 64-Bit Server VM, 21.0.10+7-LTS
+# VM invoker: c:\Program Files\Eclipse Adoptium\jdk-21.0.10.7-hotspot\bin\java.exe
+# VM options: <none>
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 3 s each
+# Measurement: 9 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 128 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction
+# Parameters: (pool = agroal, poolSize = 16, workload = longTx)
+
+# Run progress: 81.48% complete, ETA 00:13:37
+# Fork: 1 of 2
+# Warmup Iteration   1: 21:24:38.192 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-58] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+21:24:38.399 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-58] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 111 ms
+1016.596 ops/s
+# Warmup Iteration   2: 1018.621 ops/s
+# Warmup Iteration   3: 1019.664 ops/s
+Iteration   1: 1020.953 ops/s
+Iteration   2: 1020.223 ops/s
+Iteration   3: 1020.321 ops/s
+Iteration   4: 1021.548 ops/s
+Iteration   5: 1018.721 ops/s
+Iteration   6: 1022.248 ops/s
+Iteration   7: 1022.289 ops/s
+Iteration   8: 1018.795 ops/s
+Iteration   9: 1018.740 ops/s
+
+# Run progress: 82.41% complete, ETA 00:12:56
+# Fork: 2 of 2
+# Warmup Iteration   1: 21:25:21.399 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-50] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+21:25:21.737 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-50] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 168 ms
+1016.396 ops/s
+# Warmup Iteration   2: 1020.112 ops/s
+# Warmup Iteration   3: 1017.649 ops/s
+Iteration   1: 1020.316 ops/s
+Iteration   2: 1021.551 ops/s
+Iteration   3: 1018.795 ops/s
+Iteration   4: 1018.340 ops/s
+Iteration   5: 1018.622 ops/s
+Iteration   6: 1016.865 ops/s
+Iteration   7: 1017.677 ops/s
+Iteration   8: 1022.831 ops/s
+Iteration   9: 1019.109 ops/s
+
+
+Result "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction":
+  1019.886 ┬▒(99.9%) 1.616 ops/s [Average]
+  (min, avg, max) = (1016.865, 1019.886, 1022.831), stdev = 1.729
+  CI (99.9%): [1018.270, 1021.502] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.10, OpenJDK 64-Bit Server VM, 21.0.10+7-LTS
+# VM invoker: c:\Program Files\Eclipse Adoptium\jdk-21.0.10.7-hotspot\bin\java.exe
+# VM options: <none>
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 3 s each
+# Measurement: 9 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 128 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction
+# Parameters: (pool = agroal, poolSize = 32, workload = readMostly)
+
+# Run progress: 83.33% complete, ETA 00:12:16
+# Fork: 1 of 2
+# Warmup Iteration   1: 21:26:03.229 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-3] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+21:26:03.512 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-3] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 119 ms
+32080.204 ops/s
+# Warmup Iteration   2: 38317.250 ops/s
+# Warmup Iteration   3: 40692.854 ops/s
+Iteration   1: 40638.635 ops/s
+Iteration   2: 40951.799 ops/s
+Iteration   3: 40608.738 ops/s
+Iteration   4: 39636.766 ops/s
+Iteration   5: 40587.473 ops/s
+Iteration   6: 40425.811 ops/s
+Iteration   7: 40306.031 ops/s
+Iteration   8: 40169.571 ops/s
+Iteration   9: 39505.072 ops/s
+
+# Run progress: 84.26% complete, ETA 00:11:34
+# Fork: 2 of 2
+# Warmup Iteration   1: 21:26:41.830 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-48] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+21:26:42.055 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-48] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 123 ms
+31003.691 ops/s
+# Warmup Iteration   2: 37228.721 ops/s
+# Warmup Iteration   3: 39562.810 ops/s
+Iteration   1: 39304.481 ops/s
+Iteration   2: 39135.963 ops/s
+Iteration   3: 39130.642 ops/s
+Iteration   4: 39056.054 ops/s
+Iteration   5: 38686.165 ops/s
+Iteration   6: 38494.850 ops/s
+Iteration   7: 38773.187 ops/s
+Iteration   8: 38312.964 ops/s
+Iteration   9: 38554.978 ops/s
+
+
+Result "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction":
+  39571.066 ┬▒(99.9%) 807.992 ops/s [Average]
+  (min, avg, max) = (38312.964, 39571.066, 40951.799), stdev = 864.542
+  CI (99.9%): [38763.074, 40379.057] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.10, OpenJDK 64-Bit Server VM, 21.0.10+7-LTS
+# VM invoker: c:\Program Files\Eclipse Adoptium\jdk-21.0.10.7-hotspot\bin\java.exe
+# VM options: <none>
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 3 s each
+# Measurement: 9 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 128 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction
+# Parameters: (pool = agroal, poolSize = 32, workload = writeHeavy)
+
+# Run progress: 85.19% complete, ETA 00:10:53
+# Fork: 1 of 2
+# Warmup Iteration   1: 21:27:19.431 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-4] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+21:27:19.655 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-4] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 120 ms
+27264.301 ops/s
+# Warmup Iteration   2: 31348.539 ops/s
+# Warmup Iteration   3: 33770.753 ops/s
+Iteration   1: 33168.208 ops/s
+Iteration   2: 33147.687 ops/s
+Iteration   3: 33395.000 ops/s
+Iteration   4: 33456.089 ops/s
+Iteration   5: 33418.329 ops/s
+Iteration   6: 33350.512 ops/s
+Iteration   7: 33008.382 ops/s
+Iteration   8: 33346.342 ops/s
+Iteration   9: 33377.545 ops/s
+
+# Run progress: 86.11% complete, ETA 00:10:12
+# Fork: 2 of 2
+# Warmup Iteration   1: 21:27:57.894 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-22] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+21:27:58.129 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-22] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 123 ms
+24580.772 ops/s
+# Warmup Iteration   2: 30389.203 ops/s
+# Warmup Iteration   3: 33103.799 ops/s
+Iteration   1: 32411.202 ops/s
+Iteration   2: 32379.754 ops/s
+Iteration   3: 32800.667 ops/s
+Iteration   4: 33241.330 ops/s
+Iteration   5: 32652.411 ops/s
+Iteration   6: 33274.390 ops/s
+Iteration   7: 33208.097 ops/s
+Iteration   8: 32682.988 ops/s
+Iteration   9: 32558.907 ops/s
+
+
+Result "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction":
+  33048.769 ┬▒(99.9%) 343.434 ops/s [Average]
+  (min, avg, max) = (32379.754, 33048.769, 33456.089), stdev = 367.471
+  CI (99.9%): [32705.335, 33392.203] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.10, OpenJDK 64-Bit Server VM, 21.0.10+7-LTS
+# VM invoker: c:\Program Files\Eclipse Adoptium\jdk-21.0.10.7-hotspot\bin\java.exe
+# VM options: <none>
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 3 s each
+# Measurement: 9 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 128 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction
+# Parameters: (pool = agroal, poolSize = 32, workload = longTx)
+
+# Run progress: 87.04% complete, ETA 00:09:31
+# Fork: 1 of 2
+# Warmup Iteration   1: 21:28:36.591 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-11] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+21:28:36.872 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-11] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 113 ms
+2036.324 ops/s
+# Warmup Iteration   2: 2045.745 ops/s
+# Warmup Iteration   3: 2050.200 ops/s
+Iteration   1: 2049.220 ops/s
+Iteration   2: 2049.890 ops/s
+Iteration   3: 2048.436 ops/s
+Iteration   4: 2041.121 ops/s
+Iteration   5: 2042.038 ops/s
+Iteration   6: 2037.883 ops/s
+Iteration   7: 2035.349 ops/s
+Iteration   8: 2034.646 ops/s
+Iteration   9: 2034.832 ops/s
+
+# Run progress: 87.96% complete, ETA 00:08:50
+# Fork: 2 of 2
+# Warmup Iteration   1: 21:29:17.142 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-47] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+21:29:17.368 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-47] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 122 ms
+2035.565 ops/s
+# Warmup Iteration   2: 2041.302 ops/s
+# Warmup Iteration   3: 2042.617 ops/s
+Iteration   1: 2036.024 ops/s
+Iteration   2: 2043.862 ops/s
+Iteration   3: 2041.785 ops/s
+Iteration   4: 2038.507 ops/s
+Iteration   5: 2036.090 ops/s
+Iteration   6: 2045.169 ops/s
+Iteration   7: 2038.720 ops/s
+Iteration   8: 2041.037 ops/s
+Iteration   9: 2041.137 ops/s
+
+
+Result "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction":
+  2040.875 ┬▒(99.9%) 4.585 ops/s [Average]
+  (min, avg, max) = (2034.646, 2040.875, 2049.890), stdev = 4.906
+  CI (99.9%): [2036.289, 2045.460] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.10, OpenJDK 64-Bit Server VM, 21.0.10+7-LTS
+# VM invoker: c:\Program Files\Eclipse Adoptium\jdk-21.0.10.7-hotspot\bin\java.exe
+# VM options: <none>
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 3 s each
+# Measurement: 9 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 128 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction
+# Parameters: (pool = agroal, poolSize = 64, workload = readMostly)
+
+# Run progress: 88.89% complete, ETA 00:08:09
+# Fork: 1 of 2
+# Warmup Iteration   1: 21:29:57.041 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-2] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+21:29:57.282 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-2] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 120 ms
+18502.794 ops/s
+# Warmup Iteration   2: 34409.783 ops/s
+# Warmup Iteration   3: 37090.675 ops/s
+Iteration   1: 36566.844 ops/s
+Iteration   2: 38078.496 ops/s
+Iteration   3: 37963.984 ops/s
+Iteration   4: 38121.256 ops/s
+Iteration   5: 38310.077 ops/s
+Iteration   6: 38376.859 ops/s
+Iteration   7: 37914.681 ops/s
+Iteration   8: 37506.191 ops/s
+Iteration   9: 37849.463 ops/s
+
+# Run progress: 89.81% complete, ETA 00:07:28
+# Fork: 2 of 2
+# Warmup Iteration   1: 21:30:38.629 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-56] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+21:30:38.862 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-56] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 114 ms
+18973.708 ops/s
+# Warmup Iteration   2: 32990.374 ops/s
+# Warmup Iteration   3: 37540.646 ops/s
+Iteration   1: 37520.701 ops/s
+Iteration   2: 37499.864 ops/s
+Iteration   3: 37674.444 ops/s
+Iteration   4: 37197.432 ops/s
+Iteration   5: 35667.980 ops/s
+Iteration   6: 36410.427 ops/s
+Iteration   7: 36370.829 ops/s
+Iteration   8: 36289.927 ops/s
+Iteration   9: 36437.844 ops/s
+
+
+Result "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction":
+  37319.850 ┬▒(99.9%) 767.846 ops/s [Average]
+  (min, avg, max) = (35667.980, 37319.850, 38376.859), stdev = 821.587
+  CI (99.9%): [36552.004, 38087.696] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.10, OpenJDK 64-Bit Server VM, 21.0.10+7-LTS
+# VM invoker: c:\Program Files\Eclipse Adoptium\jdk-21.0.10.7-hotspot\bin\java.exe
+# VM options: <none>
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 3 s each
+# Measurement: 9 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 128 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction
+# Parameters: (pool = agroal, poolSize = 64, workload = writeHeavy)
+
+# Run progress: 90.74% complete, ETA 00:06:47
+# Fork: 1 of 2
+# Warmup Iteration   1: 21:31:19.339 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-27] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+21:31:19.577 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-27] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 123 ms
+11453.797 ops/s
+# Warmup Iteration   2: 29701.142 ops/s
+# Warmup Iteration   3: 33380.090 ops/s
+Iteration   1: 32496.574 ops/s
+Iteration   2: 32960.989 ops/s
+Iteration   3: 33090.839 ops/s
+Iteration   4: 33245.062 ops/s
+Iteration   5: 33561.159 ops/s
+Iteration   6: 32955.948 ops/s
+Iteration   7: 32894.842 ops/s
+Iteration   8: 33157.651 ops/s
+Iteration   9: 32570.000 ops/s
+
+# Run progress: 91.67% complete, ETA 00:06:07
+# Fork: 2 of 2
+# Warmup Iteration   1: 21:32:00.615 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-4] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+21:32:00.900 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-4] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 111 ms
+15869.133 ops/s
+# Warmup Iteration   2: 29303.676 ops/s
+# Warmup Iteration   3: 32850.824 ops/s
+Iteration   1: 32430.312 ops/s
+Iteration   2: 32870.989 ops/s
+Iteration   3: 33037.876 ops/s
+Iteration   4: 32984.795 ops/s
+Iteration   5: 32248.346 ops/s
+Iteration   6: 31663.158 ops/s
+Iteration   7: 30558.232 ops/s
+Iteration   8: 32421.230 ops/s
+Iteration   9: 32151.304 ops/s
+
+
+Result "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction":
+  32627.739 ┬▒(99.9%) 644.280 ops/s [Average]
+  (min, avg, max) = (30558.232, 32627.739, 33561.159), stdev = 689.373
+  CI (99.9%): [31983.459, 33272.019] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.10, OpenJDK 64-Bit Server VM, 21.0.10+7-LTS
+# VM invoker: c:\Program Files\Eclipse Adoptium\jdk-21.0.10.7-hotspot\bin\java.exe
+# VM options: <none>
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 3 s each
+# Measurement: 9 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 128 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction
+# Parameters: (pool = agroal, poolSize = 64, workload = longTx)
+
+# Run progress: 92.59% complete, ETA 00:05:26
+# Fork: 1 of 2
+# Warmup Iteration   1: 21:32:40.344 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-8] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+21:32:40.576 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-8] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 128 ms
+4621.277 ops/s
+# Warmup Iteration   2: 4087.077 ops/s
+# Warmup Iteration   3: 4062.778 ops/s
+Iteration   1: 4086.020 ops/s
+Iteration   2: 4070.769 ops/s
+Iteration   3: 4081.280 ops/s
+Iteration   4: 4083.423 ops/s
+Iteration   5: 4069.795 ops/s
+Iteration   6: 4087.852 ops/s
+Iteration   7: 4070.477 ops/s
+Iteration   8: 4080.276 ops/s
+Iteration   9: 4076.176 ops/s
+
+# Run progress: 93.52% complete, ETA 00:04:45
+# Fork: 2 of 2
+# Warmup Iteration   1: 21:33:21.481 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-5] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+21:33:21.704 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-5] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 117 ms
+4470.436 ops/s
+# Warmup Iteration   2: 4081.951 ops/s
+# Warmup Iteration   3: 4081.062 ops/s
+Iteration   1: 4068.295 ops/s
+Iteration   2: 4094.982 ops/s
+Iteration   3: 4079.380 ops/s
+Iteration   4: 4081.471 ops/s
+Iteration   5: 4082.078 ops/s
+Iteration   6: 4084.878 ops/s
+Iteration   7: 4079.245 ops/s
+Iteration   8: 4094.306 ops/s
+Iteration   9: 4072.760 ops/s
+
+
+Result "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction":
+  4080.192 ┬▒(99.9%) 7.363 ops/s [Average]
+  (min, avg, max) = (4068.295, 4080.192, 4094.982), stdev = 7.878
+  CI (99.9%): [4072.830, 4087.555] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.10, OpenJDK 64-Bit Server VM, 21.0.10+7-LTS
+# VM invoker: c:\Program Files\Eclipse Adoptium\jdk-21.0.10.7-hotspot\bin\java.exe
+# VM options: <none>
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 3 s each
+# Measurement: 9 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 128 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction
+# Parameters: (pool = agroal, poolSize = 96, workload = readMostly)
+
+# Run progress: 94.44% complete, ETA 00:04:04
+# Fork: 1 of 2
+# Warmup Iteration   1: 21:34:01.824 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-52] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+21:34:02.083 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-52] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 119 ms
+21473.328 ops/s
+# Warmup Iteration   2: 34177.859 ops/s
+# Warmup Iteration   3: 37308.443 ops/s
+Iteration   1: 37362.459 ops/s
+Iteration   2: 37422.464 ops/s
+Iteration   3: 36831.185 ops/s
+Iteration   4: 36823.489 ops/s
+Iteration   5: 37224.411 ops/s
+Iteration   6: 37383.278 ops/s
+Iteration   7: 37194.538 ops/s
+Iteration   8: 36230.294 ops/s
+Iteration   9: 36621.209 ops/s
+
+# Run progress: 95.37% complete, ETA 00:03:24
+# Fork: 2 of 2
+# Warmup Iteration   1: 21:34:46.112 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-34] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+21:34:46.340 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-34] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 120 ms
+19695.839 ops/s
+# Warmup Iteration   2: 34928.394 ops/s
+# Warmup Iteration   3: 36551.212 ops/s
+Iteration   1: 36426.313 ops/s
+Iteration   2: 36641.930 ops/s
+Iteration   3: 36087.787 ops/s
+Iteration   4: 36567.028 ops/s
+Iteration   5: 36464.523 ops/s
+Iteration   6: 36186.748 ops/s
+Iteration   7: 34797.012 ops/s
+Iteration   8: 35399.067 ops/s
+Iteration   9: 35953.880 ops/s
+
+
+Result "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction":
+  36534.312 ┬▒(99.9%) 655.880 ops/s [Average]
+  (min, avg, max) = (34797.012, 36534.312, 37422.464), stdev = 701.784
+  CI (99.9%): [35878.432, 37190.192] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.10, OpenJDK 64-Bit Server VM, 21.0.10+7-LTS
+# VM invoker: c:\Program Files\Eclipse Adoptium\jdk-21.0.10.7-hotspot\bin\java.exe
+# VM options: <none>
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 3 s each
+# Measurement: 9 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 128 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction
+# Parameters: (pool = agroal, poolSize = 96, workload = writeHeavy)
+
+# Run progress: 96.30% complete, ETA 00:02:43
+# Fork: 1 of 2
+# Warmup Iteration   1: 21:35:29.439 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-23] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+21:35:29.698 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-23] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 130 ms
+21001.953 ops/s
+# Warmup Iteration   2: 29713.311 ops/s
+# Warmup Iteration   3: 32671.902 ops/s
+Iteration   1: 32618.538 ops/s
+Iteration   2: 32668.229 ops/s
+Iteration   3: 33050.984 ops/s
+Iteration   4: 32944.004 ops/s
+Iteration   5: 32798.938 ops/s
+Iteration   6: 32891.892 ops/s
+Iteration   7: 32802.767 ops/s
+Iteration   8: 32840.858 ops/s
+Iteration   9: 32653.390 ops/s
+
+# Run progress: 97.22% complete, ETA 00:02:02
+# Fork: 2 of 2
+# Warmup Iteration   1: 21:36:13.311 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-11] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+21:36:13.528 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-11] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 114 ms
+20298.920 ops/s
+# Warmup Iteration   2: 29162.346 ops/s
+# Warmup Iteration   3: 32395.475 ops/s
+Iteration   1: 32395.039 ops/s
+Iteration   2: 32571.452 ops/s
+Iteration   3: 32314.528 ops/s
+Iteration   4: 32295.073 ops/s
+Iteration   5: 32442.918 ops/s
+Iteration   6: 32258.539 ops/s
+Iteration   7: 32363.607 ops/s
+Iteration   8: 31972.026 ops/s
+Iteration   9: 31844.820 ops/s
+
+
+Result "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction":
+  32540.422 ┬▒(99.9%) 309.859 ops/s [Average]
+  (min, avg, max) = (31844.820, 32540.422, 33050.984), stdev = 331.546
+  CI (99.9%): [32230.563, 32850.282] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.10, OpenJDK 64-Bit Server VM, 21.0.10+7-LTS
+# VM invoker: c:\Program Files\Eclipse Adoptium\jdk-21.0.10.7-hotspot\bin\java.exe
+# VM options: <none>
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 3 s each
+# Measurement: 9 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 128 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction
+# Parameters: (pool = agroal, poolSize = 96, workload = longTx)
+
+# Run progress: 98.15% complete, ETA 00:01:21
+# Fork: 1 of 2
+# Warmup Iteration   1: 21:36:56.384 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-15] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+21:36:56.606 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-15] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 117 ms
+6076.980 ops/s
+# Warmup Iteration   2: 6099.994 ops/s
+# Warmup Iteration   3: 6133.554 ops/s
+Iteration   1: 6133.680 ops/s
+Iteration   2: 6132.964 ops/s
+Iteration   3: 6146.845 ops/s
+Iteration   4: 6145.655 ops/s
+Iteration   5: 6148.647 ops/s
+Iteration   6: 6142.222 ops/s
+Iteration   7: 6150.243 ops/s
+Iteration   8: 6138.536 ops/s
+Iteration   9: 6121.437 ops/s
+
+# Run progress: 99.07% complete, ETA 00:00:40
+# Fork: 2 of 2
+# Warmup Iteration   1: 21:37:39.804 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-49] INFO  c.v.p.p.c.util.PostgreSqlSupport - Using local PostgreSQL database at jdbc:postgresql://localhost/uslpool
+21:37:40.032 [com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction-jmh-worker-49] INFO  c.v.phd.pool.workload.Schema - Created accounts schema with 10000 rows in 124 ms
+6577.813 ops/s
+# Warmup Iteration   2: 6145.393 ops/s
+# Warmup Iteration   3: 6144.465 ops/s
+Iteration   1: 6133.666 ops/s
+Iteration   2: 6150.319 ops/s
+Iteration   3: 6166.993 ops/s
+Iteration   4: 6179.312 ops/s
+Iteration   5: 6160.252 ops/s
+Iteration   6: 6154.038 ops/s
+Iteration   7: 6154.927 ops/s
+Iteration   8: 6160.962 ops/s
+Iteration   9: 6173.402 ops/s
+
+
+Result "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction":
+  6149.672 ┬▒(99.9%) 14.012 ops/s [Average]
+  (min, avg, max) = (6121.437, 6149.672, 6179.312), stdev = 14.993
+  CI (99.9%): [6135.660, 6163.685] (assumes normal distribution)
+
+
+# Run complete. Total time: 01:13:41
+
+REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on
+why the numbers are the way they are. Use profilers (see -prof, -lprof), design factorial
+experiments, perform baseline and negative tests that provide experimental control, make sure
+the benchmarking environment is safe on JVM/OS/HW level, ask for reviews from the domain experts.
+Do not assume the numbers tell you what you want them to tell.
+
+NOTE: Current JVM experimentally supports Compiler Blackholes, and they are in use. Please exercise
+extra caution when trusting the results, look into the generated code to check the benchmark still
+works, and factor in a small probability of new VM bugs. Additionally, while comparisons between
+different JVMs are already problematic, the performance difference caused by different Blackhole
+modes can be very significant. Please make sure you use the consistent Blackhole mode for comparisons.
+
+Benchmark                                  (pool)  (poolSize)  (workload)   Mode  Cnt      Score      Error  Units
+ThroughputVsPoolSizeBenchmark.transaction  hikari           4  readMostly  thrpt   18  16423.403 ┬▒  631.959  ops/s
+ThroughputVsPoolSizeBenchmark.transaction  hikari           4  writeHeavy  thrpt   18  11890.597 ┬▒  160.954  ops/s
+ThroughputVsPoolSizeBenchmark.transaction  hikari           4      longTx  thrpt   18    255.158 ┬▒    0.437  ops/s
+ThroughputVsPoolSizeBenchmark.transaction  hikari           8  readMostly  thrpt   18  31789.520 ┬▒  686.867  ops/s
+ThroughputVsPoolSizeBenchmark.transaction  hikari           8  writeHeavy  thrpt   18  19611.493 ┬▒  576.071  ops/s
+ThroughputVsPoolSizeBenchmark.transaction  hikari           8      longTx  thrpt   18    509.950 ┬▒    0.534  ops/s
+ThroughputVsPoolSizeBenchmark.transaction  hikari          16  readMostly  thrpt   18  37817.308 ┬▒ 1052.239  ops/s
+ThroughputVsPoolSizeBenchmark.transaction  hikari          16  writeHeavy  thrpt   18  26991.240 ┬▒  438.210  ops/s
+ThroughputVsPoolSizeBenchmark.transaction  hikari          16      longTx  thrpt   18   1019.488 ┬▒    1.286  ops/s
+ThroughputVsPoolSizeBenchmark.transaction  hikari          32  readMostly  thrpt   18  39441.794 ┬▒  964.557  ops/s
+ThroughputVsPoolSizeBenchmark.transaction  hikari          32  writeHeavy  thrpt   18  31980.727 ┬▒  380.879  ops/s
+ThroughputVsPoolSizeBenchmark.transaction  hikari          32      longTx  thrpt   18   2040.855 ┬▒    3.152  ops/s
+ThroughputVsPoolSizeBenchmark.transaction  hikari          64  readMostly  thrpt   18  37904.607 ┬▒  607.823  ops/s
+ThroughputVsPoolSizeBenchmark.transaction  hikari          64  writeHeavy  thrpt   18  32697.174 ┬▒  265.995  ops/s
+ThroughputVsPoolSizeBenchmark.transaction  hikari          64      longTx  thrpt   18   4082.758 ┬▒    6.542  ops/s
+ThroughputVsPoolSizeBenchmark.transaction  hikari          96  readMostly  thrpt   18  37245.023 ┬▒  798.194  ops/s
+ThroughputVsPoolSizeBenchmark.transaction  hikari          96  writeHeavy  thrpt   18  32018.782 ┬▒  477.668  ops/s
+ThroughputVsPoolSizeBenchmark.transaction  hikari          96      longTx  thrpt   18   6108.309 ┬▒  117.847  ops/s
+ThroughputVsPoolSizeBenchmark.transaction   dbcp2           4  readMostly  thrpt   18  13017.704 ┬▒  239.668  ops/s
+ThroughputVsPoolSizeBenchmark.transaction   dbcp2           4  writeHeavy  thrpt   18   9654.266 ┬▒  199.897  ops/s
+ThroughputVsPoolSizeBenchmark.transaction   dbcp2           4      longTx  thrpt   18    255.237 ┬▒    0.550  ops/s
+ThroughputVsPoolSizeBenchmark.transaction   dbcp2           8  readMostly  thrpt   18  22916.248 ┬▒ 2325.699  ops/s
+ThroughputVsPoolSizeBenchmark.transaction   dbcp2           8  writeHeavy  thrpt   18  18580.851 ┬▒  421.453  ops/s
+ThroughputVsPoolSizeBenchmark.transaction   dbcp2           8      longTx  thrpt   18    512.111 ┬▒    1.214  ops/s
+ThroughputVsPoolSizeBenchmark.transaction   dbcp2          16  readMostly  thrpt   18  27576.297 ┬▒  888.058  ops/s
+ThroughputVsPoolSizeBenchmark.transaction   dbcp2          16  writeHeavy  thrpt   18  22527.539 ┬▒  422.128  ops/s
+ThroughputVsPoolSizeBenchmark.transaction   dbcp2          16      longTx  thrpt   18   1026.052 ┬▒    2.167  ops/s
+ThroughputVsPoolSizeBenchmark.transaction   dbcp2          32  readMostly  thrpt   18  29938.259 ┬▒  835.543  ops/s
+ThroughputVsPoolSizeBenchmark.transaction   dbcp2          32  writeHeavy  thrpt   18  25303.763 ┬▒  619.701  ops/s
+ThroughputVsPoolSizeBenchmark.transaction   dbcp2          32      longTx  thrpt   18   2051.505 ┬▒    3.883  ops/s
+ThroughputVsPoolSizeBenchmark.transaction   dbcp2          64  readMostly  thrpt   18  29803.959 ┬▒  688.301  ops/s
+ThroughputVsPoolSizeBenchmark.transaction   dbcp2          64  writeHeavy  thrpt   18  24114.360 ┬▒ 2503.406  ops/s
+ThroughputVsPoolSizeBenchmark.transaction   dbcp2          64      longTx  thrpt   18   4078.689 ┬▒   28.346  ops/s
+ThroughputVsPoolSizeBenchmark.transaction   dbcp2          96  readMostly  thrpt   18  28832.238 ┬▒  673.261  ops/s
+ThroughputVsPoolSizeBenchmark.transaction   dbcp2          96  writeHeavy  thrpt   18  26135.815 ┬▒  473.418  ops/s
+ThroughputVsPoolSizeBenchmark.transaction   dbcp2          96      longTx  thrpt   18   6123.793 ┬▒   52.925  ops/s
+ThroughputVsPoolSizeBenchmark.transaction  agroal           4  readMostly  thrpt   18  21143.594 ┬▒  734.665  ops/s
+ThroughputVsPoolSizeBenchmark.transaction  agroal           4  writeHeavy  thrpt   18  15054.449 ┬▒  396.596  ops/s
+ThroughputVsPoolSizeBenchmark.transaction  agroal           4      longTx  thrpt   18    255.383 ┬▒    0.384  ops/s
+ThroughputVsPoolSizeBenchmark.transaction  agroal           8  readMostly  thrpt   18  34407.121 ┬▒  931.555  ops/s
+ThroughputVsPoolSizeBenchmark.transaction  agroal           8  writeHeavy  thrpt   18  19527.833 ┬▒ 3600.948  ops/s
+ThroughputVsPoolSizeBenchmark.transaction  agroal           8      longTx  thrpt   18    509.647 ┬▒    0.916  ops/s
+ThroughputVsPoolSizeBenchmark.transaction  agroal          16  readMostly  thrpt   18  38273.685 ┬▒  793.438  ops/s
+ThroughputVsPoolSizeBenchmark.transaction  agroal          16  writeHeavy  thrpt   18  29084.674 ┬▒  590.916  ops/s
+ThroughputVsPoolSizeBenchmark.transaction  agroal          16      longTx  thrpt   18   1019.886 ┬▒    1.616  ops/s
+ThroughputVsPoolSizeBenchmark.transaction  agroal          32  readMostly  thrpt   18  39571.066 ┬▒  807.992  ops/s
+ThroughputVsPoolSizeBenchmark.transaction  agroal          32  writeHeavy  thrpt   18  33048.769 ┬▒  343.434  ops/s
+ThroughputVsPoolSizeBenchmark.transaction  agroal          32      longTx  thrpt   18   2040.875 ┬▒    4.585  ops/s
+ThroughputVsPoolSizeBenchmark.transaction  agroal          64  readMostly  thrpt   18  37319.850 ┬▒  767.846  ops/s
+ThroughputVsPoolSizeBenchmark.transaction  agroal          64  writeHeavy  thrpt   18  32627.739 ┬▒  644.280  ops/s
+ThroughputVsPoolSizeBenchmark.transaction  agroal          64      longTx  thrpt   18   4080.192 ┬▒    7.363  ops/s
+ThroughputVsPoolSizeBenchmark.transaction  agroal          96  readMostly  thrpt   18  36534.312 ┬▒  655.880  ops/s
+ThroughputVsPoolSizeBenchmark.transaction  agroal          96  writeHeavy  thrpt   18  32540.422 ┬▒  309.859  ops/s
+ThroughputVsPoolSizeBenchmark.transaction  agroal          96      longTx  thrpt   18   6149.672 ┬▒   14.012  ops/s
+
+Benchmark result is saved to d:\Vlad\Work\GitHub\connection-pool-auto-scaling\metrics\jmh-results\ThroughputVsPoolSizeBenchmark.json
+21:38:21.669 [main] INFO  c.v.p.p.j.ThroughputVsPoolSizeBenchmarkTest - Wrote JMH summary CSV to d:\Vlad\Work\GitHub\connection-pool-auto-scaling\metrics\jmh-results\ThroughputVsPoolSizeBenchmark.csv
+21:38:21.669 [main] INFO  c.v.p.p.j.ThroughputVsPoolSizeBenchmarkTest - Completed 54 result(s) for ThroughputVsPoolSizeBenchmark
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4423 s -- in com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmarkTest
+[INFO]
+[INFO] Results:
+[INFO]
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  01:13 h
+[INFO] Finished at: 2026-07-05T21:38:21+03:00
+[INFO] ------------------------------------------------------------------------

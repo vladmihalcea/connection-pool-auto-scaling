@@ -53,7 +53,7 @@ public class ThroughputVsPoolSizeBenchmark {
         @Param({"hikari", "dbcp2", "agroal"})
         public String pool;
 
-        @Param({"1", "2", "4", "8", "12", "16", "24", "32", "48", "64", "96"})
+        @Param({"1", "2", "4", "8", "16", "24", "32", "48", "64", "96"})
         public int poolSize;
 
         @Param({"readMostly", "writeHeavy", "longTx"})
