@@ -12,6 +12,8 @@ import com.vladmihalcea.flexypool.strategy.ConnectionAcquisitionStrategyFactory;
 import com.vladmihalcea.flexypool.strategy.IncrementPoolOnTimeoutConnectionAcquisitionStrategy;
 import com.vladmihalcea.flexypool.strategy.RetryConnectionAcquisitionStrategy;
 import com.vladmihalcea.phd.pool.common.util.PostgreSqlSupport;
+import com.vladmihalcea.phd.pool.controller.UslAutoScalingController;
+import com.vladmihalcea.phd.pool.usl.UslFit;
 import com.vladmihalcea.phd.pool.workload.OltpWorkload;
 import com.vladmihalcea.phd.pool.workload.Schema;
 import com.zaxxer.hikari.HikariConfig;
@@ -30,6 +32,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicLong;
 
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
@@ -160,6 +163,93 @@ public class FlexyPoolAutoScalingExperimentTest {
         } finally {
             stop.set(true);
             executor.shutdownNow();
+            flexyPool.close();
+            hikari.close();
+        }
+    }
+
+    @Test
+    public void uslAutoScalingStrategyConvergesToFittedOptimum() throws Exception {
+        int minSize = 2;
+        int maxSize = 48;
+        int clientThreads = 64; // >= maxSize so every probed size stays saturated and the curve is demand-driven
+        long windowMillis = 1_000;
+        long runMillis = 16_000; // ~16 windows: a 6-rung probe-ladder bootstrap plus tracking to N*
+
+        HikariDataSource hikari = hikariDataSource(minSize);
+        UslAutoScalingConnectionAcquisitionStrategy.Config config =
+                new UslAutoScalingConnectionAcquisitionStrategy.Config(
+                        minSize, maxSize, windowMillis, 2,
+                        UslAutoScalingController.Config.defaults(minSize, maxSize));
+        UslAutoScalingConnectionAcquisitionStrategy.Factory<HikariDataSource> factory =
+                new UslAutoScalingConnectionAcquisitionStrategy.Factory<>(config);
+        FlexyPoolDataSource<HikariDataSource> flexyPool = flexyPool(hikari, factory);
+        UslAutoScalingConnectionAcquisitionStrategy<HikariDataSource> strategy = factory.strategy();
+
+        // writeHeavy contends on hot rows, so the throughput-vs-size curve is concave with an interior peak
+        // the online USL fit can locate — the retrograde region the controller is designed to find.
+        OltpWorkload workload = OltpWorkload.byName("writeHeavy", new Schema(10).accountCount());
+        ExecutorService executor = Executors.newFixedThreadPool(clientThreads);
+        AtomicBoolean stop = new AtomicBoolean();
+        AtomicLong committed = new AtomicLong();
+        AtomicLong failures = new AtomicLong();
+        AtomicLong maxObservedSize = new AtomicLong(minSize);
+        try {
+            for (int t = 0; t < clientThreads; t++) {
+                final long seed = t;
+                executor.submit(() -> {
+                    SplittableRandom random = new SplittableRandom(seed);
+                    while (!stop.get()) {
+                        try (Connection connection = flexyPool.getConnection()) {
+                            workload.runTransaction(connection, bound -> random.nextInt(bound));
+                            committed.incrementAndGet();
+                            maxObservedSize.accumulateAndGet(hikari.getMaximumPoolSize(), Math::max);
+                        } catch (Exception e) {
+                            failures.incrementAndGet();
+                        }
+                    }
+                });
+            }
+            Thread.sleep(runMillis);
+            stop.set(true);
+            executor.shutdown();
+            executor.awaitTermination(20, TimeUnit.SECONDS);
+
+            int finalSize = hikari.getMaximumPoolSize();
+            int estimatedOptimum = strategy.estimatedOptimum();
+            UslFit fit = strategy.lastFit();
+            LOGGER.info("USL auto-scaling strategy: committed={}, failures={}, peakSize={}, finalSize={}, "
+                            + "N*={}, fit={} (ceiling {})",
+                    committed.get(), failures.get(), maxObservedSize.get(), finalSize, estimatedOptimum,
+                    fit == null ? "n/a" : String.format("lambda=%.0f sigma=%.4f kappa=%.6f R2=%.3f",
+                            fit.model().lambda(), fit.model().sigma(), fit.model().kappa(), fit.rSquared()),
+                    maxSize);
+
+            assertTrue(committed.get() > 0, "the closed loop should commit transactions");
+            // The controller must actually explore: it walks a probe ladder across [minSize, maxSize] before
+            // it can fit, so the live pool visits sizes well beyond the minimum it starts from.
+            assertTrue(maxObservedSize.get() > minSize,
+                    "the controller must explore sizes beyond the initial " + minSize
+                            + ", peak was " + maxObservedSize.get());
+            // The plan's core mechanism: an online USL fit is accepted (R^2 >= threshold) and yields a
+            // usable N*. Before any fit is accepted the controller reports -1.
+            assertNotNull(fit, "an online USL fit should have been accepted");
+            assertTrue(estimatedOptimum >= minSize && estimatedOptimum <= maxSize,
+                    "the online fit must produce an in-range N*, got " + estimatedOptimum);
+            // Model-driven, not runaway: the controller caps the pool below the ceiling at the fitted
+            // optimum (dead-band + one saturated step of slack), rather than growing without bound.
+            assertTrue(finalSize < maxSize,
+                    "the controller must cap below the ceiling " + maxSize + " at N*, got " + finalSize);
+            assertTrue(Math.abs(finalSize - estimatedOptimum)
+                            <= config.controllerConfig().stepLimit() + config.controllerConfig().deadBand(),
+                    "the pool should settle at the estimated optimum " + estimatedOptimum
+                            + ", got " + finalSize);
+        } finally {
+            stop.set(true);
+            executor.shutdownNow();
+            if (strategy != null) {
+                strategy.close();
+            }
             flexyPool.close();
             hikari.close();
         }
