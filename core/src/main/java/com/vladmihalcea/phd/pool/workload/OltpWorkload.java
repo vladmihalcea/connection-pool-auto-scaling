@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.concurrent.locks.LockSupport;
 
 /**
  * A single OLTP transaction against the {@link Schema} {@code accounts} table, parameterised by a
@@ -15,8 +14,13 @@ import java.util.concurrent.locks.LockSupport;
  * <ul>
  *   <li>{@code readMostly} — 90% point-select, 10% balance update; short service time.</li>
  *   <li>{@code writeHeavy} — 50/50; more lock contention on hot rows.</li>
- *   <li>{@code longTx} — read-mostly plus a fixed {@code serviceDelayMicros} spin inside the
- *       transaction, lengthening service time so the USL optimum {@code N*} shifts to a larger pool.</li>
+ *   <li>{@code longTx} — read-mostly plus a fixed slug of server-side CPU work ({@code cpuWorkRows}
+ *       rows of {@code sum(sqrt(...))} over a {@code generate_series}) inside the transaction. This
+ *       both lengthens the service time and makes concurrent transactions contend for the database
+ *       server's CPU cores, so the throughput curve saturates near the core count and then turns over —
+ *       a genuine USL retrograde region. (A sleep would not: independent waits never contend, and it is
+ *       quantised to the OS timer tick — ~15.6 ms on Windows — so the curve would be a flat, unfittable
+ *       line.)</li>
  * </ul>
  * Determinism: the caller supplies a seeded {@link java.util.random.RandomGenerator}; the workload never
  * consults a global RNG, so a run is reproducible from its seed.
@@ -25,15 +29,21 @@ import java.util.concurrent.locks.LockSupport;
  */
 public final class OltpWorkload {
 
+    /**
+     * Rows of server-side CPU work per {@code longTx} transaction. ~3.5 ms on a modern core; the exact
+     * wall-clock time is host-dependent, but the work (rows scanned) is fixed, so a run is reproducible.
+     */
+    private static final int LONG_TX_CPU_ROWS = 50_000;
+
     private final String name;
     private final double writeRatio;
-    private final int serviceDelayMicros;
+    private final int cpuWorkRows;
     private final int accountCount;
 
-    private OltpWorkload(String name, double writeRatio, int serviceDelayMicros, int accountCount) {
+    private OltpWorkload(String name, double writeRatio, int cpuWorkRows, int accountCount) {
         this.name = name;
         this.writeRatio = writeRatio;
-        this.serviceDelayMicros = serviceDelayMicros;
+        this.cpuWorkRows = cpuWorkRows;
         this.accountCount = accountCount;
     }
 
@@ -45,16 +55,16 @@ public final class OltpWorkload {
         return new OltpWorkload("writeHeavy", 0.50, 0, accountCount);
     }
 
-    /** Read-mostly with an added in-transaction service delay (microseconds) to lengthen service time. */
-    public static OltpWorkload longTx(int accountCount, int serviceDelayMicros) {
-        return new OltpWorkload("longTx", 0.10, serviceDelayMicros, accountCount);
+    /** Read-mostly plus {@code cpuWorkRows} rows of server-side CPU work to lengthen service time. */
+    public static OltpWorkload longTx(int accountCount, int cpuWorkRows) {
+        return new OltpWorkload("longTx", 0.10, cpuWorkRows, accountCount);
     }
 
     public static OltpWorkload byName(String name, int accountCount) {
         return switch (name) {
             case "readMostly" -> readMostly(accountCount);
             case "writeHeavy" -> writeHeavy(accountCount);
-            case "longTx" -> longTx(accountCount, 5_000);
+            case "longTx" -> longTx(accountCount, LONG_TX_CPU_ROWS);
             default -> throw new IllegalArgumentException("Unknown workload: " + name);
         };
     }
@@ -96,8 +106,18 @@ public final class OltpWorkload {
                     }
                 }
             }
-            if (serviceDelayMicros > 0) {
-                LockSupport.parkNanos(serviceDelayMicros * 1_000L);
+            if (cpuWorkRows > 0) {
+                // Real server-side CPU work, not a sleep: sum(sqrt(...)) over a generate_series burns CPU
+                // proportional to cpuWorkRows, so concurrent long transactions compete for the database
+                // server's cores and the throughput curve saturates and turns over (a fittable USL
+                // optimum). A sleep instead would be timer-quantised and never contend, giving a flat line.
+                try (PreparedStatement compute = connection.prepareStatement(
+                        "SELECT sum(sqrt(g.i::float8)) FROM generate_series(1, ?) AS g(i)")) {
+                    compute.setInt(1, cpuWorkRows);
+                    try (ResultSet rs = compute.executeQuery()) {
+                        rs.next();
+                    }
+                }
             }
             connection.commit();
         } catch (SQLException e) {
