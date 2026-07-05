@@ -1,0 +1,5152 @@
+[
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "hikari",
+            "poolSize" : "1",
+            "workload" : "readMostly"
+        },
+        "primaryMetric" : {
+            "score" : 5826.495872735499,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 5826.495872735499,
+                "50.0" : 5826.495872735499,
+                "90.0" : 5826.495872735499,
+                "95.0" : 5826.495872735499,
+                "99.0" : 5826.495872735499,
+                "99.9" : 5826.495872735499,
+                "99.99" : 5826.495872735499,
+                "99.999" : 5826.495872735499,
+                "99.9999" : 5826.495872735499,
+                "100.0" : 5826.495872735499
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    5826.495872735499
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "hikari",
+            "poolSize" : "1",
+            "workload" : "writeHeavy"
+        },
+        "primaryMetric" : {
+            "score" : 4237.990007242291,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 4237.990007242291,
+                "50.0" : 4237.990007242291,
+                "90.0" : 4237.990007242291,
+                "95.0" : 4237.990007242291,
+                "99.0" : 4237.990007242291,
+                "99.9" : 4237.990007242291,
+                "99.99" : 4237.990007242291,
+                "99.999" : 4237.990007242291,
+                "99.9999" : 4237.990007242291,
+                "100.0" : 4237.990007242291
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    4237.990007242291
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "hikari",
+            "poolSize" : "1",
+            "workload" : "longTx"
+        },
+        "primaryMetric" : {
+            "score" : 64.04072683189565,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 64.04072683189565,
+                "50.0" : 64.04072683189565,
+                "90.0" : 64.04072683189565,
+                "95.0" : 64.04072683189565,
+                "99.0" : 64.04072683189565,
+                "99.9" : 64.04072683189565,
+                "99.99" : 64.04072683189565,
+                "99.999" : 64.04072683189565,
+                "99.9999" : 64.04072683189565,
+                "100.0" : 64.04072683189565
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    64.04072683189565
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "hikari",
+            "poolSize" : "2",
+            "workload" : "readMostly"
+        },
+        "primaryMetric" : {
+            "score" : 10398.071328033478,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 10398.071328033478,
+                "50.0" : 10398.071328033478,
+                "90.0" : 10398.071328033478,
+                "95.0" : 10398.071328033478,
+                "99.0" : 10398.071328033478,
+                "99.9" : 10398.071328033478,
+                "99.99" : 10398.071328033478,
+                "99.999" : 10398.071328033478,
+                "99.9999" : 10398.071328033478,
+                "100.0" : 10398.071328033478
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    10398.071328033478
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "hikari",
+            "poolSize" : "2",
+            "workload" : "writeHeavy"
+        },
+        "primaryMetric" : {
+            "score" : 7261.125319698022,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 7261.125319698022,
+                "50.0" : 7261.125319698022,
+                "90.0" : 7261.125319698022,
+                "95.0" : 7261.125319698022,
+                "99.0" : 7261.125319698022,
+                "99.9" : 7261.125319698022,
+                "99.99" : 7261.125319698022,
+                "99.999" : 7261.125319698022,
+                "99.9999" : 7261.125319698022,
+                "100.0" : 7261.125319698022
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    7261.125319698022
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "hikari",
+            "poolSize" : "2",
+            "workload" : "longTx"
+        },
+        "primaryMetric" : {
+            "score" : 128.65974571544626,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 128.65974571544626,
+                "50.0" : 128.65974571544626,
+                "90.0" : 128.65974571544626,
+                "95.0" : 128.65974571544626,
+                "99.0" : 128.65974571544626,
+                "99.9" : 128.65974571544626,
+                "99.99" : 128.65974571544626,
+                "99.999" : 128.65974571544626,
+                "99.9999" : 128.65974571544626,
+                "100.0" : 128.65974571544626
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    128.65974571544626
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "hikari",
+            "poolSize" : "4",
+            "workload" : "readMostly"
+        },
+        "primaryMetric" : {
+            "score" : 17031.04302862796,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 17031.04302862796,
+                "50.0" : 17031.04302862796,
+                "90.0" : 17031.04302862796,
+                "95.0" : 17031.04302862796,
+                "99.0" : 17031.04302862796,
+                "99.9" : 17031.04302862796,
+                "99.99" : 17031.04302862796,
+                "99.999" : 17031.04302862796,
+                "99.9999" : 17031.04302862796,
+                "100.0" : 17031.04302862796
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    17031.04302862796
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "hikari",
+            "poolSize" : "4",
+            "workload" : "writeHeavy"
+        },
+        "primaryMetric" : {
+            "score" : 12129.627946302773,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 12129.627946302773,
+                "50.0" : 12129.627946302773,
+                "90.0" : 12129.627946302773,
+                "95.0" : 12129.627946302773,
+                "99.0" : 12129.627946302773,
+                "99.9" : 12129.627946302773,
+                "99.99" : 12129.627946302773,
+                "99.999" : 12129.627946302773,
+                "99.9999" : 12129.627946302773,
+                "100.0" : 12129.627946302773
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    12129.627946302773
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "hikari",
+            "poolSize" : "4",
+            "workload" : "longTx"
+        },
+        "primaryMetric" : {
+            "score" : 256.7511862096549,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 256.7511862096549,
+                "50.0" : 256.7511862096549,
+                "90.0" : 256.7511862096549,
+                "95.0" : 256.7511862096549,
+                "99.0" : 256.7511862096549,
+                "99.9" : 256.7511862096549,
+                "99.99" : 256.7511862096549,
+                "99.999" : 256.7511862096549,
+                "99.9999" : 256.7511862096549,
+                "100.0" : 256.7511862096549
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    256.7511862096549
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "hikari",
+            "poolSize" : "8",
+            "workload" : "readMostly"
+        },
+        "primaryMetric" : {
+            "score" : 26713.24859821035,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 26713.24859821035,
+                "50.0" : 26713.24859821035,
+                "90.0" : 26713.24859821035,
+                "95.0" : 26713.24859821035,
+                "99.0" : 26713.24859821035,
+                "99.9" : 26713.24859821035,
+                "99.99" : 26713.24859821035,
+                "99.999" : 26713.24859821035,
+                "99.9999" : 26713.24859821035,
+                "100.0" : 26713.24859821035
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    26713.24859821035
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "hikari",
+            "poolSize" : "8",
+            "workload" : "writeHeavy"
+        },
+        "primaryMetric" : {
+            "score" : 18600.365180608536,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 18600.365180608536,
+                "50.0" : 18600.365180608536,
+                "90.0" : 18600.365180608536,
+                "95.0" : 18600.365180608536,
+                "99.0" : 18600.365180608536,
+                "99.9" : 18600.365180608536,
+                "99.99" : 18600.365180608536,
+                "99.999" : 18600.365180608536,
+                "99.9999" : 18600.365180608536,
+                "100.0" : 18600.365180608536
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    18600.365180608536
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "hikari",
+            "poolSize" : "8",
+            "workload" : "longTx"
+        },
+        "primaryMetric" : {
+            "score" : 510.4692130614511,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 510.4692130614511,
+                "50.0" : 510.4692130614511,
+                "90.0" : 510.4692130614511,
+                "95.0" : 510.4692130614511,
+                "99.0" : 510.4692130614511,
+                "99.9" : 510.4692130614511,
+                "99.99" : 510.4692130614511,
+                "99.999" : 510.4692130614511,
+                "99.9999" : 510.4692130614511,
+                "100.0" : 510.4692130614511
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    510.4692130614511
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "hikari",
+            "poolSize" : "12",
+            "workload" : "readMostly"
+        },
+        "primaryMetric" : {
+            "score" : 32971.65677306661,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 32971.65677306661,
+                "50.0" : 32971.65677306661,
+                "90.0" : 32971.65677306661,
+                "95.0" : 32971.65677306661,
+                "99.0" : 32971.65677306661,
+                "99.9" : 32971.65677306661,
+                "99.99" : 32971.65677306661,
+                "99.999" : 32971.65677306661,
+                "99.9999" : 32971.65677306661,
+                "100.0" : 32971.65677306661
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    32971.65677306661
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "hikari",
+            "poolSize" : "12",
+            "workload" : "writeHeavy"
+        },
+        "primaryMetric" : {
+            "score" : 23162.4693843577,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 23162.4693843577,
+                "50.0" : 23162.4693843577,
+                "90.0" : 23162.4693843577,
+                "95.0" : 23162.4693843577,
+                "99.0" : 23162.4693843577,
+                "99.9" : 23162.4693843577,
+                "99.99" : 23162.4693843577,
+                "99.999" : 23162.4693843577,
+                "99.9999" : 23162.4693843577,
+                "100.0" : 23162.4693843577
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    23162.4693843577
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "hikari",
+            "poolSize" : "12",
+            "workload" : "longTx"
+        },
+        "primaryMetric" : {
+            "score" : 771.4507573622044,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 771.4507573622044,
+                "50.0" : 771.4507573622044,
+                "90.0" : 771.4507573622044,
+                "95.0" : 771.4507573622044,
+                "99.0" : 771.4507573622044,
+                "99.9" : 771.4507573622044,
+                "99.99" : 771.4507573622044,
+                "99.999" : 771.4507573622044,
+                "99.9999" : 771.4507573622044,
+                "100.0" : 771.4507573622044
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    771.4507573622044
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "hikari",
+            "poolSize" : "16",
+            "workload" : "readMostly"
+        },
+        "primaryMetric" : {
+            "score" : 34039.19891958521,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 34039.19891958521,
+                "50.0" : 34039.19891958521,
+                "90.0" : 34039.19891958521,
+                "95.0" : 34039.19891958521,
+                "99.0" : 34039.19891958521,
+                "99.9" : 34039.19891958521,
+                "99.99" : 34039.19891958521,
+                "99.999" : 34039.19891958521,
+                "99.9999" : 34039.19891958521,
+                "100.0" : 34039.19891958521
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    34039.19891958521
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "hikari",
+            "poolSize" : "16",
+            "workload" : "writeHeavy"
+        },
+        "primaryMetric" : {
+            "score" : 23725.587214923326,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 23725.587214923326,
+                "50.0" : 23725.587214923326,
+                "90.0" : 23725.587214923326,
+                "95.0" : 23725.587214923326,
+                "99.0" : 23725.587214923326,
+                "99.9" : 23725.587214923326,
+                "99.99" : 23725.587214923326,
+                "99.999" : 23725.587214923326,
+                "99.9999" : 23725.587214923326,
+                "100.0" : 23725.587214923326
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    23725.587214923326
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "hikari",
+            "poolSize" : "16",
+            "workload" : "longTx"
+        },
+        "primaryMetric" : {
+            "score" : 1015.0573215338867,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 1015.0573215338867,
+                "50.0" : 1015.0573215338867,
+                "90.0" : 1015.0573215338867,
+                "95.0" : 1015.0573215338867,
+                "99.0" : 1015.0573215338867,
+                "99.9" : 1015.0573215338867,
+                "99.99" : 1015.0573215338867,
+                "99.999" : 1015.0573215338867,
+                "99.9999" : 1015.0573215338867,
+                "100.0" : 1015.0573215338867
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    1015.0573215338867
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "hikari",
+            "poolSize" : "24",
+            "workload" : "readMostly"
+        },
+        "primaryMetric" : {
+            "score" : 32964.9132864892,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 32964.9132864892,
+                "50.0" : 32964.9132864892,
+                "90.0" : 32964.9132864892,
+                "95.0" : 32964.9132864892,
+                "99.0" : 32964.9132864892,
+                "99.9" : 32964.9132864892,
+                "99.99" : 32964.9132864892,
+                "99.999" : 32964.9132864892,
+                "99.9999" : 32964.9132864892,
+                "100.0" : 32964.9132864892
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    32964.9132864892
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "hikari",
+            "poolSize" : "24",
+            "workload" : "writeHeavy"
+        },
+        "primaryMetric" : {
+            "score" : 24054.68324710936,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 24054.68324710936,
+                "50.0" : 24054.68324710936,
+                "90.0" : 24054.68324710936,
+                "95.0" : 24054.68324710936,
+                "99.0" : 24054.68324710936,
+                "99.9" : 24054.68324710936,
+                "99.99" : 24054.68324710936,
+                "99.999" : 24054.68324710936,
+                "99.9999" : 24054.68324710936,
+                "100.0" : 24054.68324710936
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    24054.68324710936
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "hikari",
+            "poolSize" : "24",
+            "workload" : "longTx"
+        },
+        "primaryMetric" : {
+            "score" : 1129.2776203826718,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 1129.2776203826718,
+                "50.0" : 1129.2776203826718,
+                "90.0" : 1129.2776203826718,
+                "95.0" : 1129.2776203826718,
+                "99.0" : 1129.2776203826718,
+                "99.9" : 1129.2776203826718,
+                "99.99" : 1129.2776203826718,
+                "99.999" : 1129.2776203826718,
+                "99.9999" : 1129.2776203826718,
+                "100.0" : 1129.2776203826718
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    1129.2776203826718
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "hikari",
+            "poolSize" : "32",
+            "workload" : "readMostly"
+        },
+        "primaryMetric" : {
+            "score" : 33238.040471025306,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 33238.040471025306,
+                "50.0" : 33238.040471025306,
+                "90.0" : 33238.040471025306,
+                "95.0" : 33238.040471025306,
+                "99.0" : 33238.040471025306,
+                "99.9" : 33238.040471025306,
+                "99.99" : 33238.040471025306,
+                "99.999" : 33238.040471025306,
+                "99.9999" : 33238.040471025306,
+                "100.0" : 33238.040471025306
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    33238.040471025306
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "hikari",
+            "poolSize" : "32",
+            "workload" : "writeHeavy"
+        },
+        "primaryMetric" : {
+            "score" : 24252.20612706459,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 24252.20612706459,
+                "50.0" : 24252.20612706459,
+                "90.0" : 24252.20612706459,
+                "95.0" : 24252.20612706459,
+                "99.0" : 24252.20612706459,
+                "99.9" : 24252.20612706459,
+                "99.99" : 24252.20612706459,
+                "99.999" : 24252.20612706459,
+                "99.9999" : 24252.20612706459,
+                "100.0" : 24252.20612706459
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    24252.20612706459
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "hikari",
+            "poolSize" : "32",
+            "workload" : "longTx"
+        },
+        "primaryMetric" : {
+            "score" : 1172.912852450595,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 1172.912852450595,
+                "50.0" : 1172.912852450595,
+                "90.0" : 1172.912852450595,
+                "95.0" : 1172.912852450595,
+                "99.0" : 1172.912852450595,
+                "99.9" : 1172.912852450595,
+                "99.99" : 1172.912852450595,
+                "99.999" : 1172.912852450595,
+                "99.9999" : 1172.912852450595,
+                "100.0" : 1172.912852450595
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    1172.912852450595
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "hikari",
+            "poolSize" : "48",
+            "workload" : "readMostly"
+        },
+        "primaryMetric" : {
+            "score" : 34112.96399856632,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 34112.96399856632,
+                "50.0" : 34112.96399856632,
+                "90.0" : 34112.96399856632,
+                "95.0" : 34112.96399856632,
+                "99.0" : 34112.96399856632,
+                "99.9" : 34112.96399856632,
+                "99.99" : 34112.96399856632,
+                "99.999" : 34112.96399856632,
+                "99.9999" : 34112.96399856632,
+                "100.0" : 34112.96399856632
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    34112.96399856632
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "hikari",
+            "poolSize" : "48",
+            "workload" : "writeHeavy"
+        },
+        "primaryMetric" : {
+            "score" : 24372.3516015962,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 24372.3516015962,
+                "50.0" : 24372.3516015962,
+                "90.0" : 24372.3516015962,
+                "95.0" : 24372.3516015962,
+                "99.0" : 24372.3516015962,
+                "99.9" : 24372.3516015962,
+                "99.99" : 24372.3516015962,
+                "99.999" : 24372.3516015962,
+                "99.9999" : 24372.3516015962,
+                "100.0" : 24372.3516015962
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    24372.3516015962
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "hikari",
+            "poolSize" : "48",
+            "workload" : "longTx"
+        },
+        "primaryMetric" : {
+            "score" : 984.5525263479018,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 984.5525263479018,
+                "50.0" : 984.5525263479018,
+                "90.0" : 984.5525263479018,
+                "95.0" : 984.5525263479018,
+                "99.0" : 984.5525263479018,
+                "99.9" : 984.5525263479018,
+                "99.99" : 984.5525263479018,
+                "99.999" : 984.5525263479018,
+                "99.9999" : 984.5525263479018,
+                "100.0" : 984.5525263479018
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    984.5525263479018
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "hikari",
+            "poolSize" : "64",
+            "workload" : "readMostly"
+        },
+        "primaryMetric" : {
+            "score" : 32195.028961257565,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 32195.028961257565,
+                "50.0" : 32195.028961257565,
+                "90.0" : 32195.028961257565,
+                "95.0" : 32195.028961257565,
+                "99.0" : 32195.028961257565,
+                "99.9" : 32195.028961257565,
+                "99.99" : 32195.028961257565,
+                "99.999" : 32195.028961257565,
+                "99.9999" : 32195.028961257565,
+                "100.0" : 32195.028961257565
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    32195.028961257565
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "hikari",
+            "poolSize" : "64",
+            "workload" : "writeHeavy"
+        },
+        "primaryMetric" : {
+            "score" : 22933.916107450597,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 22933.916107450597,
+                "50.0" : 22933.916107450597,
+                "90.0" : 22933.916107450597,
+                "95.0" : 22933.916107450597,
+                "99.0" : 22933.916107450597,
+                "99.9" : 22933.916107450597,
+                "99.99" : 22933.916107450597,
+                "99.999" : 22933.916107450597,
+                "99.9999" : 22933.916107450597,
+                "100.0" : 22933.916107450597
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    22933.916107450597
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "hikari",
+            "poolSize" : "64",
+            "workload" : "longTx"
+        },
+        "primaryMetric" : {
+            "score" : 1227.9771258880637,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 1227.9771258880637,
+                "50.0" : 1227.9771258880637,
+                "90.0" : 1227.9771258880637,
+                "95.0" : 1227.9771258880637,
+                "99.0" : 1227.9771258880637,
+                "99.9" : 1227.9771258880637,
+                "99.99" : 1227.9771258880637,
+                "99.999" : 1227.9771258880637,
+                "99.9999" : 1227.9771258880637,
+                "100.0" : 1227.9771258880637
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    1227.9771258880637
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "hikari",
+            "poolSize" : "96",
+            "workload" : "readMostly"
+        },
+        "primaryMetric" : {
+            "score" : 32595.228976032016,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 32595.228976032016,
+                "50.0" : 32595.228976032016,
+                "90.0" : 32595.228976032016,
+                "95.0" : 32595.228976032016,
+                "99.0" : 32595.228976032016,
+                "99.9" : 32595.228976032016,
+                "99.99" : 32595.228976032016,
+                "99.999" : 32595.228976032016,
+                "99.9999" : 32595.228976032016,
+                "100.0" : 32595.228976032016
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    32595.228976032016
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "hikari",
+            "poolSize" : "96",
+            "workload" : "writeHeavy"
+        },
+        "primaryMetric" : {
+            "score" : 22987.260634133545,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 22987.260634133545,
+                "50.0" : 22987.260634133545,
+                "90.0" : 22987.260634133545,
+                "95.0" : 22987.260634133545,
+                "99.0" : 22987.260634133545,
+                "99.9" : 22987.260634133545,
+                "99.99" : 22987.260634133545,
+                "99.999" : 22987.260634133545,
+                "99.9999" : 22987.260634133545,
+                "100.0" : 22987.260634133545
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    22987.260634133545
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "hikari",
+            "poolSize" : "96",
+            "workload" : "longTx"
+        },
+        "primaryMetric" : {
+            "score" : 1352.1434503541113,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 1352.1434503541113,
+                "50.0" : 1352.1434503541113,
+                "90.0" : 1352.1434503541113,
+                "95.0" : 1352.1434503541113,
+                "99.0" : 1352.1434503541113,
+                "99.9" : 1352.1434503541113,
+                "99.99" : 1352.1434503541113,
+                "99.999" : 1352.1434503541113,
+                "99.9999" : 1352.1434503541113,
+                "100.0" : 1352.1434503541113
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    1352.1434503541113
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "dbcp2",
+            "poolSize" : "1",
+            "workload" : "readMostly"
+        },
+        "primaryMetric" : {
+            "score" : 4458.7279188768125,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 4458.7279188768125,
+                "50.0" : 4458.7279188768125,
+                "90.0" : 4458.7279188768125,
+                "95.0" : 4458.7279188768125,
+                "99.0" : 4458.7279188768125,
+                "99.9" : 4458.7279188768125,
+                "99.99" : 4458.7279188768125,
+                "99.999" : 4458.7279188768125,
+                "99.9999" : 4458.7279188768125,
+                "100.0" : 4458.7279188768125
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    4458.7279188768125
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "dbcp2",
+            "poolSize" : "1",
+            "workload" : "writeHeavy"
+        },
+        "primaryMetric" : {
+            "score" : 3581.106387706981,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 3581.106387706981,
+                "50.0" : 3581.106387706981,
+                "90.0" : 3581.106387706981,
+                "95.0" : 3581.106387706981,
+                "99.0" : 3581.106387706981,
+                "99.9" : 3581.106387706981,
+                "99.99" : 3581.106387706981,
+                "99.999" : 3581.106387706981,
+                "99.9999" : 3581.106387706981,
+                "100.0" : 3581.106387706981
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    3581.106387706981
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "dbcp2",
+            "poolSize" : "1",
+            "workload" : "longTx"
+        },
+        "primaryMetric" : {
+            "score" : 64.24960243176709,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 64.24960243176709,
+                "50.0" : 64.24960243176709,
+                "90.0" : 64.24960243176709,
+                "95.0" : 64.24960243176709,
+                "99.0" : 64.24960243176709,
+                "99.9" : 64.24960243176709,
+                "99.99" : 64.24960243176709,
+                "99.999" : 64.24960243176709,
+                "99.9999" : 64.24960243176709,
+                "100.0" : 64.24960243176709
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    64.24960243176709
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "dbcp2",
+            "poolSize" : "2",
+            "workload" : "readMostly"
+        },
+        "primaryMetric" : {
+            "score" : 8388.780550494428,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 8388.780550494428,
+                "50.0" : 8388.780550494428,
+                "90.0" : 8388.780550494428,
+                "95.0" : 8388.780550494428,
+                "99.0" : 8388.780550494428,
+                "99.9" : 8388.780550494428,
+                "99.99" : 8388.780550494428,
+                "99.999" : 8388.780550494428,
+                "99.9999" : 8388.780550494428,
+                "100.0" : 8388.780550494428
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    8388.780550494428
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "dbcp2",
+            "poolSize" : "2",
+            "workload" : "writeHeavy"
+        },
+        "primaryMetric" : {
+            "score" : 6195.543278004673,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 6195.543278004673,
+                "50.0" : 6195.543278004673,
+                "90.0" : 6195.543278004673,
+                "95.0" : 6195.543278004673,
+                "99.0" : 6195.543278004673,
+                "99.9" : 6195.543278004673,
+                "99.99" : 6195.543278004673,
+                "99.999" : 6195.543278004673,
+                "99.9999" : 6195.543278004673,
+                "100.0" : 6195.543278004673
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    6195.543278004673
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "dbcp2",
+            "poolSize" : "2",
+            "workload" : "longTx"
+        },
+        "primaryMetric" : {
+            "score" : 129.49301586347752,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 129.49301586347752,
+                "50.0" : 129.49301586347752,
+                "90.0" : 129.49301586347752,
+                "95.0" : 129.49301586347752,
+                "99.0" : 129.49301586347752,
+                "99.9" : 129.49301586347752,
+                "99.99" : 129.49301586347752,
+                "99.999" : 129.49301586347752,
+                "99.9999" : 129.49301586347752,
+                "100.0" : 129.49301586347752
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    129.49301586347752
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "dbcp2",
+            "poolSize" : "4",
+            "workload" : "readMostly"
+        },
+        "primaryMetric" : {
+            "score" : 11797.383117240337,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 11797.383117240337,
+                "50.0" : 11797.383117240337,
+                "90.0" : 11797.383117240337,
+                "95.0" : 11797.383117240337,
+                "99.0" : 11797.383117240337,
+                "99.9" : 11797.383117240337,
+                "99.99" : 11797.383117240337,
+                "99.999" : 11797.383117240337,
+                "99.9999" : 11797.383117240337,
+                "100.0" : 11797.383117240337
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    11797.383117240337
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "dbcp2",
+            "poolSize" : "4",
+            "workload" : "writeHeavy"
+        },
+        "primaryMetric" : {
+            "score" : 9025.107221873217,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 9025.107221873217,
+                "50.0" : 9025.107221873217,
+                "90.0" : 9025.107221873217,
+                "95.0" : 9025.107221873217,
+                "99.0" : 9025.107221873217,
+                "99.9" : 9025.107221873217,
+                "99.99" : 9025.107221873217,
+                "99.999" : 9025.107221873217,
+                "99.9999" : 9025.107221873217,
+                "100.0" : 9025.107221873217
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    9025.107221873217
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "dbcp2",
+            "poolSize" : "4",
+            "workload" : "longTx"
+        },
+        "primaryMetric" : {
+            "score" : 257.61414299799065,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 257.61414299799065,
+                "50.0" : 257.61414299799065,
+                "90.0" : 257.61414299799065,
+                "95.0" : 257.61414299799065,
+                "99.0" : 257.61414299799065,
+                "99.9" : 257.61414299799065,
+                "99.99" : 257.61414299799065,
+                "99.999" : 257.61414299799065,
+                "99.9999" : 257.61414299799065,
+                "100.0" : 257.61414299799065
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    257.61414299799065
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "dbcp2",
+            "poolSize" : "8",
+            "workload" : "readMostly"
+        },
+        "primaryMetric" : {
+            "score" : 17313.731629900223,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 17313.731629900223,
+                "50.0" : 17313.731629900223,
+                "90.0" : 17313.731629900223,
+                "95.0" : 17313.731629900223,
+                "99.0" : 17313.731629900223,
+                "99.9" : 17313.731629900223,
+                "99.99" : 17313.731629900223,
+                "99.999" : 17313.731629900223,
+                "99.9999" : 17313.731629900223,
+                "100.0" : 17313.731629900223
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    17313.731629900223
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "dbcp2",
+            "poolSize" : "8",
+            "workload" : "writeHeavy"
+        },
+        "primaryMetric" : {
+            "score" : 12771.79854480309,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 12771.79854480309,
+                "50.0" : 12771.79854480309,
+                "90.0" : 12771.79854480309,
+                "95.0" : 12771.79854480309,
+                "99.0" : 12771.79854480309,
+                "99.9" : 12771.79854480309,
+                "99.99" : 12771.79854480309,
+                "99.999" : 12771.79854480309,
+                "99.9999" : 12771.79854480309,
+                "100.0" : 12771.79854480309
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    12771.79854480309
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "dbcp2",
+            "poolSize" : "8",
+            "workload" : "longTx"
+        },
+        "primaryMetric" : {
+            "score" : 517.6692037932545,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 517.6692037932545,
+                "50.0" : 517.6692037932545,
+                "90.0" : 517.6692037932545,
+                "95.0" : 517.6692037932545,
+                "99.0" : 517.6692037932545,
+                "99.9" : 517.6692037932545,
+                "99.99" : 517.6692037932545,
+                "99.999" : 517.6692037932545,
+                "99.9999" : 517.6692037932545,
+                "100.0" : 517.6692037932545
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    517.6692037932545
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "dbcp2",
+            "poolSize" : "12",
+            "workload" : "readMostly"
+        },
+        "primaryMetric" : {
+            "score" : 21634.60957676811,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 21634.60957676811,
+                "50.0" : 21634.60957676811,
+                "90.0" : 21634.60957676811,
+                "95.0" : 21634.60957676811,
+                "99.0" : 21634.60957676811,
+                "99.9" : 21634.60957676811,
+                "99.99" : 21634.60957676811,
+                "99.999" : 21634.60957676811,
+                "99.9999" : 21634.60957676811,
+                "100.0" : 21634.60957676811
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    21634.60957676811
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "dbcp2",
+            "poolSize" : "12",
+            "workload" : "writeHeavy"
+        },
+        "primaryMetric" : {
+            "score" : 16185.429305547043,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 16185.429305547043,
+                "50.0" : 16185.429305547043,
+                "90.0" : 16185.429305547043,
+                "95.0" : 16185.429305547043,
+                "99.0" : 16185.429305547043,
+                "99.9" : 16185.429305547043,
+                "99.99" : 16185.429305547043,
+                "99.999" : 16185.429305547043,
+                "99.9999" : 16185.429305547043,
+                "100.0" : 16185.429305547043
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    16185.429305547043
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "dbcp2",
+            "poolSize" : "12",
+            "workload" : "longTx"
+        },
+        "primaryMetric" : {
+            "score" : 771.5530957584544,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 771.5530957584544,
+                "50.0" : 771.5530957584544,
+                "90.0" : 771.5530957584544,
+                "95.0" : 771.5530957584544,
+                "99.0" : 771.5530957584544,
+                "99.9" : 771.5530957584544,
+                "99.99" : 771.5530957584544,
+                "99.999" : 771.5530957584544,
+                "99.9999" : 771.5530957584544,
+                "100.0" : 771.5530957584544
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    771.5530957584544
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "dbcp2",
+            "poolSize" : "16",
+            "workload" : "readMostly"
+        },
+        "primaryMetric" : {
+            "score" : 22660.842144385977,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 22660.842144385977,
+                "50.0" : 22660.842144385977,
+                "90.0" : 22660.842144385977,
+                "95.0" : 22660.842144385977,
+                "99.0" : 22660.842144385977,
+                "99.9" : 22660.842144385977,
+                "99.99" : 22660.842144385977,
+                "99.999" : 22660.842144385977,
+                "99.9999" : 22660.842144385977,
+                "100.0" : 22660.842144385977
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    22660.842144385977
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "dbcp2",
+            "poolSize" : "16",
+            "workload" : "writeHeavy"
+        },
+        "primaryMetric" : {
+            "score" : 18134.14592030685,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 18134.14592030685,
+                "50.0" : 18134.14592030685,
+                "90.0" : 18134.14592030685,
+                "95.0" : 18134.14592030685,
+                "99.0" : 18134.14592030685,
+                "99.9" : 18134.14592030685,
+                "99.99" : 18134.14592030685,
+                "99.999" : 18134.14592030685,
+                "99.9999" : 18134.14592030685,
+                "100.0" : 18134.14592030685
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    18134.14592030685
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "dbcp2",
+            "poolSize" : "16",
+            "workload" : "longTx"
+        },
+        "primaryMetric" : {
+            "score" : 1034.797824425821,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 1034.797824425821,
+                "50.0" : 1034.797824425821,
+                "90.0" : 1034.797824425821,
+                "95.0" : 1034.797824425821,
+                "99.0" : 1034.797824425821,
+                "99.9" : 1034.797824425821,
+                "99.99" : 1034.797824425821,
+                "99.999" : 1034.797824425821,
+                "99.9999" : 1034.797824425821,
+                "100.0" : 1034.797824425821
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    1034.797824425821
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "dbcp2",
+            "poolSize" : "24",
+            "workload" : "readMostly"
+        },
+        "primaryMetric" : {
+            "score" : 26510.052817433167,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 26510.052817433167,
+                "50.0" : 26510.052817433167,
+                "90.0" : 26510.052817433167,
+                "95.0" : 26510.052817433167,
+                "99.0" : 26510.052817433167,
+                "99.9" : 26510.052817433167,
+                "99.99" : 26510.052817433167,
+                "99.999" : 26510.052817433167,
+                "99.9999" : 26510.052817433167,
+                "100.0" : 26510.052817433167
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    26510.052817433167
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "dbcp2",
+            "poolSize" : "24",
+            "workload" : "writeHeavy"
+        },
+        "primaryMetric" : {
+            "score" : 22191.653139182188,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 22191.653139182188,
+                "50.0" : 22191.653139182188,
+                "90.0" : 22191.653139182188,
+                "95.0" : 22191.653139182188,
+                "99.0" : 22191.653139182188,
+                "99.9" : 22191.653139182188,
+                "99.99" : 22191.653139182188,
+                "99.999" : 22191.653139182188,
+                "99.9999" : 22191.653139182188,
+                "100.0" : 22191.653139182188
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    22191.653139182188
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "dbcp2",
+            "poolSize" : "24",
+            "workload" : "longTx"
+        },
+        "primaryMetric" : {
+            "score" : 1554.1641174712083,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 1554.1641174712083,
+                "50.0" : 1554.1641174712083,
+                "90.0" : 1554.1641174712083,
+                "95.0" : 1554.1641174712083,
+                "99.0" : 1554.1641174712083,
+                "99.9" : 1554.1641174712083,
+                "99.99" : 1554.1641174712083,
+                "99.999" : 1554.1641174712083,
+                "99.9999" : 1554.1641174712083,
+                "100.0" : 1554.1641174712083
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    1554.1641174712083
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "dbcp2",
+            "poolSize" : "32",
+            "workload" : "readMostly"
+        },
+        "primaryMetric" : {
+            "score" : 26140.92864997303,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 26140.92864997303,
+                "50.0" : 26140.92864997303,
+                "90.0" : 26140.92864997303,
+                "95.0" : 26140.92864997303,
+                "99.0" : 26140.92864997303,
+                "99.9" : 26140.92864997303,
+                "99.99" : 26140.92864997303,
+                "99.999" : 26140.92864997303,
+                "99.9999" : 26140.92864997303,
+                "100.0" : 26140.92864997303
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    26140.92864997303
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "dbcp2",
+            "poolSize" : "32",
+            "workload" : "writeHeavy"
+        },
+        "primaryMetric" : {
+            "score" : 23367.15999857542,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 23367.15999857542,
+                "50.0" : 23367.15999857542,
+                "90.0" : 23367.15999857542,
+                "95.0" : 23367.15999857542,
+                "99.0" : 23367.15999857542,
+                "99.9" : 23367.15999857542,
+                "99.99" : 23367.15999857542,
+                "99.999" : 23367.15999857542,
+                "99.9999" : 23367.15999857542,
+                "100.0" : 23367.15999857542
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    23367.15999857542
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "dbcp2",
+            "poolSize" : "32",
+            "workload" : "longTx"
+        },
+        "primaryMetric" : {
+            "score" : 2054.392091651953,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 2054.392091651953,
+                "50.0" : 2054.392091651953,
+                "90.0" : 2054.392091651953,
+                "95.0" : 2054.392091651953,
+                "99.0" : 2054.392091651953,
+                "99.9" : 2054.392091651953,
+                "99.99" : 2054.392091651953,
+                "99.999" : 2054.392091651953,
+                "99.9999" : 2054.392091651953,
+                "100.0" : 2054.392091651953
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    2054.392091651953
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "dbcp2",
+            "poolSize" : "48",
+            "workload" : "readMostly"
+        },
+        "primaryMetric" : {
+            "score" : 25488.55015859557,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 25488.55015859557,
+                "50.0" : 25488.55015859557,
+                "90.0" : 25488.55015859557,
+                "95.0" : 25488.55015859557,
+                "99.0" : 25488.55015859557,
+                "99.9" : 25488.55015859557,
+                "99.99" : 25488.55015859557,
+                "99.999" : 25488.55015859557,
+                "99.9999" : 25488.55015859557,
+                "100.0" : 25488.55015859557
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    25488.55015859557
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "dbcp2",
+            "poolSize" : "48",
+            "workload" : "writeHeavy"
+        },
+        "primaryMetric" : {
+            "score" : 23933.32627709271,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 23933.32627709271,
+                "50.0" : 23933.32627709271,
+                "90.0" : 23933.32627709271,
+                "95.0" : 23933.32627709271,
+                "99.0" : 23933.32627709271,
+                "99.9" : 23933.32627709271,
+                "99.99" : 23933.32627709271,
+                "99.999" : 23933.32627709271,
+                "99.9999" : 23933.32627709271,
+                "100.0" : 23933.32627709271
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    23933.32627709271
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "dbcp2",
+            "poolSize" : "48",
+            "workload" : "longTx"
+        },
+        "primaryMetric" : {
+            "score" : 3096.745658457173,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 3096.745658457173,
+                "50.0" : 3096.745658457173,
+                "90.0" : 3096.745658457173,
+                "95.0" : 3096.745658457173,
+                "99.0" : 3096.745658457173,
+                "99.9" : 3096.745658457173,
+                "99.99" : 3096.745658457173,
+                "99.999" : 3096.745658457173,
+                "99.9999" : 3096.745658457173,
+                "100.0" : 3096.745658457173
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    3096.745658457173
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "dbcp2",
+            "poolSize" : "64",
+            "workload" : "readMostly"
+        },
+        "primaryMetric" : {
+            "score" : 24703.97742079137,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 24703.97742079137,
+                "50.0" : 24703.97742079137,
+                "90.0" : 24703.97742079137,
+                "95.0" : 24703.97742079137,
+                "99.0" : 24703.97742079137,
+                "99.9" : 24703.97742079137,
+                "99.99" : 24703.97742079137,
+                "99.999" : 24703.97742079137,
+                "99.9999" : 24703.97742079137,
+                "100.0" : 24703.97742079137
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    24703.97742079137
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "dbcp2",
+            "poolSize" : "64",
+            "workload" : "writeHeavy"
+        },
+        "primaryMetric" : {
+            "score" : 23084.423391420303,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 23084.423391420303,
+                "50.0" : 23084.423391420303,
+                "90.0" : 23084.423391420303,
+                "95.0" : 23084.423391420303,
+                "99.0" : 23084.423391420303,
+                "99.9" : 23084.423391420303,
+                "99.99" : 23084.423391420303,
+                "99.999" : 23084.423391420303,
+                "99.9999" : 23084.423391420303,
+                "100.0" : 23084.423391420303
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    23084.423391420303
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "dbcp2",
+            "poolSize" : "64",
+            "workload" : "longTx"
+        },
+        "primaryMetric" : {
+            "score" : 4111.143199272366,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 4111.143199272366,
+                "50.0" : 4111.143199272366,
+                "90.0" : 4111.143199272366,
+                "95.0" : 4111.143199272366,
+                "99.0" : 4111.143199272366,
+                "99.9" : 4111.143199272366,
+                "99.99" : 4111.143199272366,
+                "99.999" : 4111.143199272366,
+                "99.9999" : 4111.143199272366,
+                "100.0" : 4111.143199272366
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    4111.143199272366
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "dbcp2",
+            "poolSize" : "96",
+            "workload" : "readMostly"
+        },
+        "primaryMetric" : {
+            "score" : 27268.889837376708,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 27268.889837376708,
+                "50.0" : 27268.889837376708,
+                "90.0" : 27268.889837376708,
+                "95.0" : 27268.889837376708,
+                "99.0" : 27268.889837376708,
+                "99.9" : 27268.889837376708,
+                "99.99" : 27268.889837376708,
+                "99.999" : 27268.889837376708,
+                "99.9999" : 27268.889837376708,
+                "100.0" : 27268.889837376708
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    27268.889837376708
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "dbcp2",
+            "poolSize" : "96",
+            "workload" : "writeHeavy"
+        },
+        "primaryMetric" : {
+            "score" : 22581.75306651911,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 22581.75306651911,
+                "50.0" : 22581.75306651911,
+                "90.0" : 22581.75306651911,
+                "95.0" : 22581.75306651911,
+                "99.0" : 22581.75306651911,
+                "99.9" : 22581.75306651911,
+                "99.99" : 22581.75306651911,
+                "99.999" : 22581.75306651911,
+                "99.9999" : 22581.75306651911,
+                "100.0" : 22581.75306651911
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    22581.75306651911
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "dbcp2",
+            "poolSize" : "96",
+            "workload" : "longTx"
+        },
+        "primaryMetric" : {
+            "score" : 6187.561307270187,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 6187.561307270187,
+                "50.0" : 6187.561307270187,
+                "90.0" : 6187.561307270187,
+                "95.0" : 6187.561307270187,
+                "99.0" : 6187.561307270187,
+                "99.9" : 6187.561307270187,
+                "99.99" : 6187.561307270187,
+                "99.999" : 6187.561307270187,
+                "99.9999" : 6187.561307270187,
+                "100.0" : 6187.561307270187
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    6187.561307270187
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "agroal",
+            "poolSize" : "1",
+            "workload" : "readMostly"
+        },
+        "primaryMetric" : {
+            "score" : 5841.961713391319,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 5841.961713391319,
+                "50.0" : 5841.961713391319,
+                "90.0" : 5841.961713391319,
+                "95.0" : 5841.961713391319,
+                "99.0" : 5841.961713391319,
+                "99.9" : 5841.961713391319,
+                "99.99" : 5841.961713391319,
+                "99.999" : 5841.961713391319,
+                "99.9999" : 5841.961713391319,
+                "100.0" : 5841.961713391319
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    5841.961713391319
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "agroal",
+            "poolSize" : "1",
+            "workload" : "writeHeavy"
+        },
+        "primaryMetric" : {
+            "score" : 4403.297236764166,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 4403.297236764166,
+                "50.0" : 4403.297236764166,
+                "90.0" : 4403.297236764166,
+                "95.0" : 4403.297236764166,
+                "99.0" : 4403.297236764166,
+                "99.9" : 4403.297236764166,
+                "99.99" : 4403.297236764166,
+                "99.999" : 4403.297236764166,
+                "99.9999" : 4403.297236764166,
+                "100.0" : 4403.297236764166
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    4403.297236764166
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "agroal",
+            "poolSize" : "1",
+            "workload" : "longTx"
+        },
+        "primaryMetric" : {
+            "score" : 64.31882667910504,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 64.31882667910504,
+                "50.0" : 64.31882667910504,
+                "90.0" : 64.31882667910504,
+                "95.0" : 64.31882667910504,
+                "99.0" : 64.31882667910504,
+                "99.9" : 64.31882667910504,
+                "99.99" : 64.31882667910504,
+                "99.999" : 64.31882667910504,
+                "99.9999" : 64.31882667910504,
+                "100.0" : 64.31882667910504
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    64.31882667910504
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "agroal",
+            "poolSize" : "2",
+            "workload" : "readMostly"
+        },
+        "primaryMetric" : {
+            "score" : 11161.88126115629,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 11161.88126115629,
+                "50.0" : 11161.88126115629,
+                "90.0" : 11161.88126115629,
+                "95.0" : 11161.88126115629,
+                "99.0" : 11161.88126115629,
+                "99.9" : 11161.88126115629,
+                "99.99" : 11161.88126115629,
+                "99.999" : 11161.88126115629,
+                "99.9999" : 11161.88126115629,
+                "100.0" : 11161.88126115629
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    11161.88126115629
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "agroal",
+            "poolSize" : "2",
+            "workload" : "writeHeavy"
+        },
+        "primaryMetric" : {
+            "score" : 7308.716439660843,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 7308.716439660843,
+                "50.0" : 7308.716439660843,
+                "90.0" : 7308.716439660843,
+                "95.0" : 7308.716439660843,
+                "99.0" : 7308.716439660843,
+                "99.9" : 7308.716439660843,
+                "99.99" : 7308.716439660843,
+                "99.999" : 7308.716439660843,
+                "99.9999" : 7308.716439660843,
+                "100.0" : 7308.716439660843
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    7308.716439660843
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "agroal",
+            "poolSize" : "2",
+            "workload" : "longTx"
+        },
+        "primaryMetric" : {
+            "score" : 129.78559129162227,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 129.78559129162227,
+                "50.0" : 129.78559129162227,
+                "90.0" : 129.78559129162227,
+                "95.0" : 129.78559129162227,
+                "99.0" : 129.78559129162227,
+                "99.9" : 129.78559129162227,
+                "99.99" : 129.78559129162227,
+                "99.999" : 129.78559129162227,
+                "99.9999" : 129.78559129162227,
+                "100.0" : 129.78559129162227
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    129.78559129162227
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "agroal",
+            "poolSize" : "4",
+            "workload" : "readMostly"
+        },
+        "primaryMetric" : {
+            "score" : 16905.83475153769,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 16905.83475153769,
+                "50.0" : 16905.83475153769,
+                "90.0" : 16905.83475153769,
+                "95.0" : 16905.83475153769,
+                "99.0" : 16905.83475153769,
+                "99.9" : 16905.83475153769,
+                "99.99" : 16905.83475153769,
+                "99.999" : 16905.83475153769,
+                "99.9999" : 16905.83475153769,
+                "100.0" : 16905.83475153769
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    16905.83475153769
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "agroal",
+            "poolSize" : "4",
+            "workload" : "writeHeavy"
+        },
+        "primaryMetric" : {
+            "score" : 11551.41993263426,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 11551.41993263426,
+                "50.0" : 11551.41993263426,
+                "90.0" : 11551.41993263426,
+                "95.0" : 11551.41993263426,
+                "99.0" : 11551.41993263426,
+                "99.9" : 11551.41993263426,
+                "99.99" : 11551.41993263426,
+                "99.999" : 11551.41993263426,
+                "99.9999" : 11551.41993263426,
+                "100.0" : 11551.41993263426
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    11551.41993263426
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "agroal",
+            "poolSize" : "4",
+            "workload" : "longTx"
+        },
+        "primaryMetric" : {
+            "score" : 256.2133377368609,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 256.2133377368609,
+                "50.0" : 256.2133377368609,
+                "90.0" : 256.2133377368609,
+                "95.0" : 256.2133377368609,
+                "99.0" : 256.2133377368609,
+                "99.9" : 256.2133377368609,
+                "99.99" : 256.2133377368609,
+                "99.999" : 256.2133377368609,
+                "99.9999" : 256.2133377368609,
+                "100.0" : 256.2133377368609
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    256.2133377368609
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "agroal",
+            "poolSize" : "8",
+            "workload" : "readMostly"
+        },
+        "primaryMetric" : {
+            "score" : 24603.124329473547,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 24603.124329473547,
+                "50.0" : 24603.124329473547,
+                "90.0" : 24603.124329473547,
+                "95.0" : 24603.124329473547,
+                "99.0" : 24603.124329473547,
+                "99.9" : 24603.124329473547,
+                "99.99" : 24603.124329473547,
+                "99.999" : 24603.124329473547,
+                "99.9999" : 24603.124329473547,
+                "100.0" : 24603.124329473547
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    24603.124329473547
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "agroal",
+            "poolSize" : "8",
+            "workload" : "writeHeavy"
+        },
+        "primaryMetric" : {
+            "score" : 16571.091237486835,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 16571.091237486835,
+                "50.0" : 16571.091237486835,
+                "90.0" : 16571.091237486835,
+                "95.0" : 16571.091237486835,
+                "99.0" : 16571.091237486835,
+                "99.9" : 16571.091237486835,
+                "99.99" : 16571.091237486835,
+                "99.999" : 16571.091237486835,
+                "99.9999" : 16571.091237486835,
+                "100.0" : 16571.091237486835
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    16571.091237486835
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "agroal",
+            "poolSize" : "8",
+            "workload" : "longTx"
+        },
+        "primaryMetric" : {
+            "score" : 513.183010543284,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 513.183010543284,
+                "50.0" : 513.183010543284,
+                "90.0" : 513.183010543284,
+                "95.0" : 513.183010543284,
+                "99.0" : 513.183010543284,
+                "99.9" : 513.183010543284,
+                "99.99" : 513.183010543284,
+                "99.999" : 513.183010543284,
+                "99.9999" : 513.183010543284,
+                "100.0" : 513.183010543284
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    513.183010543284
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "agroal",
+            "poolSize" : "12",
+            "workload" : "readMostly"
+        },
+        "primaryMetric" : {
+            "score" : 28945.721174569993,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 28945.721174569993,
+                "50.0" : 28945.721174569993,
+                "90.0" : 28945.721174569993,
+                "95.0" : 28945.721174569993,
+                "99.0" : 28945.721174569993,
+                "99.9" : 28945.721174569993,
+                "99.99" : 28945.721174569993,
+                "99.999" : 28945.721174569993,
+                "99.9999" : 28945.721174569993,
+                "100.0" : 28945.721174569993
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    28945.721174569993
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "agroal",
+            "poolSize" : "12",
+            "workload" : "writeHeavy"
+        },
+        "primaryMetric" : {
+            "score" : 19253.01920327492,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 19253.01920327492,
+                "50.0" : 19253.01920327492,
+                "90.0" : 19253.01920327492,
+                "95.0" : 19253.01920327492,
+                "99.0" : 19253.01920327492,
+                "99.9" : 19253.01920327492,
+                "99.99" : 19253.01920327492,
+                "99.999" : 19253.01920327492,
+                "99.9999" : 19253.01920327492,
+                "100.0" : 19253.01920327492
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    19253.01920327492
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "agroal",
+            "poolSize" : "12",
+            "workload" : "longTx"
+        },
+        "primaryMetric" : {
+            "score" : 769.7227916145355,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 769.7227916145355,
+                "50.0" : 769.7227916145355,
+                "90.0" : 769.7227916145355,
+                "95.0" : 769.7227916145355,
+                "99.0" : 769.7227916145355,
+                "99.9" : 769.7227916145355,
+                "99.99" : 769.7227916145355,
+                "99.999" : 769.7227916145355,
+                "99.9999" : 769.7227916145355,
+                "100.0" : 769.7227916145355
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    769.7227916145355
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "agroal",
+            "poolSize" : "16",
+            "workload" : "readMostly"
+        },
+        "primaryMetric" : {
+            "score" : 33384.850824981724,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 33384.850824981724,
+                "50.0" : 33384.850824981724,
+                "90.0" : 33384.850824981724,
+                "95.0" : 33384.850824981724,
+                "99.0" : 33384.850824981724,
+                "99.9" : 33384.850824981724,
+                "99.99" : 33384.850824981724,
+                "99.999" : 33384.850824981724,
+                "99.9999" : 33384.850824981724,
+                "100.0" : 33384.850824981724
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    33384.850824981724
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "agroal",
+            "poolSize" : "16",
+            "workload" : "writeHeavy"
+        },
+        "primaryMetric" : {
+            "score" : 23541.281875094177,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 23541.281875094177,
+                "50.0" : 23541.281875094177,
+                "90.0" : 23541.281875094177,
+                "95.0" : 23541.281875094177,
+                "99.0" : 23541.281875094177,
+                "99.9" : 23541.281875094177,
+                "99.99" : 23541.281875094177,
+                "99.999" : 23541.281875094177,
+                "99.9999" : 23541.281875094177,
+                "100.0" : 23541.281875094177
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    23541.281875094177
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "agroal",
+            "poolSize" : "16",
+            "workload" : "longTx"
+        },
+        "primaryMetric" : {
+            "score" : 1026.5539590731792,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 1026.5539590731792,
+                "50.0" : 1026.5539590731792,
+                "90.0" : 1026.5539590731792,
+                "95.0" : 1026.5539590731792,
+                "99.0" : 1026.5539590731792,
+                "99.9" : 1026.5539590731792,
+                "99.99" : 1026.5539590731792,
+                "99.999" : 1026.5539590731792,
+                "99.9999" : 1026.5539590731792,
+                "100.0" : 1026.5539590731792
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    1026.5539590731792
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "agroal",
+            "poolSize" : "24",
+            "workload" : "readMostly"
+        },
+        "primaryMetric" : {
+            "score" : 33647.26682805438,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 33647.26682805438,
+                "50.0" : 33647.26682805438,
+                "90.0" : 33647.26682805438,
+                "95.0" : 33647.26682805438,
+                "99.0" : 33647.26682805438,
+                "99.9" : 33647.26682805438,
+                "99.99" : 33647.26682805438,
+                "99.999" : 33647.26682805438,
+                "99.9999" : 33647.26682805438,
+                "100.0" : 33647.26682805438
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    33647.26682805438
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "agroal",
+            "poolSize" : "24",
+            "workload" : "writeHeavy"
+        },
+        "primaryMetric" : {
+            "score" : 27708.68284132348,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 27708.68284132348,
+                "50.0" : 27708.68284132348,
+                "90.0" : 27708.68284132348,
+                "95.0" : 27708.68284132348,
+                "99.0" : 27708.68284132348,
+                "99.9" : 27708.68284132348,
+                "99.99" : 27708.68284132348,
+                "99.999" : 27708.68284132348,
+                "99.9999" : 27708.68284132348,
+                "100.0" : 27708.68284132348
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    27708.68284132348
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "agroal",
+            "poolSize" : "24",
+            "workload" : "longTx"
+        },
+        "primaryMetric" : {
+            "score" : 1539.2784567146186,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 1539.2784567146186,
+                "50.0" : 1539.2784567146186,
+                "90.0" : 1539.2784567146186,
+                "95.0" : 1539.2784567146186,
+                "99.0" : 1539.2784567146186,
+                "99.9" : 1539.2784567146186,
+                "99.99" : 1539.2784567146186,
+                "99.999" : 1539.2784567146186,
+                "99.9999" : 1539.2784567146186,
+                "100.0" : 1539.2784567146186
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    1539.2784567146186
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "agroal",
+            "poolSize" : "32",
+            "workload" : "readMostly"
+        },
+        "primaryMetric" : {
+            "score" : 20148.406246551243,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 20148.406246551243,
+                "50.0" : 20148.406246551243,
+                "90.0" : 20148.406246551243,
+                "95.0" : 20148.406246551243,
+                "99.0" : 20148.406246551243,
+                "99.9" : 20148.406246551243,
+                "99.99" : 20148.406246551243,
+                "99.999" : 20148.406246551243,
+                "99.9999" : 20148.406246551243,
+                "100.0" : 20148.406246551243
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    20148.406246551243
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "agroal",
+            "poolSize" : "32",
+            "workload" : "writeHeavy"
+        },
+        "primaryMetric" : {
+            "score" : 20881.691989819705,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 20881.691989819705,
+                "50.0" : 20881.691989819705,
+                "90.0" : 20881.691989819705,
+                "95.0" : 20881.691989819705,
+                "99.0" : 20881.691989819705,
+                "99.9" : 20881.691989819705,
+                "99.99" : 20881.691989819705,
+                "99.999" : 20881.691989819705,
+                "99.9999" : 20881.691989819705,
+                "100.0" : 20881.691989819705
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    20881.691989819705
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "agroal",
+            "poolSize" : "32",
+            "workload" : "longTx"
+        },
+        "primaryMetric" : {
+            "score" : 2049.359928163251,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 2049.359928163251,
+                "50.0" : 2049.359928163251,
+                "90.0" : 2049.359928163251,
+                "95.0" : 2049.359928163251,
+                "99.0" : 2049.359928163251,
+                "99.9" : 2049.359928163251,
+                "99.99" : 2049.359928163251,
+                "99.999" : 2049.359928163251,
+                "99.9999" : 2049.359928163251,
+                "100.0" : 2049.359928163251
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    2049.359928163251
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "agroal",
+            "poolSize" : "48",
+            "workload" : "readMostly"
+        },
+        "primaryMetric" : {
+            "score" : 20589.26844739798,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 20589.26844739798,
+                "50.0" : 20589.26844739798,
+                "90.0" : 20589.26844739798,
+                "95.0" : 20589.26844739798,
+                "99.0" : 20589.26844739798,
+                "99.9" : 20589.26844739798,
+                "99.99" : 20589.26844739798,
+                "99.999" : 20589.26844739798,
+                "99.9999" : 20589.26844739798,
+                "100.0" : 20589.26844739798
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    20589.26844739798
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "agroal",
+            "poolSize" : "48",
+            "workload" : "writeHeavy"
+        },
+        "primaryMetric" : {
+            "score" : 27990.79330399061,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 27990.79330399061,
+                "50.0" : 27990.79330399061,
+                "90.0" : 27990.79330399061,
+                "95.0" : 27990.79330399061,
+                "99.0" : 27990.79330399061,
+                "99.9" : 27990.79330399061,
+                "99.99" : 27990.79330399061,
+                "99.999" : 27990.79330399061,
+                "99.9999" : 27990.79330399061,
+                "100.0" : 27990.79330399061
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    27990.79330399061
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "agroal",
+            "poolSize" : "48",
+            "workload" : "longTx"
+        },
+        "primaryMetric" : {
+            "score" : 3072.28915672617,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 3072.28915672617,
+                "50.0" : 3072.28915672617,
+                "90.0" : 3072.28915672617,
+                "95.0" : 3072.28915672617,
+                "99.0" : 3072.28915672617,
+                "99.9" : 3072.28915672617,
+                "99.99" : 3072.28915672617,
+                "99.999" : 3072.28915672617,
+                "99.9999" : 3072.28915672617,
+                "100.0" : 3072.28915672617
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    3072.28915672617
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "agroal",
+            "poolSize" : "64",
+            "workload" : "readMostly"
+        },
+        "primaryMetric" : {
+            "score" : 31182.5048341948,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 31182.5048341948,
+                "50.0" : 31182.5048341948,
+                "90.0" : 31182.5048341948,
+                "95.0" : 31182.5048341948,
+                "99.0" : 31182.5048341948,
+                "99.9" : 31182.5048341948,
+                "99.99" : 31182.5048341948,
+                "99.999" : 31182.5048341948,
+                "99.9999" : 31182.5048341948,
+                "100.0" : 31182.5048341948
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    31182.5048341948
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "agroal",
+            "poolSize" : "64",
+            "workload" : "writeHeavy"
+        },
+        "primaryMetric" : {
+            "score" : 26592.00376393569,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 26592.00376393569,
+                "50.0" : 26592.00376393569,
+                "90.0" : 26592.00376393569,
+                "95.0" : 26592.00376393569,
+                "99.0" : 26592.00376393569,
+                "99.9" : 26592.00376393569,
+                "99.99" : 26592.00376393569,
+                "99.999" : 26592.00376393569,
+                "99.9999" : 26592.00376393569,
+                "100.0" : 26592.00376393569
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    26592.00376393569
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "agroal",
+            "poolSize" : "64",
+            "workload" : "longTx"
+        },
+        "primaryMetric" : {
+            "score" : 4104.7713782871515,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 4104.7713782871515,
+                "50.0" : 4104.7713782871515,
+                "90.0" : 4104.7713782871515,
+                "95.0" : 4104.7713782871515,
+                "99.0" : 4104.7713782871515,
+                "99.9" : 4104.7713782871515,
+                "99.99" : 4104.7713782871515,
+                "99.999" : 4104.7713782871515,
+                "99.9999" : 4104.7713782871515,
+                "100.0" : 4104.7713782871515
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    4104.7713782871515
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "agroal",
+            "poolSize" : "96",
+            "workload" : "readMostly"
+        },
+        "primaryMetric" : {
+            "score" : 29252.36539587109,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 29252.36539587109,
+                "50.0" : 29252.36539587109,
+                "90.0" : 29252.36539587109,
+                "95.0" : 29252.36539587109,
+                "99.0" : 29252.36539587109,
+                "99.9" : 29252.36539587109,
+                "99.99" : 29252.36539587109,
+                "99.999" : 29252.36539587109,
+                "99.9999" : 29252.36539587109,
+                "100.0" : 29252.36539587109
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    29252.36539587109
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "agroal",
+            "poolSize" : "96",
+            "workload" : "writeHeavy"
+        },
+        "primaryMetric" : {
+            "score" : 27465.131883302285,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 27465.131883302285,
+                "50.0" : 27465.131883302285,
+                "90.0" : 27465.131883302285,
+                "95.0" : 27465.131883302285,
+                "99.0" : 27465.131883302285,
+                "99.9" : 27465.131883302285,
+                "99.99" : 27465.131883302285,
+                "99.999" : 27465.131883302285,
+                "99.9999" : 27465.131883302285,
+                "100.0" : 27465.131883302285
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    27465.131883302285
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "pool" : "agroal",
+            "poolSize" : "96",
+            "workload" : "longTx"
+        },
+        "primaryMetric" : {
+            "score" : 6126.786000189488,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 6126.786000189488,
+                "50.0" : 6126.786000189488,
+                "90.0" : 6126.786000189488,
+                "95.0" : 6126.786000189488,
+                "99.0" : 6126.786000189488,
+                "99.9" : 6126.786000189488,
+                "99.99" : 6126.786000189488,
+                "99.999" : 6126.786000189488,
+                "99.9999" : 6126.786000189488,
+                "100.0" : 6126.786000189488
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    6126.786000189488
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    }
+]
+
+

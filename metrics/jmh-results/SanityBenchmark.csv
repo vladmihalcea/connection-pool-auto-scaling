@@ -1,0 +1,2 @@
+benchmark,mode,threads,score,score_error,unit
+acquireRunRelease,thrpt,8,34823.8,NaN,ops/s

@@ -1,0 +1,4 @@
+policy,phase1_size,phase2_size,phase1_tps,phase2_tps,nstar1,nstar2
+static-oracle-phase1,81.0000,81.0000,43706.5,17059.1,81,37
+reactive,56.0000,65.0000,41524.8,18815.0,81,37
+usl,81.7733,37.0000,43634.8,20964.7,81,37

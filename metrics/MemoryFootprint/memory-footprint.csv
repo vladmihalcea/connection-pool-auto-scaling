@@ -1,0 +1,11 @@
+component,size,retained_bytes
+usl-estimator,after-200-windows,1584
+hikari,8,4199656
+hikari,32,4055608
+hikari,96,4006728
+dbcp2,8,4446456
+dbcp2,32,5178136
+dbcp2,96,22680
+agroal,8,4156776
+agroal,32,5086216
+agroal,96,7908696

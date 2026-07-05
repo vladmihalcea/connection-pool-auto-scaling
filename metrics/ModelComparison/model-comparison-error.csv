@@ -1,0 +1,13 @@
+pool,model,predicted,measured,abs_error
+hikari,USL,142,96,46
+hikari,Little,33,96,63
+hikari,ErlangC,43,96,53
+hikari,Heuristic,17,96,79
+dbcp2,USL,65,96,31
+dbcp2,Little,17,96,79
+dbcp2,ErlangC,25,96,71
+dbcp2,Heuristic,17,96,79
+agroal,USL,98,64,34
+agroal,Little,23,64,41
+agroal,ErlangC,33,64,31
+agroal,Heuristic,17,64,47

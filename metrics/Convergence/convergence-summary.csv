@@ -1,0 +1,6 @@
+policy,steady_tps,steady_size,pct_of_oracle_tps,time_to_95pct_oracle
+static-small,10950.1,8.00000,39.4182,never
+static-oracle,27831.4,44.0000,100.188,1
+static-large,22162.5,96.0000,79.7809,never
+reactive,26260.3,65.0000,94.5321,25
+usl,27829.0,44.0000,100.179,4
