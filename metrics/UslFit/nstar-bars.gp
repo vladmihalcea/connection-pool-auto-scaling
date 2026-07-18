@@ -20,7 +20,7 @@ set terminal svg enhanced font "arial,11" size 900,520
 set output 'nstar-bars.svg'
 plot for [i=2:4] 'nstar-bars.csv' using i:xtic(1) ls (i-1) title columnheader
 
-set terminal pdfcairo enhanced font "arial,10" size 8,4.5
+set terminal pdfcairo enhanced font "arial,13" size 5,2.8
 set output 'nstar-bars.pdf'
 replot
 set output

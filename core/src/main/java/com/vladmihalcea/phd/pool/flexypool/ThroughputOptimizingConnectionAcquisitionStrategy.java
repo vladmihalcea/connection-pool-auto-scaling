@@ -23,7 +23,7 @@ import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * A FlexyPool {@link ConnectionAcquisitionStrategy} that drives the pool toward the size that
- * <em>maximises throughput</em>, built entirely on FlexyPool's two existing dynamic-sizing strategies:
+ * <em>maximizes throughput</em>, built entirely on FlexyPool's two existing dynamic-sizing strategies:
  *
  * <ul>
  *   <li>{@link IncrementPoolOnTimeoutConnectionAcquisitionStrategy} grows the pool one connection at a
@@ -182,7 +182,7 @@ public final class ThroughputOptimizingConnectionAcquisitionStrategy<T extends D
         }
     }
 
-    /** The throughput-maximising size discovered so far, or -1 before the first window elapses. */
+    /** The throughput-maximizing size discovered so far, or -1 before the first window elapses. */
     public int bestSize() {
         return sizingPolicy.bestSize();
     }

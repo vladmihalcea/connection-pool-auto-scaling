@@ -10,7 +10,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
- * Behavioural tests for the model-free throughput-probe policy against the deterministic simulator. It
+ * Behavioral tests for the model-free throughput-probe policy against the deterministic simulator. It
  * must climb to the known optimum {@code N*} purely from measured throughput (no USL fit), stay well below
  * the client-thread count where FlexyPool's grow-only reactive strategy overshoots, deliver higher
  * steady-state throughput than that reactive baseline, and re-track (including shrink) after a regime

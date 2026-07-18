@@ -13,7 +13,7 @@ FlexyPool deployment unchanged.
 
 ## Requirements
 
-- **Java 21**, Maven. Local repository at `d:/.m2/repository`.
+- **Java 25**, Maven. Local repository at `d:/.m2/repository`.
 - **Docker** for the PostgreSQL-backed benchmarks (Testcontainers, `postgres:17-alpine`). The USL
   math, the controller, and the convergence/regime-shift experiments run **without Docker** against a
   deterministic simulator.
@@ -53,9 +53,11 @@ Docker daemon is reachable.
 
 ## Headline results (current committed data)
 
-- **E3** — the USL optimum is far larger than the coherency-blind baselines predict (e.g. HikariCP
-  readMostly: USL N\*≈142 vs. Little 33, Erlang-C 43, heuristic 17), because none of the classical
-  models has a cross-connection coordination term.
+- **E3** — scored against the measured plateau start (the smallest pool size within 99% of peak
+  throughput), Little's Law and Erlang-C under-provision in all nine pool/workload cases (e.g. HikariCP
+  readMostly: plateau start 24, USL N\*=45, Little 6, Erlang-C 11, heuristic 25), because neither
+  queueing model has a cross-connection coordination term. Mean absolute error: USL 14, heuristic 15,
+  Erlang-C 25, Little 30; worst case: USL 22 vs. heuristic 39.
 - **E4** — the USL controller reaches **100% of the offline-oracle throughput** from a cold start, while
   a static pool sized at the client-thread count sits in the **retrograde region (~80%)** and the
   reactive latency-chasing policy overshoots the optimum.
@@ -65,9 +67,9 @@ Docker daemon is reachable.
 - **E6/E7** — the control machinery is ~15 µs/window of CPU and ~1.6 KB of state, negligible beside a
   millisecond transaction and a multi-megabyte pool.
 
-> The committed `metrics/` data for E2–E5 is at smoke/synthetic scale so the pipeline is reproducible
-> offline; regenerate E1 at full scale (with Docker) for the paper's measured curves — E2/E3 then pick
-> up the real CSV automatically.
+> E2/E3 are computed from the committed measured E1 curves
+> (`metrics/jmh-results/ThroughputVsPoolSizeBenchmark.csv`); E4/E5 run on the deterministic simulator,
+> so they are reproducible offline.
 
 ## Architecture
 

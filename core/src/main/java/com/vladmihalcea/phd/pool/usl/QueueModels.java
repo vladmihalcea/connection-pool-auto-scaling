@@ -22,7 +22,7 @@ public final class QueueModels {
      *
      * @param arrivalRatePerSec offered transaction arrival rate (requests/second)
      * @param serviceTimeSeconds mean service time per transaction (seconds)
-     * @return the smallest integer pool size that keeps utilisation at or below 1
+     * @return the smallest integer pool size that keeps utilization at or below 1
      */
     public static int littlesLaw(double arrivalRatePerSec, double serviceTimeSeconds) {
         double concurrency = arrivalRatePerSec * serviceTimeSeconds;

@@ -8,7 +8,7 @@ set ylabel "Throughput (tx/s)"
 set grid xtics ytics lt 0 lw 0.5 lc rgb "#cccccc"
 set key outside right top vertical
 
-# measured = points, fitted = smooth line, one colour per pool
+# measured = points, fitted = smooth line, one color per pool
 set style line 1 lc rgb "#1565C0" pt 7 ps 0.8
 set style line 2 lc rgb "#1565C0" lw 2
 set style line 3 lc rgb "#2E7D32" pt 5 ps 0.8
@@ -25,7 +25,7 @@ plot 'fit-readMostly.csv' using 1:2 with points ls 1 title 'hikari (measured)', 
      '' using 1:6 with points ls 5 title 'agroal (measured)', \
      '' using 1:7 with lines ls 6 title 'agroal (USL)'
 
-set terminal pdfcairo enhanced font "arial,10" size 8,4.8
+set terminal pdfcairo enhanced font "arial,13" size 5,3
 set output 'fit-readMostly.pdf'
 replot
 set output

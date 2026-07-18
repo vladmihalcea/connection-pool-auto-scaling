@@ -60,7 +60,8 @@ public class ThroughputVsPoolSizeBenchmark {
         public String workload;
 
         private PoolUnderTest poolUnderTest;
-        OltpWorkload oltpWorkload;
+
+        private OltpWorkload oltpWorkload;
 
         /**
          * Limits concurrent pool contenders to {@code poolSize + 16} (capped at the 128 JMH threads), so
@@ -69,7 +70,7 @@ public class ThroughputVsPoolSizeBenchmark {
          * timeout — which the raw JMH thread count would otherwise cause at small pools (a 100+:1 ratio)
          * and a size-proportional queue would cause at the larger pools.
          */
-        Semaphore clientThrottle;
+        private Semaphore clientThrottle;
 
         @Setup(Level.Trial)
         public void setUp() {

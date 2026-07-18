@@ -9,9 +9,9 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
- * Validation of the Levenberg&ndash;Marquardt USL fitter by round-tripping known coefficients: generate
- * throughput from a ground-truth {@link UslModel}, fit, and assert the coefficients, {@code N*} and
- * {@code R^2} are recovered — first on clean data, then under seeded multiplicative noise. This is the
+ * Validation of the Levenberg&ndash;Marquardt USL fitter by generate-and-recover on known coefficients:
+ * generate throughput from a ground-truth {@link UslModel}, fit, and assert the coefficients, {@code N*}
+ * and {@code R^2} are recovered — first on clean data, then under seeded multiplicative noise. This is the
  * scientific gate behind experiment E2. No Docker required.
  *
  * @author Vlad Mihalcea
@@ -67,8 +67,10 @@ public class UslFitterTest {
 
         UslModel regressed = UslFitter.fitByRegression(POOL_SIZES, throughput);
 
-        assertEquals(truth.sigma(), regressed.sigma(), 0.005);
-        assertEquals(truth.kappa(), regressed.kappa(), 0.00003);
+        // On clean data that includes N = 1 the transform is exact, so the recovery is exact too; a loose
+        // tolerance would hide reporting sigma + kappa as sigma (off by kappa = 1e-4).
+        assertEquals(truth.sigma(), regressed.sigma(), 1e-9);
+        assertEquals(truth.kappa(), regressed.kappa(), 1e-9);
     }
 
     @Test

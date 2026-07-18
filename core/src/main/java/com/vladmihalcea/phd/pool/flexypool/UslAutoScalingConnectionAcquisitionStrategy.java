@@ -111,7 +111,7 @@ public final class UslAutoScalingConnectionAcquisitionStrategy<T extends DataSou
                             .newInstance(configurationProperties);
             // Raw constructor call (as the built-in FlexyPool strategy factories do) so the incoming
             // ConfigurationProperties<T, Metrics, PoolAdapter<T>> is accepted by the strategy's
-            // wildcard-typed constructor; the result is the strategy parameterised on T.
+            // wildcard-typed constructor; the result is the strategy parameterized on T.
             UslAutoScalingConnectionAcquisitionStrategy<T> instance =
                     new UslAutoScalingConnectionAcquisitionStrategy(configurationProperties, config, retry);
             lastInstance = instance;

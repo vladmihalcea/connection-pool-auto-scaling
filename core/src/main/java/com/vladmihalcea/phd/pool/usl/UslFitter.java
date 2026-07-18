@@ -79,7 +79,8 @@ public final class UslFitter {
 
         double rSquared = rSquared(poolSizes, throughputs, fitted);
         double[] stdErr = standardErrors(optimum, m);
-        return new UslFit(fitted, rSquared, stdErr[0], stdErr[1], stdErr[2]);
+        int dof = Math.max(1, m - 3);
+        return new UslFit(fitted, rSquared, stdErr[0], stdErr[1], stdErr[2], dof);
     }
 
     /**
@@ -90,7 +91,7 @@ public final class UslFitter {
      */
     public static UslModel fitByRegression(double[] poolSizes, double[] throughputs) {
         validate(poolSizes, throughputs);
-        // X(1): use the throughput at the smallest observed pool size, normalised to N=1.
+        // X(1): use the throughput at the smallest observed pool size, normalized to N=1.
         int minIdx = 0;
         for (int i = 1; i < poolSizes.length; i++) {
             if (poolSizes[i] < poolSizes[minIdx]) {
@@ -101,6 +102,8 @@ public final class UslFitter {
 
         // Fit y = a*(N-1) + b*(N-1)^2 with y = N/(X/lambda) - 1, via ordinary least squares (no intercept).
         // Using basis u = (N-1), v = (N-1)^2 and solving the 2x2 normal equations.
+        // Since kappa*N*(N-1) = kappa*(N-1)^2 + kappa*(N-1), the deficiency is
+        // (sigma + kappa)*(N-1) + kappa*(N-1)^2, so b = kappa and a = sigma + kappa.
         double suu = 0, suv = 0, svv = 0, suy = 0, svy = 0;
         for (int i = 0; i < poolSizes.length; i++) {
             double n = poolSizes[i];
@@ -121,8 +124,9 @@ public final class UslFitter {
             sigma = 0.0;
             kappa = 0.0;
         } else {
-            sigma = (svv * suy - suv * svy) / det;
+            double a = (svv * suy - suv * svy) / det;
             kappa = (suu * svy - suv * suy) / det;
+            sigma = a - kappa;
         }
         return new UslModel(Math.max(1e-9, lambda), Math.max(0.0, sigma), Math.max(0.0, kappa));
     }

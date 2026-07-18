@@ -166,7 +166,7 @@ public class UslFitReportTest {
                 set output 'nstar-bars.svg'
                 plot for [i=2:4] 'nstar-bars.csv' using i:xtic(1) ls (i-1) title columnheader
 
-                set terminal pdfcairo enhanced font "arial,10" size 8,4.5
+                set terminal pdfcairo enhanced font "arial,13" size 5,2.8
                 set output 'nstar-bars.pdf'
                 replot
                 set output
@@ -186,7 +186,7 @@ public class UslFitReportTest {
                 set grid xtics ytics lt 0 lw 0.5 lc rgb "#cccccc"
                 set key outside right top vertical
 
-                # measured = points, fitted = smooth line, one colour per pool
+                # measured = points, fitted = smooth line, one color per pool
                 set style line 1 lc rgb "#1565C0" pt 7 ps 0.8
                 set style line 2 lc rgb "#1565C0" lw 2
                 set style line 3 lc rgb "#2E7D32" pt 5 ps 0.8
@@ -203,7 +203,7 @@ public class UslFitReportTest {
                      '' using 1:6 with points ls 5 title 'agroal (measured)', \\
                      '' using 1:7 with lines ls 6 title 'agroal (USL)'
 
-                set terminal pdfcairo enhanced font "arial,10" size 8,4.8
+                set terminal pdfcairo enhanced font "arial,13" size 5,3
                 set output 'fit-readMostly.pdf'
                 replot
                 set output

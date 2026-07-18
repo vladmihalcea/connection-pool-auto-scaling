@@ -86,7 +86,7 @@ public final class ThroughputData {
     }
 
     /**
-     * Ground-truth USL models used to synthesise data when no measured E1 CSV is available. Distinct
+     * Ground-truth USL models used to synthesize data when no measured E1 CSV is available. Distinct
      * contention/coherency per pool; workloads shift the optimum (writeHeavy raises contention, longTx
      * pushes the optimum right by lowering the coherency penalty per connection).
      */

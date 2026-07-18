@@ -11,7 +11,7 @@ import java.util.Random;
  * <p>
  * Throughput as a function of pool size follows a ground-truth {@link UslModel} (with seeded
  * multiplicative noise), so the simulator has a known optimum {@code N*} the controller should discover.
- * Tail acquisition latency is modelled as the queueing delay a saturating population of
+ * Tail acquisition latency is modeled as the queueing delay a saturating population of
  * {@code clientThreads} experiences when the pool is smaller than the offered concurrency: it is large
  * while the pool is under-sized and vanishes once the pool can serve every client. That signal is what a
  * reactive, latency-chasing policy climbs — driving it toward the client-thread count and thus past the

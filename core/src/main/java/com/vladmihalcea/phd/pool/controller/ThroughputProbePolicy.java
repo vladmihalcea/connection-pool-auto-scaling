@@ -5,7 +5,7 @@ import java.util.Map;
 
 /**
  * A <em>model-free</em> pool-sizing policy that hill-climbs directly on measured throughput to find the
- * size that maximises it — the same optimum {@link UslAutoScalingController} reaches by fitting the USL,
+ * size that maximizes it — the same optimum {@link UslAutoScalingController} reaches by fitting the USL,
  * but without any model. It is the decision half of the FlexyPool
  * {@code ThroughputOptimizingConnectionAcquisitionStrategy}: FlexyPool's
  * {@code IncrementPoolOnTimeoutConnectionAcquisitionStrategy} grows the pool one connection at a time
@@ -125,7 +125,7 @@ public final class ThroughputProbePolicy implements ScalingPolicy {
         return "probe";
     }
 
-    /** The best (throughput-maximising) size discovered so far, or -1 before the first window. */
+    /** The best (throughput-maximizing) size discovered so far, or -1 before the first window. */
     public int bestSize() {
         return bestSize;
     }

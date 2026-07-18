@@ -17,7 +17,7 @@ import java.util.Map;
  * <ol>
  *   <li><b>Observes</b> the window's (pool size, throughput).</li>
  *   <li><b>Learns</b> — folds the point into an exponentially-weighted per-size throughput history so
- *       recent behaviour dominates; refits the USL once at least {@code minPointsForFit} distinct sizes
+ *       recent behavior dominates; refits the USL once at least {@code minPointsForFit} distinct sizes
  *       are known.</li>
  *   <li><b>Decides</b> — computes {@code N* = floor(sqrt((1-sigma)/kappa))} from the fit; if the fit is
  *       trustworthy ({@code R^2 >= minRSquared}) and the pool is outside the dead-band around {@code N*},

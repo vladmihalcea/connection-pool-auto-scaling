@@ -10,7 +10,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
- * Behavioural tests for the USL auto-scaling controller against the deterministic simulator: it must
+ * Behavioral tests for the USL auto-scaling controller against the deterministic simulator: it must
  * converge to the known optimum {@code N*}, re-track a moved optimum after a regime shift (including
  * shrinking, which the reactive baseline cannot), and deliver higher steady-state throughput than the
  * reactive latency-chasing policy. No Docker required.

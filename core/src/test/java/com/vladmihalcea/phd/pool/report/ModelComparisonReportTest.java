@@ -14,13 +14,19 @@ import java.util.List;
 
 /**
  * Experiment E3: compare the pool size predicted by four sizing methods — the USL optimum, Little's Law,
- * the Erlang-C (M/M/c) model and the HikariCP heuristic — against the pool size that actually maximised
+ * the Erlang-C (M/M/c) model and the HikariCP heuristic — against the pool size that actually maximized
  * measured throughput. The paper's point: the model-free heuristic and the coherency-blind queueing
  * models miss the observed optimum, and by a margin that grows with the fitted coherency coefficient.
  * <p>
- * Service time and offered load are derived from each curve: {@code S = 1 / X(1)} (single-connection
- * service rate) and offered load {@code a = X_peak / X(1)} Erlangs. Consumes measured E1 data when
- * present, otherwise the seeded synthetic dataset.
+ * Because the measured curves are broad plateaus, the raw argmax is a noisy target; alongside it we
+ * report the <em>plateau onset</em> — the smallest pool size whose throughput reaches 99% of the peak —
+ * and each model's error against both. Service time and offered load are derived from each curve:
+ * {@code S = 1 / X(1)} (single-connection service rate) and offered load {@code a = X_peak / X(1)}
+ * Erlangs. Consumes measured E1 data when present, otherwise the seeded synthetic dataset.
+ * <p>
+ * The comparison is produced for every workload; {@code readMostly} keeps the unsuffixed file names so
+ * the existing figure pipeline (and the paper's Fig. 3) picks it up, and the other workloads land in
+ * {@code model-comparison-<workload>.csv} beside it.
  *
  * @author Vlad Mihalcea
  */
@@ -29,52 +35,67 @@ public class ModelComparisonReportTest {
     private static final Logger LOGGER = LoggerFactory.getLogger(ModelComparisonReportTest.class);
 
     private static final List<String> POOLS = List.of("hikari", "dbcp2", "agroal");
-    private static final String WORKLOAD = "readMostly";
-    private static final int DB_HOST_CORES = 8;      // documented host assumption for the heuristic
+    private static final List<String> WORKLOADS = List.of("readMostly", "writeHeavy", "longTx");
+    /**
+     * Physical cores of the benchmark host (AMD Ryzen AI 9 HX PRO 370: 12 cores / 24 SMT threads).
+     * The HikariCP heuristic counts physical cores, not SMT threads. Update when the host changes.
+     */
+    private static final int DB_HOST_CORES = 12;
     private static final double WAIT_SLO = 0.05;     // Erlang-C target P(wait) < 5%
+    private static final double PLATEAU_FRACTION = 0.99; // plateau onset = smallest N at >= 99% of peak
 
     @Test
     public void compareModels() {
         List<ThroughputData.Curve> curves = loadCurves();
 
-        Path wideCsv = CsvWriter.metricsPath("ModelComparison", "model-comparison.csv");
-        Path errCsv = CsvWriter.metricsPath("ModelComparison", "model-comparison-error.csv");
-        try (CsvWriter wide = new CsvWriter(wideCsv,
-                "pool", "measured", "USL", "Little", "ErlangC", "Heuristic");
-             CsvWriter err = new CsvWriter(errCsv,
-                     "pool", "model", "predicted", "measured", "abs_error")) {
+        for (String workload : WORKLOADS) {
+            String suffix = "readMostly".equals(workload) ? "" : "-" + workload;
+            Path wideCsv = CsvWriter.metricsPath("ModelComparison", "model-comparison" + suffix + ".csv");
+            Path errCsv = CsvWriter.metricsPath("ModelComparison", "model-comparison-error" + suffix + ".csv");
+            try (CsvWriter wide = new CsvWriter(wideCsv,
+                    "pool", "Measured peak size", "Measured plateau start", "USL (N*)", "Little's Law", "Erlang-C", "Heuristic");
+                 CsvWriter err = new CsvWriter(errCsv,
+                         "pool", "model", "predicted", "argmax", "plateau99", "err_argmax", "err_plateau99")) {
 
-            for (String pool : POOLS) {
-                ThroughputData.Curve curve = find(curves, pool, WORKLOAD);
-                if (curve == null) {
-                    continue;
+                for (String pool : POOLS) {
+                    ThroughputData.Curve curve = find(curves, pool, workload);
+                    if (curve == null) {
+                        continue;
+                    }
+                    UslFit fit = UslFitter.fit(curve.poolSizes(), curve.throughput());
+
+                    int peakThroughputSize = peakThroughputSize(curve);
+                    int plateauStart = plateauStartPoolSize(curve, PLATEAU_FRACTION);
+                    double singleConnThroughput = throughputAtSizeOne(curve);
+                    double peakThroughput = maxThroughput(curve);
+                    double averageServiceTimeSeconds = 1.0 / singleConnThroughput;
+                    double offeredLoadErlangs = peakThroughput / singleConnThroughput;
+                    double arrivalRate = offeredLoadErlangs / averageServiceTimeSeconds; // = peak, by construction
+
+                    int uslNStar = capInfinite(fit.optimalPoolSize());
+                    int little = QueueModels.littlesLaw(arrivalRate, averageServiceTimeSeconds);
+                    int erlangC = QueueModels.erlangCServers(arrivalRate, averageServiceTimeSeconds, WAIT_SLO);
+                    int heuristic = QueueModels.hikariHeuristic(DB_HOST_CORES, 1);
+
+                    wide.writeRow(pool, peakThroughputSize, plateauStart, uslNStar, little, erlangC, heuristic);
+                    writeErrors(err, pool, "USL", uslNStar, peakThroughputSize, plateauStart);
+                    writeErrors(err, pool, "Little", little, peakThroughputSize, plateauStart);
+                    writeErrors(err, pool, "ErlangC", erlangC, peakThroughputSize, plateauStart);
+                    writeErrors(err, pool, "Heuristic", heuristic, peakThroughputSize, plateauStart);
+
+                    LOGGER.info("{} [{}]: argmax={}, plateau99={}, USL N*={}, Little={}, ErlangC={}, heuristic={}",
+                            pool, workload, peakThroughputSize, plateauStart, uslNStar, little, erlangC, heuristic);
                 }
-                UslFit fit = UslFitter.fit(curve.poolSizes(), curve.throughput());
-
-                int measuredArgmax = argmaxPoolSize(curve);
-                double singleConnThroughput = throughputAtSizeOne(curve);
-                double peak = maxThroughput(curve);
-                double serviceTimeSeconds = 1.0 / singleConnThroughput;
-                double offeredLoadErlangs = peak / singleConnThroughput;
-                double arrivalRate = offeredLoadErlangs / serviceTimeSeconds; // = peak, by construction
-
-                int uslNStar = capInfinite(fit.optimalPoolSize());
-                int little = QueueModels.littlesLaw(arrivalRate, serviceTimeSeconds);
-                int erlangC = QueueModels.erlangCServers(arrivalRate, serviceTimeSeconds, WAIT_SLO);
-                int heuristic = QueueModels.hikariHeuristic(DB_HOST_CORES, 1);
-
-                wide.writeRow(pool, measuredArgmax, uslNStar, little, erlangC, heuristic);
-                err.writeRow(pool, "USL", uslNStar, measuredArgmax, Math.abs(uslNStar - measuredArgmax));
-                err.writeRow(pool, "Little", little, measuredArgmax, Math.abs(little - measuredArgmax));
-                err.writeRow(pool, "ErlangC", erlangC, measuredArgmax, Math.abs(erlangC - measuredArgmax));
-                err.writeRow(pool, "Heuristic", heuristic, measuredArgmax, Math.abs(heuristic - measuredArgmax));
-
-                LOGGER.info("{}: measured argmax={}, USL N*={}, Little={}, ErlangC={}, heuristic={}",
-                        pool, measuredArgmax, uslNStar, little, erlangC, heuristic);
             }
+            LOGGER.info("Wrote model-comparison report to {}", wideCsv);
         }
         writeGnuplot();
-        LOGGER.info("Wrote model-comparison report to {}", wideCsv);
+    }
+
+    private static void writeErrors(CsvWriter err, String pool, String model, int predicted,
+                                    int argmax, int plateauOnset) {
+        err.writeRow(pool, model, predicted, argmax, plateauOnset,
+                Math.abs(predicted - argmax), Math.abs(predicted - plateauOnset));
     }
 
     private List<ThroughputData.Curve> loadCurves() {
@@ -87,7 +108,7 @@ public class ModelComparisonReportTest {
             }
         }
         LOGGER.warn("No measured E1 CSV at {} - using SYNTHETIC ground-truth data.", e1Csv);
-        return ThroughputData.synthesize(POOLS, List.of(WORKLOAD), 2026L);
+        return ThroughputData.synthesize(POOLS, WORKLOADS, 2026L);
     }
 
     private static ThroughputData.Curve find(List<ThroughputData.Curve> curves, String pool, String workload) {
@@ -96,7 +117,7 @@ public class ModelComparisonReportTest {
                 .findFirst().orElse(null);
     }
 
-    private static int argmaxPoolSize(ThroughputData.Curve curve) {
+    private static int peakThroughputSize(ThroughputData.Curve curve) {
         int best = 0;
         for (int i = 1; i < curve.throughput().length; i++) {
             if (curve.throughput()[i] > curve.throughput()[best]) {
@@ -104,6 +125,21 @@ public class ModelComparisonReportTest {
             }
         }
         return (int) curve.poolSizes()[best];
+    }
+
+    /**
+     * The plateau onset: the smallest sampled pool size whose throughput reaches {@code fraction} of the
+     * curve's peak. On broad, flat-topped curves this is a far more stable "measured optimum" than the
+     * raw argmax, whose position within the plateau is decided by run-to-run noise.
+     */
+    private static int plateauStartPoolSize(ThroughputData.Curve curve, double fraction) {
+        double threshold = fraction * maxThroughput(curve);
+        for (int i = 0; i < curve.poolSizes().length; i++) {
+            if (curve.throughput()[i] >= threshold) {
+                return (int) curve.poolSizes()[i];
+            }
+        }
+        return peakThroughputSize(curve);
     }
 
     private static double maxThroughput(ThroughputData.Curve curve) {
@@ -130,11 +166,11 @@ public class ModelComparisonReportTest {
 
     private void writeGnuplot() {
         String gp = """
-                # Experiment E3: predicted vs. measured optimal pool size, per sizing method.
-                # Input:  model-comparison.csv (pool, measured, USL, Little, ErlangC, Heuristic)
+                # Experiment E3: measured vs. predicted optimal pool size, per sizing method (readMostly).
+                # Input:  model-comparison.csv (pool, Measured peak size, Measured plateau start, USL (N*), Little's Law, Erlang-C, Heuristic)
                 # Output: model-comparison.svg / .pdf
                 set datafile separator ","
-                set title "Predicted vs. measured optimal pool size" font ",13"
+                set title "Measured vs. predicted optimal pool size" font ",13"
                 set ylabel "Pool size (connections)"
                 set style data histograms
                 set style histogram clustered gap 1
@@ -145,16 +181,17 @@ public class ModelComparisonReportTest {
                 set xtics rotate by -20
 
                 set style line 1 lc rgb "#455A64"
-                set style line 2 lc rgb "#1565C0"
-                set style line 3 lc rgb "#2E7D32"
-                set style line 4 lc rgb "#F9A825"
-                set style line 5 lc rgb "#C62828"
+                set style line 2 lc rgb "#90A4AE"
+                set style line 3 lc rgb "#1565C0"
+                set style line 4 lc rgb "#2E7D32"
+                set style line 5 lc rgb "#F9A825"
+                set style line 6 lc rgb "#C62828"
 
                 set terminal svg enhanced font "arial,11" size 1000,560
                 set output 'model-comparison.svg'
-                plot for [i=2:6] 'model-comparison.csv' using i:xtic(1) ls (i-1) title columnheader
+                plot for [i=2:7] 'model-comparison.csv' using i:xtic(1) ls (i-1) title columnheader
 
-                set terminal pdfcairo enhanced font "arial,10" size 8,4.5
+                set terminal pdfcairo enhanced font "arial,13" size 5,2.8
                 set output 'model-comparison.pdf'
                 replot
                 set output

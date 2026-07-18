@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /**
  * Fast, Docker-free checks on the workload factory: the named profiles resolve and unknown names fail
- * fast. The transactional behaviour itself is exercised by the DB-backed benchmarks.
+ * fast. The transactional behavior itself is exercised by the DB-backed benchmarks.
  *
  * @author Vlad Mihalcea
  */

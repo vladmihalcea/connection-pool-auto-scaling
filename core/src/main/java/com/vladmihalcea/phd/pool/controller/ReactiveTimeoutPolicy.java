@@ -1,7 +1,7 @@
 package com.vladmihalcea.phd.pool.controller;
 
 /**
- * A model-free reactive baseline modelling FlexyPool's
+ * A model-free reactive baseline modeling FlexyPool's
  * {@code IncrementPoolOnTimeoutConnectionAcquisitionStrategy}: whenever the tail acquisition latency
  * exceeds a timeout threshold the pool is grown by one connection, up to a hard ceiling; it never
  * shrinks. This faithfully captures the two properties the paper critiques — the policy is
