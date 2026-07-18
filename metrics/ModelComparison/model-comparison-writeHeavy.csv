@@ -1,0 +1,4 @@
+pool,argmax,plateau99,USL,Little,ErlangC,Heuristic
+hikari,48,48,58,7,13,25
+dbcp2,64,64,71,7,13,25
+agroal,48,48,56,9,15,25

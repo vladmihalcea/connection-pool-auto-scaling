@@ -1,4 +1,4 @@
-pool,measured,USL,Little,ErlangC,Heuristic
-hikari,96,142,33,43,17
-dbcp2,96,65,17,25,17
-agroal,64,98,23,33,17
+pool,argmax,plateau99,USL,Little,ErlangC,Heuristic
+hikari,32,24,45,6,11,25
+dbcp2,96,64,56,6,11,25
+agroal,32,24,46,8,13,25

@@ -13,7 +13,7 @@ FlexyPool deployment unchanged.
 
 ## Requirements
 
-- **Java 21**, Maven. Local repository at `d:/.m2/repository`.
+- **Java 25**, Maven. Local repository at `d:/.m2/repository`.
 - **Docker** for the PostgreSQL-backed benchmarks (Testcontainers, `postgres:17-alpine`). The USL
   math, the controller, and the convergence/regime-shift experiments run **without Docker** against a
   deterministic simulator.

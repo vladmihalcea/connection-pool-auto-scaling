@@ -1,4 +1,4 @@
 workload,hikari,dbcp2,agroal
-readMostly,142,75,84
-writeHeavy,115,62,105
-longTx,170,120,410
+readMostly,45,56,46
+writeHeavy,58,71,56
+longTx,44,44,44
