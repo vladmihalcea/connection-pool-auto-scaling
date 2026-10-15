@@ -21,6 +21,8 @@ public final class PoolFactory {
         return switch (id) {
             case "hikari" -> new HikariPoolUnderTest(jdbc, initialSize);
             case "dbcp2" -> new Dbcp2PoolUnderTest(jdbc, initialSize);
+            // DBCP2 without the per-borrow isValid() round trip; an ablation, not part of REAL_POOLS.
+            case "dbcp2-notob" -> new Dbcp2PoolUnderTest(jdbc, initialSize, false);
             case "agroal" -> new AgroalPoolUnderTest(jdbc, initialSize);
             default -> throw new IllegalArgumentException("Unknown pool id: " + id);
         };

@@ -1,0 +1,7 @@
+curve                      lambda       sigma(e-2)       kappa(e-4)   N*     R2    peakX   @N
+readMostly dbcp2             5061    8.48 +-  1.80    3.45 +-  1.12   51  0.997    41265   48
+readMostly dbcp2-notob       9726   15.70 +-  5.00    4.50 +-  3.29   43  0.987    48304   64
+readMostly hikari            6466    8.21 +-  2.70    5.07 +-  1.78   42  0.993    50521   24
+writeHeavy dbcp2             3396    7.04 +-  1.61    1.86 +-  0.95   70  0.998    35168   96
+writeHeavy dbcp2-notob       5633   11.32 +-  1.41    1.92 +-  0.85   67  0.999    40191   96
+writeHeavy hikari            3796    5.91 +-  1.32    2.74 +-  0.80   58  0.998    41464   48

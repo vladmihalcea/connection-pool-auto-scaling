@@ -133,6 +133,14 @@ public abstract class AbstractBenchmarkTest {
                 .threads(threads())
                 .forks(forks())
                 .shouldFailOnError(true);
+        // Optional @Param override, e.g. -Djmh.params="pool=hikari,dbcp2;workload=readMostly".
+        String params = System.getProperty("jmh.params", "");
+        for (String assignment : params.split(";")) {
+            int eq = assignment.indexOf('=');
+            if (eq > 0) {
+                builder.param(assignment.substring(0, eq).trim(), assignment.substring(eq + 1).trim().split(","));
+            }
+        }
         if (resultFile != null) {
             builder.resultFormat(ResultFormatType.JSON)
                     .result(resultFile.toString());

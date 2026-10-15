@@ -19,7 +19,17 @@ public final class Dbcp2PoolUnderTest implements PoolUnderTest {
     private final BasicDataSource dataSource;
 
     public Dbcp2PoolUnderTest(JdbcConfig jdbc, int initialSize) {
+        this(jdbc, initialSize, true);
+    }
+
+    /**
+     * @param testOnBorrow DBCP2's default ({@code true}) validates every borrowed connection; with no
+     *                     validation query that is {@code Connection.isValid}, a database round trip per
+     *                     borrow. {@code false} isolates that cost from the pool's own locking.
+     */
+    public Dbcp2PoolUnderTest(JdbcConfig jdbc, int initialSize, boolean testOnBorrow) {
         BasicDataSource ds = new BasicDataSource();
+        ds.setTestOnBorrow(testOnBorrow);
         ds.setUrl(jdbc.url());
         ds.setUsername(jdbc.username());
         ds.setPassword(jdbc.password());
