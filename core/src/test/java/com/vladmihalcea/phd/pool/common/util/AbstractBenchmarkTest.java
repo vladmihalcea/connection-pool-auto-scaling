@@ -33,7 +33,22 @@ public abstract class AbstractBenchmarkTest {
 
     protected final Logger LOGGER = LoggerFactory.getLogger(getClass());
 
+    /**
+     * Prefix of the system properties that override a {@code @Param}, e.g.
+     * {@code -Djmh.param.poolSize=1..40,42..96:2} for the dense pool-size sweep.
+     */
+    protected static final String PARAM_PREFIX = "jmh.param.";
+
     protected abstract Class<?> benchmarkClass();
+
+    /**
+     * Base name of a run's result files under {@code metrics/jmh-results/}: the benchmark class name, or
+     * {@code -Dusl.results.name}, so that separate sweeps (for example per database) do not overwrite each
+     * other. It is passed on to the forked JVMs with the other {@code usl.*} settings.
+     */
+    public static String resultsName(Class<?> benchmarkClass) {
+        return System.getProperty("usl.results.name", benchmarkClass.getSimpleName());
+    }
 
     // Defaults are publication-grade; a quick pass can shrink them, e.g. -Djmh.forks=1 -Djmh.iters=1 -Djmh.secs=1.
     protected int warmupIterations() {
@@ -70,9 +85,14 @@ public abstract class AbstractBenchmarkTest {
     protected void checkPreconditions() {
     }
 
+    /** Runs in the main JVM after the preconditions and before JMH forks, e.g. to clear stale side outputs. */
+    protected void beforeRun() {
+    }
+
     @Test
     public void runBenchmarks() throws RunnerException {
         checkPreconditions();
+        beforeRun();
         Collection<RunResult> results = execute(resultFile());
         writeCsvSummary(results);
         LOGGER.info("Completed {} result(s) for {}", results.size(), benchmarkClass().getSimpleName());
@@ -102,7 +122,7 @@ public abstract class AbstractBenchmarkTest {
         header.add("score_error");
         header.add("unit");
 
-        Path csv = CsvWriter.metricsPath("jmh-results", benchmarkClass().getSimpleName() + ".csv");
+        Path csv = CsvWriter.metricsPath("jmh-results", resultsName(benchmarkClass()) + ".csv");
         try (CsvWriter out = new CsvWriter(csv, header.toArray(new String[0]))) {
             for (RunResult result : results) {
                 List<Object> row = new ArrayList<>();
@@ -133,12 +153,49 @@ public abstract class AbstractBenchmarkTest {
                 .threads(threads())
                 .forks(forks())
                 .shouldFailOnError(true);
+        // The forked JMH JVMs do not see the properties that Maven sets programmatically, so the database
+        // settings (usl.*) are passed on explicitly; otherwise a remote-database run would use localhost.
+        List<String> forkedProperties = new ArrayList<>();
+        for (String name : System.getProperties().stringPropertyNames()) {
+            if (name.startsWith("usl.")) {
+                forkedProperties.add("-D" + name + "=" + System.getProperty(name));
+            } else if (name.startsWith(PARAM_PREFIX)) {
+                builder.param(name.substring(PARAM_PREFIX.length()), expandParamValues(System.getProperty(name)));
+            }
+        }
+        if (!forkedProperties.isEmpty()) {
+            builder.jvmArgsAppend(forkedProperties.toArray(new String[0]));
+        }
         if (resultFile != null) {
             builder.resultFormat(ResultFormatType.JSON)
                     .result(resultFile.toString());
         }
         Options opts = builder.build();
         return new Runner(opts).run();
+    }
+
+    /**
+     * Expands a {@code @Param} override into its values: comma-separated items, each a single value or an
+     * inclusive range {@code from..to} with an optional step ({@code from..to:step}).
+     */
+    protected static String[] expandParamValues(String spec) {
+        List<String> values = new ArrayList<>();
+        for (String part : spec.split(",")) {
+            String item = part.trim();
+            int range = item.indexOf("..");
+            if (range < 0) {
+                values.add(item);
+                continue;
+            }
+            String[] bound = item.substring(range + 2).split(":");
+            int from = Integer.parseInt(item.substring(0, range).trim());
+            int to = Integer.parseInt(bound[0].trim());
+            int step = bound.length > 1 ? Integer.parseInt(bound[1].trim()) : 1;
+            for (int value = from; value <= to; value += step) {
+                values.add(String.valueOf(value));
+            }
+        }
+        return values.toArray(new String[0]);
     }
 
     private Path resultFile() {
@@ -150,7 +207,7 @@ public abstract class AbstractBenchmarkTest {
             }
             Path jmhResults = metrics.resolve("jmh-results");
             Files.createDirectories(jmhResults);
-            return jmhResults.resolve(benchmarkClass().getSimpleName() + ".json");
+            return jmhResults.resolve(resultsName(benchmarkClass()) + ".json");
         } catch (Exception e) {
             LOGGER.warn("Could not prepare JMH result file, continuing without it", e);
             return null;

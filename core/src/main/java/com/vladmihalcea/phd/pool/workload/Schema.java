@@ -12,7 +12,7 @@ import java.sql.Statement;
 /**
  * A pgbench-style {@code accounts} schema plus a seeded data load, used as the OLTP fixture for every
  * throughput and auto-scaling experiment. Kept deliberately small and dependency-free (plain JDBC DDL)
- * so it can be created against any PostgreSQL data source, real or Testcontainers-managed.
+ * so it can be created against any PostgreSQL or MySQL data source, real or Testcontainers-managed.
  *
  * @author Vlad Mihalcea
  */
@@ -70,7 +70,7 @@ public final class Schema {
             connection.commit();
 
             try (Statement analyze = connection.createStatement()) {
-                analyze.execute("ANALYZE accounts");
+                analyze.execute(isMySql(connection) ? "ANALYZE TABLE accounts" : "ANALYZE accounts");
             }
             connection.commit();
         } catch (SQLException e) {
@@ -78,5 +78,10 @@ public final class Schema {
         }
         LOGGER.info("Created accounts schema with {} rows in {} ms",
                 accountCount(), (System.nanoTime() - start) / 1_000_000);
+    }
+
+    /** Whether the connection talks to MySQL, whose DDL and statistics syntax differ from PostgreSQL's. */
+    public static boolean isMySql(Connection connection) throws SQLException {
+        return connection.getMetaData().getDatabaseProductName().toLowerCase().contains("mysql");
     }
 }

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The self-contained testbed pack built by the "testbed" profile (see core/pom.xml). -->
+<assembly xmlns="http://maven.apache.org/ASSEMBLY/2.2.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/ASSEMBLY/2.2.0 https://maven.apache.org/xsd/assembly-2.2.0.xsd">
+    <id>testbed</id>
+    <formats>
+        <format>zip</format>
+    </formats>
+    <includeBaseDirectory>true</includeBaseDirectory>
+    <baseDirectory>usl-testbed</baseDirectory>
+    <files>
+        <file>
+            <source>${project.build.directory}/${project.build.finalName}.jar</source>
+            <destName>core.jar</destName>
+        </file>
+        <file>
+            <source>${project.build.directory}/${project.build.finalName}-tests.jar</source>
+            <destName>core-tests.jar</destName>
+        </file>
+    </files>
+    <fileSets>
+        <fileSet>
+            <directory>${project.build.directory}/testbed-lib</directory>
+            <outputDirectory>lib</outputDirectory>
+        </fileSet>
+        <fileSet>
+            <directory>src/testbed</directory>
+            <outputDirectory></outputDirectory>
+            <lineEnding>crlf</lineEnding>
+        </fileSet>
+    </fileSets>
+</assembly>

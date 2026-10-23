@@ -3,9 +3,11 @@ package com.vladmihalcea.phd.pool.jmh;
 import com.vladmihalcea.phd.pool.adapter.JdbcConfig;
 import com.vladmihalcea.phd.pool.adapter.PoolFactory;
 import com.vladmihalcea.phd.pool.api.PoolUnderTest;
-import com.vladmihalcea.phd.pool.common.util.PostgreSqlSupport;
-import com.vladmihalcea.phd.pool.workload.OltpWorkload;
-import com.vladmihalcea.phd.pool.workload.Schema;
+import com.vladmihalcea.phd.pool.common.util.AbstractBenchmarkTest;
+import com.vladmihalcea.phd.pool.common.util.Database;
+import com.vladmihalcea.phd.pool.common.util.Workloads;
+import com.vladmihalcea.phd.pool.util.CsvWriter;
+import org.HdrHistogram.ConcurrentHistogram;
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.BenchmarkMode;
 import org.openjdk.jmh.annotations.Level;
@@ -17,11 +19,22 @@ import org.openjdk.jmh.annotations.Setup;
 import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.annotations.TearDown;
 import org.openjdk.jmh.infra.Blackhole;
+import org.openjdk.jmh.infra.IterationParams;
+import org.openjdk.jmh.runner.IterationType;
 
+import java.io.IOException;
+import java.io.UncheckedIOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardOpenOption;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
 import java.util.SplittableRandom;
 import java.util.concurrent.Semaphore;
+import java.util.function.LongSupplier;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -40,6 +53,15 @@ import java.util.concurrent.TimeUnit;
  * (≈15 ms/tx on Windows) clears 16 waiters in ≈250 ms — well inside the pool adapters' 10-second acquire
  * timeout — so no thread is ever starved past the timeout at any pool size, and
  * {@code shouldFailOnError(true)} never fires.
+ * <p>
+ * Besides the three ICASC workloads, {@code workload} accepts the sysbench-derived {@code oltpReadWrite} and
+ * {@code oltpReadOnly}, which run on their own {@code sbtest} tables, and the TPC-C-derived {@code tpcc}, which
+ * every fork loads afresh ({@link Workloads}).
+ * The {@code database} parameter selects PostgreSQL (the default, as in the ICASC sweep) or MySQL. Besides
+ * the throughput that JMH reports, each fork records the response time of every transaction of its
+ * measurement iterations, from the request for a connection to its return, and appends one row of
+ * percentiles to {@link #latencyCsv()}: in a closed loop Little's Law ties the mean to the throughput, but
+ * not the tail.
  *
  * @author Vlad Mihalcea
  */
@@ -47,8 +69,22 @@ import java.util.concurrent.TimeUnit;
 @OutputTimeUnit(TimeUnit.SECONDS)
 public class ThroughputVsPoolSizeBenchmark {
 
+    @FunctionalInterface
+    interface Transaction {
+        void run(Connection connection, SplittableRandom random) throws SQLException;
+    }
+
+    /** Response-time percentiles, one row per fork, next to the JMH results of the same run. */
+    public static Path latencyCsv() {
+        return CsvWriter.metricsPath("jmh-results",
+                AbstractBenchmarkTest.resultsName(ThroughputVsPoolSizeBenchmark.class) + "-latency.csv");
+    }
+
     @State(Scope.Benchmark)
     public static class PoolState {
+
+        @Param({"postgresql"})
+        public String database;
 
         @Param({"hikari", "dbcp2", "agroal"})
         public String pool;
@@ -61,7 +97,11 @@ public class ThroughputVsPoolSizeBenchmark {
 
         private PoolUnderTest poolUnderTest;
 
-        private OltpWorkload oltpWorkload;
+        /** One transaction of the workload: an ICASC micro-workload or a sysbench-derived one. */
+        private Transaction transaction;
+
+        /** Transactions restarted after a deadlock or a duplicate key (sysbench-derived workloads only). */
+        private LongSupplier retries = () -> 0;
 
         /**
          * Limits concurrent pool contenders to {@code poolSize + 16} (capped at the 128 JMH threads), so
@@ -72,25 +112,103 @@ public class ThroughputVsPoolSizeBenchmark {
          */
         private Semaphore clientThrottle;
 
-        @Setup(Level.Trial)
-        public void setUp() {
-            Schema schema = new Schema(10); // 10k accounts: enough to avoid a single hot row dominating
-            schema.create(PostgreSqlSupport.adminDataSource());
+        /** Response times of the transactions of the measurement iterations, in nanoseconds. */
+        private final ConcurrentHistogram latency = new ConcurrentHistogram(3);
 
-            JdbcConfig jdbc = new JdbcConfig(
-                    PostgreSqlSupport.jdbcUrl(), PostgreSqlSupport.username(), PostgreSqlSupport.password());
+        private volatile boolean measuring;
+
+        @Setup(Level.Trial)
+        public void setUp() throws Exception {
+            Database db = Database.valueOf(database.toUpperCase(Locale.ROOT));
+            // A fresh 10k-account table (ICASC micro-workloads), the reused sbtest tables (sysbench-derived), or a
+            // freshly loaded TPC-C schema per fork (TPC-C drifts as its hot rows accumulate versions).
+            Workloads.Prepared prepared = Workloads.prepare(db, workload);
+            transaction = prepared.transaction()::run;
+            retries = prepared.retries();
+
+            JdbcConfig jdbc = db.jdbcConfig();
             poolUnderTest = PoolFactory.create(pool, jdbc, poolSize);
-            oltpWorkload = OltpWorkload.byName(workload, schema.accountCount());
+            prefill(poolUnderTest, poolSize);
 
             int permits = Math.min(poolSize + 16, 128);
             clientThrottle = new Semaphore(permits, /*fair=*/true);
         }
 
+        /**
+         * Holds all {@code poolSize} connections at once before the first iteration, so every pool has opened
+         * its full set of physical connections when JMH starts measuring. HikariCP fills its pool in the
+         * background (about one connection per second against PostgreSQL on Windows in our live runs), and a
+         * pool still filling during the measurement would report the throughput of a smaller pool.
+         */
+        private static void prefill(PoolUnderTest poolUnderTest, int poolSize) {
+            List<Connection> held = new ArrayList<>(poolSize);
+            try {
+                for (int i = 0; i < poolSize; i++) {
+                    held.add(poolUnderTest.dataSource().getConnection());
+                }
+            } catch (SQLException e) {
+                throw new IllegalStateException("Could not open " + poolSize + " connections", e);
+            } finally {
+                for (Connection connection : held) {
+                    try {
+                        connection.close();
+                    } catch (SQLException ignore) {
+                        // returning a connection to the pool; nothing to recover
+                    }
+                }
+            }
+        }
+
+        /**
+         * Records response times only during measurement iterations, never during warm-up. The histogram also
+         * takes the transactions of JMH's short warm-down at the end of each measurement iteration, which JMH
+         * does not count in the throughput; they run under the same load.
+         */
+        @Setup(Level.Iteration)
+        public void startIteration(IterationParams iteration) {
+            measuring = iteration.getType() == IterationType.MEASUREMENT;
+        }
+
+        void recordLatency(long nanos) {
+            if (measuring) {
+                latency.recordValue(nanos);
+            }
+        }
+
         @TearDown(Level.Trial)
         public void tearDown() {
+            writeLatency();
             if (poolUnderTest != null) {
                 poolUnderTest.close();
             }
+        }
+
+        /** Appends this fork's percentiles; JMH runs the forks one after another, so appends never interleave. */
+        private void writeLatency() {
+            if (latency.getTotalCount() == 0) {
+                return;
+            }
+            Path csv = latencyCsv();
+            try {
+                Files.createDirectories(csv.getParent());
+                StringBuilder rows = new StringBuilder();
+                if (!Files.exists(csv)) {
+                    rows.append("database,pool,workload,poolSize,count,mean_us,p50_us,p90_us,p99_us,p999_us,max_us,"
+                            + "retries\n");
+                }
+                rows.append(String.join(",", database, pool, workload, String.valueOf(poolSize),
+                        String.valueOf(latency.getTotalCount()), micros(latency.getMean()),
+                        micros(latency.getValueAtPercentile(50)), micros(latency.getValueAtPercentile(90)),
+                        micros(latency.getValueAtPercentile(99)), micros(latency.getValueAtPercentile(99.9)),
+                        micros(latency.getMaxValue()), String.valueOf(retries.getAsLong()))).append('\n');
+                Files.writeString(csv, rows, StandardOpenOption.CREATE, StandardOpenOption.APPEND);
+            } catch (IOException e) {
+                throw new UncheckedIOException(e);
+            }
+        }
+
+        private static String micros(double nanos) {
+            return String.format(Locale.ROOT, "%.1f", nanos / 1_000.0);
         }
     }
 
@@ -103,9 +221,13 @@ public class ThroughputVsPoolSizeBenchmark {
     public void transaction(PoolState state, Rng rng, Blackhole blackhole) throws SQLException {
         // Throttle to poolSize + 16 contenders before touching the pool so the queue depth stays bounded.
         state.clientThrottle.acquireUninterruptibly();
-        try (Connection connection = state.poolUnderTest.dataSource().getConnection()) {
-            state.oltpWorkload.runTransaction(connection, bound -> rng.random.nextInt(bound));
-            blackhole.consume(connection);
+        try {
+            long start = System.nanoTime();
+            try (Connection connection = state.poolUnderTest.dataSource().getConnection()) {
+                state.transaction.run(connection, rng.random);
+                blackhole.consume(connection);
+            }
+            state.recordLatency(System.nanoTime() - start);
         } finally {
             state.clientThrottle.release();
         }

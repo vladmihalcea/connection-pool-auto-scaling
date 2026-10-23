@@ -45,4 +45,17 @@ public final class Statistics {
         }
         return 1.96 * stdDev() / Math.sqrt(n);
     }
+
+    /**
+     * Half-width of the 95% confidence interval with the Student-t critical value for {@code n - 1} degrees of
+     * freedom ({@code t = 2.262} for 10 repetitions), which the normal approximation understates for small
+     * samples.
+     */
+    public double ci95HalfWidthStudent() {
+        if (n < 2) {
+            return 0.0;
+        }
+        double t = new org.apache.commons.math3.distribution.TDistribution(n - 1).inverseCumulativeProbability(0.975);
+        return t * stdDev() / Math.sqrt(n);
+    }
 }

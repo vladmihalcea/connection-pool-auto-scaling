@@ -82,7 +82,7 @@ public final class UslAutoScalingController implements ScalingPolicy {
      * A spread of probe sizes across the range: the two ends plus geometric-ish interior points, so the
      * bootstrap fit spans low and high concurrency.
      */
-    private static int[] buildProbeLadder(int minSize, int maxSize) {
+    static int[] buildProbeLadder(int minSize, int maxSize) {
         double[] fractions = {0.0, 0.08, 0.16, 0.33, 0.66, 1.0};
         java.util.TreeSet<Integer> ladder = new java.util.TreeSet<>();
         for (double f : fractions) {
