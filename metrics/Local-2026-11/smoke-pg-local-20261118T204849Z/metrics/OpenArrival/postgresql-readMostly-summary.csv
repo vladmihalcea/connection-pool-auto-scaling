@@ -1,0 +1,2 @@
+rep,cap,pool_size,load,rate,arrival_rate,throughput,busy,utilization,queue,lease_ms,wait_mean_ms,erlang_c_wait_ms,response_mean_ms,response_p50_ms,response_p99_ms,response_p999_ms,failures,shed,demand_limited_windows,h5_median_error,h5_p90_error,h5_bias
+0,neta,43,0.500000,39402.3,39349.8,39289.0,11.7415,0.273059,26.2988,0.298851,1.20004,1.81231e-14,1.50035,0.205951,15.6385,23.9043,0,0,0,NaN,NaN,NaN

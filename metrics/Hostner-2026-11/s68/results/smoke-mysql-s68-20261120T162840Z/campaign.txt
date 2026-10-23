@@ -1,0 +1,1 @@
+block=smoke-mysql database=mysql db_host=37.148.161.24 jmh_forks=10 reps=10 sweep_pools=default

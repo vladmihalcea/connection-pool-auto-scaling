@@ -1,0 +1,5 @@
+rep,policy,resolved,phase,instances,max_connections,configured_connections,open_connections,busy_connections,throughput,predicted_throughput,failed_acquisitions,response_mean_ms,response_p99_ms,instance_throughput_min,instance_throughput_max
+0,static-neta,static-48,0,1,100,48.0000,48.0000,47.2129,63593.8,77288.8,0,1.01382,9.76486,63593.8,63593.8
+0,static-neta,static-48,1,2,100,96.0000,96.0000,94.9495,50664.7,77373.4,0,2.55117,36.9951,24405.7,26259.1
+0,usl-response-time,usl-response-time,0,1,100,19.4000,18.6000,17.4060,43414.1,60488.3,0,1.47555,33.2431,43414.1,43414.1
+0,usl-response-time,usl-response-time,1,2,100,50.0000,31.6000,30.4418,47817.3,71927.6,0,3.00606,35.4550,10165.6,37651.6

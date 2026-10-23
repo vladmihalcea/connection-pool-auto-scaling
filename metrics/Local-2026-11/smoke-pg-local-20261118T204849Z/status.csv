@@ -1,0 +1,11 @@
+test,start_utc,end_utc,exit_code
+DatabaseSettingsReportTest,2026-11-18T20:48:49Z,2026-11-18T20:48:50Z,0
+LinkCheckExperimentTest,2026-11-18T20:48:50Z,2026-11-18T20:49:25Z,0
+ThroughputVsPoolSizeBenchmarkTest,2026-11-18T20:49:25Z,2026-11-18T20:50:39Z,0
+ConcurrencyAdaptationExperimentTest,2026-11-18T20:50:39Z,2026-11-18T20:55:50Z,0
+LoadProfileBenchmarkTest,2026-11-18T20:55:50Z,2026-11-18T20:58:01Z,0
+OverheadBenchmarkTest,2026-11-18T20:58:01Z,2026-11-18T20:58:14Z,0
+ThroughputVsPoolSizeBenchmarkTest,2026-11-18T20:58:15Z,2026-11-18T20:58:28Z,0
+ConcurrencyAdaptationExperimentTest,2026-11-18T20:58:28Z,2026-11-18T20:59:39Z,0
+OpenArrivalExperimentTest,2026-11-18T20:59:39Z,2026-11-18T21:01:13Z,0
+SharedDatabaseExperimentTest,2026-11-18T21:01:13Z,2026-11-18T21:05:16Z,0

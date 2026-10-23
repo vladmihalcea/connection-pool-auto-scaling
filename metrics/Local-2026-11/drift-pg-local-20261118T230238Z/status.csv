@@ -1,0 +1,4 @@
+test,start_utc,end_utc,exit_code
+DatabaseSettingsReportTest,2026-11-18T23:02:38Z,2026-11-18T23:02:39Z,0
+LinkCheckExperimentTest,2026-11-18T23:02:39Z,2026-11-18T23:03:10Z,0
+ConcurrencyAdaptationExperimentTest,2026-11-18T23:03:10Z,2026-11-19T00:25:44Z,0

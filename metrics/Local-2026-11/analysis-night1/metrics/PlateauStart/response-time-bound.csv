@@ -1,0 +1,17 @@
+source,database,pool,workload,clients,eps,n_eps_fitted,n_eps_size,nstar_size,throughput_ratio,bound,within_bound,mean_response_ratio,measured_within_bound,p99_ratio
+ThroughputVsPoolSizeBenchmark-fixed128-postgresql,postgresql,hikari,readMostly,128,0.0100000,47.0000,48.0000,96.0000,1.07578,1.01010,false,1.06781,false,1.86941
+ThroughputVsPoolSizeBenchmark-fixed128-postgresql,postgresql,hikari,readMostly,128,0.0200000,41.0000,44.0000,96.0000,1.09122,1.02041,false,1.08484,false,1.96252
+ThroughputVsPoolSizeBenchmark-fixed128-postgresql,postgresql,hikari,readMostly,128,0.0500000,31.0000,32.0000,96.0000,1.08793,1.05263,false,1.07095,false,2.01330
+ThroughputVsPoolSizeBenchmark-fixed128-postgresql,postgresql,hikari,readMostly,128,0.100000,23.0000,24.0000,96.0000,1.09600,1.11111,true,1.08302,true,2.29142
+ThroughputVsPoolSizeBenchmark-fixed128-postgresql,postgresql,hikari,writeHeavy,128,0.0100000,70.0000,72.0000,96.0000,1.07819,1.01010,false,1.06345,false,1.62418
+ThroughputVsPoolSizeBenchmark-fixed128-postgresql,postgresql,hikari,writeHeavy,128,0.0200000,61.0000,64.0000,96.0000,1.09681,1.02041,false,1.07458,false,1.88930
+ThroughputVsPoolSizeBenchmark-fixed128-postgresql,postgresql,hikari,writeHeavy,128,0.0500000,47.0000,48.0000,96.0000,1.11564,1.05263,false,1.09249,false,2.47196
+ThroughputVsPoolSizeBenchmark-fixed128-postgresql,postgresql,hikari,writeHeavy,128,0.100000,35.0000,36.0000,96.0000,1.14823,1.11111,false,1.12216,false,3.04443
+ThroughputVsPoolSizeBenchmark-fixed128-postgresql,postgresql,hikari,longTx,128,0.0100000,37.0000,40.0000,24.0000,1.01469,1.01010,false,1.45971,false,1.62429
+ThroughputVsPoolSizeBenchmark-fixed128-postgresql,postgresql,hikari,longTx,128,0.0200000,33.0000,36.0000,24.0000,1.02114,1.02041,false,1.34170,false,1.34675
+ThroughputVsPoolSizeBenchmark-fixed128-postgresql,postgresql,hikari,longTx,128,0.0500000,27.0000,28.0000,24.0000,1.01041,1.05263,true,1.16539,false,1.19492
+ThroughputVsPoolSizeBenchmark-fixed128-postgresql,postgresql,hikari,longTx,128,0.100000,22.0000,24.0000,24.0000,1.00000,1.11111,true,1.00000,true,1.00000
+ThroughputVsPoolSizeBenchmark-fixed128-postgresql,postgresql,hikari,oltpReadWrite,128,0.0100000,11.0000,12.0000,32.0000,1.07576,1.01010,false,0.865318,true,1.31167
+ThroughputVsPoolSizeBenchmark-fixed128-postgresql,postgresql,hikari,oltpReadWrite,128,0.0200000,10.0000,12.0000,32.0000,1.07576,1.02041,false,0.865318,true,1.31167
+ThroughputVsPoolSizeBenchmark-fixed128-postgresql,postgresql,hikari,oltpReadWrite,128,0.0500000,9.00000,12.0000,32.0000,1.07576,1.05263,false,0.865318,true,1.31167
+ThroughputVsPoolSizeBenchmark-fixed128-postgresql,postgresql,hikari,oltpReadWrite,128,0.100000,7.00000,8.00000,32.0000,1.05275,1.11111,true,0.605988,true,1.07632

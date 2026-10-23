@@ -1,0 +1,4 @@
+database,pool,workload,ceiling,settled_size,plateau_start,nstar,tps,committed,failures,lambda,sigma,kappa,r2
+mysql,hikari,writeHeavy,48,43,45,48,7998.84,800931,917,249.509,0.00843544,2.00104e-05,0.988499
+mysql,dbcp2,writeHeavy,48,48,-1,-1,8289.20,704768,524,NaN,NaN,NaN,NaN
+mysql,agroal,writeHeavy,48,32,-1,-1,6436.88,580611,913,NaN,NaN,NaN,NaN

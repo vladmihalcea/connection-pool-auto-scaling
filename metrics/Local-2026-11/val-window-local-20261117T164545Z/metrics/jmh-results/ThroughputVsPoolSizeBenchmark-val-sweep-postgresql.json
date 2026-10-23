@@ -1,0 +1,412 @@
+[
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-25.0.5.8-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+            "-Xms4g",
+            "-Xmx8g",
+            "-Dusl.db.url=jdbc:postgresql://127.0.0.1/uslpool",
+            "-Djmh.forks=1",
+            "-Djmh.warmup=1",
+            "-Djmh.iters=2",
+            "-Djmh.secs=2",
+            "-Djmh.param.database=postgresql",
+            "-Djmh.param.pool=hikari",
+            "-Djmh.param.poolSize=4,32",
+            "-Djmh.param.workload=readMostly,oltpReadWrite,tpcc",
+            "-Dusl.results.name=ThroughputVsPoolSizeBenchmark-val-sweep-postgresql",
+            "-Dusl.db.url=jdbc:postgresql://127.0.0.1/uslpool",
+            "-Dusl.results.name=ThroughputVsPoolSizeBenchmark-val-sweep-postgresql"
+        ],
+        "jdkVersion" : "25.0.5",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "25.0.5+8-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "2 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 2,
+        "measurementTime" : "2 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "database" : "postgresql",
+            "pool" : "hikari",
+            "poolSize" : "4",
+            "workload" : "readMostly"
+        },
+        "primaryMetric" : {
+            "score" : 23099.50911362383,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 23073.395355394237,
+                "50.0" : 23099.50911362383,
+                "90.0" : 23125.622871853422,
+                "95.0" : 23125.622871853422,
+                "99.0" : 23125.622871853422,
+                "99.9" : 23125.622871853422,
+                "99.99" : 23125.622871853422,
+                "99.999" : 23125.622871853422,
+                "99.9999" : 23125.622871853422,
+                "100.0" : 23125.622871853422
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    23125.622871853422,
+                    23073.395355394237
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-25.0.5.8-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+            "-Xms4g",
+            "-Xmx8g",
+            "-Dusl.db.url=jdbc:postgresql://127.0.0.1/uslpool",
+            "-Djmh.forks=1",
+            "-Djmh.warmup=1",
+            "-Djmh.iters=2",
+            "-Djmh.secs=2",
+            "-Djmh.param.database=postgresql",
+            "-Djmh.param.pool=hikari",
+            "-Djmh.param.poolSize=4,32",
+            "-Djmh.param.workload=readMostly,oltpReadWrite,tpcc",
+            "-Dusl.results.name=ThroughputVsPoolSizeBenchmark-val-sweep-postgresql",
+            "-Dusl.db.url=jdbc:postgresql://127.0.0.1/uslpool",
+            "-Dusl.results.name=ThroughputVsPoolSizeBenchmark-val-sweep-postgresql"
+        ],
+        "jdkVersion" : "25.0.5",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "25.0.5+8-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "2 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 2,
+        "measurementTime" : "2 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "database" : "postgresql",
+            "pool" : "hikari",
+            "poolSize" : "4",
+            "workload" : "oltpReadWrite"
+        },
+        "primaryMetric" : {
+            "score" : 646.9903392040122,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 641.4693501967206,
+                "50.0" : 646.9903392040122,
+                "90.0" : 652.5113282113039,
+                "95.0" : 652.5113282113039,
+                "99.0" : 652.5113282113039,
+                "99.9" : 652.5113282113039,
+                "99.99" : 652.5113282113039,
+                "99.999" : 652.5113282113039,
+                "99.9999" : 652.5113282113039,
+                "100.0" : 652.5113282113039
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    641.4693501967206,
+                    652.5113282113039
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-25.0.5.8-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+            "-Xms4g",
+            "-Xmx8g",
+            "-Dusl.db.url=jdbc:postgresql://127.0.0.1/uslpool",
+            "-Djmh.forks=1",
+            "-Djmh.warmup=1",
+            "-Djmh.iters=2",
+            "-Djmh.secs=2",
+            "-Djmh.param.database=postgresql",
+            "-Djmh.param.pool=hikari",
+            "-Djmh.param.poolSize=4,32",
+            "-Djmh.param.workload=readMostly,oltpReadWrite,tpcc",
+            "-Dusl.results.name=ThroughputVsPoolSizeBenchmark-val-sweep-postgresql",
+            "-Dusl.db.url=jdbc:postgresql://127.0.0.1/uslpool",
+            "-Dusl.results.name=ThroughputVsPoolSizeBenchmark-val-sweep-postgresql"
+        ],
+        "jdkVersion" : "25.0.5",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "25.0.5+8-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "2 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 2,
+        "measurementTime" : "2 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "database" : "postgresql",
+            "pool" : "hikari",
+            "poolSize" : "4",
+            "workload" : "tpcc"
+        },
+        "primaryMetric" : {
+            "score" : 2527.048482377135,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 1734.3704675182653,
+                "50.0" : 2527.048482377135,
+                "90.0" : 3319.726497236004,
+                "95.0" : 3319.726497236004,
+                "99.0" : 3319.726497236004,
+                "99.9" : 3319.726497236004,
+                "99.99" : 3319.726497236004,
+                "99.999" : 3319.726497236004,
+                "99.9999" : 3319.726497236004,
+                "100.0" : 3319.726497236004
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    1734.3704675182653,
+                    3319.726497236004
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-25.0.5.8-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+            "-Xms4g",
+            "-Xmx8g",
+            "-Dusl.db.url=jdbc:postgresql://127.0.0.1/uslpool",
+            "-Djmh.forks=1",
+            "-Djmh.warmup=1",
+            "-Djmh.iters=2",
+            "-Djmh.secs=2",
+            "-Djmh.param.database=postgresql",
+            "-Djmh.param.pool=hikari",
+            "-Djmh.param.poolSize=4,32",
+            "-Djmh.param.workload=readMostly,oltpReadWrite,tpcc",
+            "-Dusl.results.name=ThroughputVsPoolSizeBenchmark-val-sweep-postgresql",
+            "-Dusl.db.url=jdbc:postgresql://127.0.0.1/uslpool",
+            "-Dusl.results.name=ThroughputVsPoolSizeBenchmark-val-sweep-postgresql"
+        ],
+        "jdkVersion" : "25.0.5",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "25.0.5+8-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "2 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 2,
+        "measurementTime" : "2 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "database" : "postgresql",
+            "pool" : "hikari",
+            "poolSize" : "32",
+            "workload" : "readMostly"
+        },
+        "primaryMetric" : {
+            "score" : 64751.75138106197,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 64204.19574457239,
+                "50.0" : 64751.75138106197,
+                "90.0" : 65299.30701755156,
+                "95.0" : 65299.30701755156,
+                "99.0" : 65299.30701755156,
+                "99.9" : 65299.30701755156,
+                "99.99" : 65299.30701755156,
+                "99.999" : 65299.30701755156,
+                "99.9999" : 65299.30701755156,
+                "100.0" : 65299.30701755156
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    65299.30701755156,
+                    64204.19574457239
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-25.0.5.8-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+            "-Xms4g",
+            "-Xmx8g",
+            "-Dusl.db.url=jdbc:postgresql://127.0.0.1/uslpool",
+            "-Djmh.forks=1",
+            "-Djmh.warmup=1",
+            "-Djmh.iters=2",
+            "-Djmh.secs=2",
+            "-Djmh.param.database=postgresql",
+            "-Djmh.param.pool=hikari",
+            "-Djmh.param.poolSize=4,32",
+            "-Djmh.param.workload=readMostly,oltpReadWrite,tpcc",
+            "-Dusl.results.name=ThroughputVsPoolSizeBenchmark-val-sweep-postgresql",
+            "-Dusl.db.url=jdbc:postgresql://127.0.0.1/uslpool",
+            "-Dusl.results.name=ThroughputVsPoolSizeBenchmark-val-sweep-postgresql"
+        ],
+        "jdkVersion" : "25.0.5",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "25.0.5+8-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "2 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 2,
+        "measurementTime" : "2 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "database" : "postgresql",
+            "pool" : "hikari",
+            "poolSize" : "32",
+            "workload" : "oltpReadWrite"
+        },
+        "primaryMetric" : {
+            "score" : 1089.743807418392,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 1082.1280274667804,
+                "50.0" : 1089.743807418392,
+                "90.0" : 1097.3595873700037,
+                "95.0" : 1097.3595873700037,
+                "99.0" : 1097.3595873700037,
+                "99.9" : 1097.3595873700037,
+                "99.99" : 1097.3595873700037,
+                "99.999" : 1097.3595873700037,
+                "99.9999" : 1097.3595873700037,
+                "100.0" : 1097.3595873700037
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    1082.1280274667804,
+                    1097.3595873700037
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.ThroughputVsPoolSizeBenchmark.transaction",
+        "mode" : "thrpt",
+        "threads" : 128,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-25.0.5.8-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+            "-Xms4g",
+            "-Xmx8g",
+            "-Dusl.db.url=jdbc:postgresql://127.0.0.1/uslpool",
+            "-Djmh.forks=1",
+            "-Djmh.warmup=1",
+            "-Djmh.iters=2",
+            "-Djmh.secs=2",
+            "-Djmh.param.database=postgresql",
+            "-Djmh.param.pool=hikari",
+            "-Djmh.param.poolSize=4,32",
+            "-Djmh.param.workload=readMostly,oltpReadWrite,tpcc",
+            "-Dusl.results.name=ThroughputVsPoolSizeBenchmark-val-sweep-postgresql",
+            "-Dusl.db.url=jdbc:postgresql://127.0.0.1/uslpool",
+            "-Dusl.results.name=ThroughputVsPoolSizeBenchmark-val-sweep-postgresql"
+        ],
+        "jdkVersion" : "25.0.5",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "25.0.5+8-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "2 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 2,
+        "measurementTime" : "2 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "database" : "postgresql",
+            "pool" : "hikari",
+            "poolSize" : "32",
+            "workload" : "tpcc"
+        },
+        "primaryMetric" : {
+            "score" : 2273.3720329718835,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 2255.0002051899487,
+                "50.0" : 2273.3720329718835,
+                "90.0" : 2291.743860753819,
+                "95.0" : 2291.743860753819,
+                "99.0" : 2291.743860753819,
+                "99.9" : 2291.743860753819,
+                "99.99" : 2291.743860753819,
+                "99.999" : 2291.743860753819,
+                "99.9999" : 2291.743860753819,
+                "100.0" : 2291.743860753819
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    2255.0002051899487,
+                    2291.743860753819
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    }
+]
+
+

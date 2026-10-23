@@ -1,0 +1,7 @@
+benchmark,mode,database,policy,pool,profile,workload,threads,score,score_error,unit
+transaction,thrpt,postgresql,static-96,hikari,increasing,oltpReadWrite,64,592.953,1160.51,ops/s
+transaction,thrpt,postgresql,static-96,hikari,steady,oltpReadWrite,64,821.895,450.681,ops/s
+transaction,thrpt,postgresql,static-96,hikari,shrinking,oltpReadWrite,64,613.004,1293.55,ops/s
+transaction,thrpt,postgresql,usl-response-time,hikari,increasing,oltpReadWrite,64,541.533,1067.76,ops/s
+transaction,thrpt,postgresql,usl-response-time,hikari,steady,oltpReadWrite,64,646.815,701.265,ops/s
+transaction,thrpt,postgresql,usl-response-time,hikari,shrinking,oltpReadWrite,64,444.505,579.202,ops/s

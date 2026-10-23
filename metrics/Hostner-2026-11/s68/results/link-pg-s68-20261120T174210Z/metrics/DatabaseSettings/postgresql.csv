@@ -1,0 +1,33 @@
+name,setting,unit,source
+version,PostgreSQL 18.6 (Ubuntu 18.6-0ubuntu0.26.04.1) on x86_64-pc-linux-gnu; compiled by gcc (Ubuntu 15.2.0-16ubuntu1) 15.2.0; 64-bit,,server
+DateStyle,ISO; MDY,,client
+TimeZone,Europe/Amsterdam,,client
+application_name,PostgreSQL JDBC Driver,,session
+autovacuum_worker_slots,16,,configuration file
+checkpoint_timeout,1800,s,configuration file
+client_encoding,UTF8,,client
+cluster_name,18/main,,configuration file
+default_text_search_config,pg_catalog.english,,configuration file
+dynamic_shared_memory_type,posix,,configuration file
+effective_cache_size,3145728,8kB,configuration file
+external_pid_file,/var/run/postgresql/18-main.pid,,configuration file
+lc_messages,C.UTF-8,,configuration file
+lc_monetary,C.UTF-8,,configuration file
+lc_numeric,C.UTF-8,,configuration file
+lc_time,C.UTF-8,,configuration file
+listen_addresses,*,,configuration file
+log_autovacuum_min_duration,0,ms,configuration file
+log_line_prefix,%m [%p] %q%u@%d ,,configuration file
+log_timezone,Europe/Amsterdam,,configuration file
+maintenance_work_mem,1048576,kB,configuration file
+max_connections,200,,configuration file
+max_wal_size,16384,MB,configuration file
+min_wal_size,80,MB,configuration file
+port,5432,,configuration file
+random_page_cost,1.1,,configuration file
+shared_buffers,1048576,8kB,configuration file
+ssl,on,,configuration file
+ssl_cert_file,/etc/ssl/certs/ssl-cert-snakeoil.pem,,configuration file
+ssl_key_file,/etc/ssl/private/ssl-cert-snakeoil.key,,configuration file
+unix_socket_directories,/var/run/postgresql,,configuration file
+work_mem,16384,kB,configuration file

@@ -69,6 +69,13 @@
             <version>${postgresql.version}</version>
         </dependency>
 
+        <!-- MySQL JDBC driver -->
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <version>${mysql.version}</version>
+        </dependency>
+
         <!-- Logging -->
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -92,6 +99,12 @@
         <dependency>
             <groupId>org.testcontainers</groupId>
             <artifactId>postgresql</artifactId>
+            <version>${testcontainers.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.testcontainers</groupId>
+            <artifactId>mysql</artifactId>
             <version>${testcontainers.version}</version>
             <scope>test</scope>
         </dependency>
@@ -171,5 +184,93 @@
             </testResource>
         </testResources>
     </build>
+
+    <profiles>
+        <!--
+          Self-contained pack for a client machine that has only a Java runtime:
+            mvn -pl core -P testbed package
+          builds core/target/usl-testbed.zip (the main and test classes, every test-scope dependency in lib/,
+          and the scripts of src/testbed/), which runs the benchmarks and experiments against a remote
+          database host, and core/target/usl-server.tar.gz, the same classes and libraries with the Linux
+          scripts of server/ for the Hostner campaign (server/README.md). Dependencies stay separate jars, so the
+          JDBC drivers' service registrations and the signed jars are left intact.
+        -->
+        <profile>
+            <id>testbed</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-jar-plugin</artifactId>
+                        <version>${maven-jar-plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <id>testbed-test-jar</id>
+                                <goals>
+                                    <goal>test-jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-dependency-plugin</artifactId>
+                        <version>${maven-dependency-plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <id>testbed-lib</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>copy-dependencies</goal>
+                                </goals>
+                                <configuration>
+                                    <includeScope>test</includeScope>
+                                    <outputDirectory>${project.build.directory}/testbed-lib</outputDirectory>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-assembly-plugin</artifactId>
+                        <version>${maven-assembly-plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <id>testbed-pack</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>single</goal>
+                                </goals>
+                                <configuration>
+                                    <descriptors>
+                                        <descriptor>src/assembly/testbed.xml</descriptor>
+                                    </descriptors>
+                                    <finalName>usl-testbed</finalName>
+                                    <appendAssemblyId>false</appendAssemblyId>
+                                    <attach>false</attach>
+                                </configuration>
+                            </execution>
+                            <!-- The same classes and libraries with the Linux scripts of server/: usl-server.tar.gz -->
+                            <execution>
+                                <id>server-pack</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>single</goal>
+                                </goals>
+                                <configuration>
+                                    <descriptors>
+                                        <descriptor>src/assembly/server.xml</descriptor>
+                                    </descriptors>
+                                    <finalName>usl-server</finalName>
+                                    <appendAssemblyId>false</appendAssemblyId>
+                                    <attach>false</attach>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 
 </project>

@@ -1,0 +1,25 @@
+name,setting,unit,source
+version,PostgreSQL 18.4 on x86_64-windows; compiled by msvc-19.44.35226; 64-bit,,server
+application_name,PostgreSQL JDBC Driver,,session
+autovacuum_worker_slots,16,,configuration file
+client_encoding,UTF8,,client
+DateStyle,ISO; MDY,,client
+default_text_search_config,pg_catalog.english,,configuration file
+dynamic_shared_memory_type,windows,,configuration file
+lc_messages,English_United States.1252,,configuration file
+lc_monetary,English_United States.1252,,configuration file
+lc_numeric,English_United States.1252,,configuration file
+lc_time,English_United States.1252,,configuration file
+listen_addresses,*,,configuration file
+log_destination,stderr,,configuration file
+log_file_mode,0640,,configuration file
+log_line_prefix,%t ,,configuration file
+log_timezone,Europe/Bucharest,,configuration file
+logging_collector,on,,configuration file
+max_connections,100,,configuration file
+max_prepared_transactions,10,,configuration file
+max_wal_size,1024,MB,configuration file
+min_wal_size,80,MB,configuration file
+port,5432,,configuration file
+shared_buffers,16384,8kB,configuration file
+TimeZone,Europe/Bucharest,,client

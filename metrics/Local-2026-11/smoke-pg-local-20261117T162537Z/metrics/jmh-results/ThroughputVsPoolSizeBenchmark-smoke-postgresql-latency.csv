@@ -1,0 +1,7 @@
+database,pool,workload,poolSize,count,mean_us,p50_us,p90_us,p99_us,p999_us,max_us,retries,clients,mean_wait_us,mean_lease_us
+postgresql,hikari,readMostly,4,19590,1013.3,192.5,2738.2,13426.7,24576.0,47546.4,0,20,814.8,198.5
+postgresql,hikari,oltpReadWrite,4,626,31405.6,31490.0,58163.2,135266.3,189136.9,189136.9,0,20,25076.0,6329.7
+postgresql,hikari,tpcc,4,1674,11852.7,3741.7,29868.0,117637.1,178782.2,205258.8,0,20,9478.6,2374.1
+postgresql,hikari,readMostly,32,54399,865.5,328.4,1343.5,11542.5,37355.5,164495.4,0,48,233.1,632.4
+postgresql,hikari,oltpReadWrite,32,1185,39969.1,38830.1,55607.3,84475.9,105971.7,124649.5,0,48,13246.0,26723.2
+postgresql,hikari,tpcc,32,2223,21563.6,13049.9,47415.3,133038.1,195428.4,247070.7,0,48,7179.6,14383.9

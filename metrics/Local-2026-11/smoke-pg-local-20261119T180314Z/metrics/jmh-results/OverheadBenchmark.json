@@ -1,0 +1,279 @@
+[
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.OverheadBenchmark.controllerDecision",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-25.0.5.8-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+            "-Xms4g",
+            "-Xmx8g",
+            "-Dusl.db.url=jdbc:postgresql://127.0.0.1/uslpool",
+            "-Djmh.forks=1",
+            "-Djmh.warmup=1",
+            "-Djmh.iters=1",
+            "-Djmh.secs=1",
+            "-Dusl.db.url=jdbc:postgresql://127.0.0.1/uslpool"
+        ],
+        "jdkVersion" : "25.0.5",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "25.0.5+8-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 10380.74068692069,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 10380.74068692069,
+                "50.0" : 10380.74068692069,
+                "90.0" : 10380.74068692069,
+                "95.0" : 10380.74068692069,
+                "99.0" : 10380.74068692069,
+                "99.9" : 10380.74068692069,
+                "99.99" : 10380.74068692069,
+                "99.999" : 10380.74068692069,
+                "99.9999" : 10380.74068692069,
+                "100.0" : 10380.74068692069
+            },
+            "scoreUnit" : "ns/op",
+            "rawData" : [
+                [
+                    10380.74068692069
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.OverheadBenchmark.geneticDecision",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-25.0.5.8-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+            "-Xms4g",
+            "-Xmx8g",
+            "-Dusl.db.url=jdbc:postgresql://127.0.0.1/uslpool",
+            "-Djmh.forks=1",
+            "-Djmh.warmup=1",
+            "-Djmh.iters=1",
+            "-Djmh.secs=1",
+            "-Dusl.db.url=jdbc:postgresql://127.0.0.1/uslpool"
+        ],
+        "jdkVersion" : "25.0.5",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "25.0.5+8-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 3.89391897862406,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 3.89391897862406,
+                "50.0" : 3.89391897862406,
+                "90.0" : 3.89391897862406,
+                "95.0" : 3.89391897862406,
+                "99.0" : 3.89391897862406,
+                "99.9" : 3.89391897862406,
+                "99.99" : 3.89391897862406,
+                "99.999" : 3.89391897862406,
+                "99.9999" : 3.89391897862406,
+                "100.0" : 3.89391897862406
+            },
+            "scoreUnit" : "ns/op",
+            "rawData" : [
+                [
+                    3.89391897862406
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.OverheadBenchmark.leaseTimeRefit",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-25.0.5.8-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+            "-Xms4g",
+            "-Xmx8g",
+            "-Dusl.db.url=jdbc:postgresql://127.0.0.1/uslpool",
+            "-Djmh.forks=1",
+            "-Djmh.warmup=1",
+            "-Djmh.iters=1",
+            "-Djmh.secs=1",
+            "-Dusl.db.url=jdbc:postgresql://127.0.0.1/uslpool"
+        ],
+        "jdkVersion" : "25.0.5",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "25.0.5+8-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 1339.6319756007106,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 1339.6319756007106,
+                "50.0" : 1339.6319756007106,
+                "90.0" : 1339.6319756007106,
+                "95.0" : 1339.6319756007106,
+                "99.0" : 1339.6319756007106,
+                "99.9" : 1339.6319756007106,
+                "99.99" : 1339.6319756007106,
+                "99.999" : 1339.6319756007106,
+                "99.9999" : 1339.6319756007106,
+                "100.0" : 1339.6319756007106
+            },
+            "scoreUnit" : "ns/op",
+            "rawData" : [
+                [
+                    1339.6319756007106
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.OverheadBenchmark.responseTimeDecision",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-25.0.5.8-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+            "-Xms4g",
+            "-Xmx8g",
+            "-Dusl.db.url=jdbc:postgresql://127.0.0.1/uslpool",
+            "-Djmh.forks=1",
+            "-Djmh.warmup=1",
+            "-Djmh.iters=1",
+            "-Djmh.secs=1",
+            "-Dusl.db.url=jdbc:postgresql://127.0.0.1/uslpool"
+        ],
+        "jdkVersion" : "25.0.5",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "25.0.5+8-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 30.00220363176504,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 30.00220363176504,
+                "50.0" : 30.00220363176504,
+                "90.0" : 30.00220363176504,
+                "95.0" : 30.00220363176504,
+                "99.0" : 30.00220363176504,
+                "99.9" : 30.00220363176504,
+                "99.99" : 30.00220363176504,
+                "99.999" : 30.00220363176504,
+                "99.9999" : 30.00220363176504,
+                "100.0" : 30.00220363176504
+            },
+            "scoreUnit" : "ns/op",
+            "rawData" : [
+                [
+                    30.00220363176504
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.OverheadBenchmark.uslRefit",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "C:\\Program Files\\Eclipse Adoptium\\jdk-25.0.5.8-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+            "-Xms4g",
+            "-Xmx8g",
+            "-Dusl.db.url=jdbc:postgresql://127.0.0.1/uslpool",
+            "-Djmh.forks=1",
+            "-Djmh.warmup=1",
+            "-Djmh.iters=1",
+            "-Djmh.secs=1",
+            "-Dusl.db.url=jdbc:postgresql://127.0.0.1/uslpool"
+        ],
+        "jdkVersion" : "25.0.5",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "25.0.5+8-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 6998.93863224796,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 6998.93863224796,
+                "50.0" : 6998.93863224796,
+                "90.0" : 6998.93863224796,
+                "95.0" : 6998.93863224796,
+                "99.0" : 6998.93863224796,
+                "99.9" : 6998.93863224796,
+                "99.99" : 6998.93863224796,
+                "99.999" : 6998.93863224796,
+                "99.9999" : 6998.93863224796,
+                "100.0" : 6998.93863224796
+            },
+            "scoreUnit" : "ns/op",
+            "rawData" : [
+                [
+                    6998.93863224796
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    }
+]
+
+

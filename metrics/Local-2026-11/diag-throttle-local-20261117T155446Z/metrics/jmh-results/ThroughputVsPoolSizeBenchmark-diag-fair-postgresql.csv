@@ -1,0 +1,5 @@
+benchmark,mode,database,pool,poolSize,workload,threads,score,score_error,unit
+transaction,thrpt,postgresql,hikari,8,readMostly,128,32328.9,20791.4,ops/s
+transaction,thrpt,postgresql,hikari,24,readMostly,128,46881.5,10380.2,ops/s
+transaction,thrpt,postgresql,hikari,48,readMostly,128,44728.6,8823.23,ops/s
+transaction,thrpt,postgresql,hikari,96,readMostly,128,51533.6,7968.32,ops/s

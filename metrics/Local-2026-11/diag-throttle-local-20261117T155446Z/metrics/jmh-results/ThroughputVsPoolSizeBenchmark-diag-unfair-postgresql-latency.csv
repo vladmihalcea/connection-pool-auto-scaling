@@ -1,0 +1,5 @@
+database,pool,workload,poolSize,count,mean_us,p50_us,p90_us,p99_us,p999_us,max_us,retries,clients,mean_wait_us,mean_lease_us
+postgresql,hikari,readMostly,8,225129,653.7,201.2,1494.0,7884.8,14966.8,43548.7,0,24,439.5,214.2
+postgresql,hikari,readMostly,24,394154,627.7,260.2,1012.2,7434.2,18792.4,105578.5,0,40,252.4,375.3
+postgresql,hikari,readMostly,48,399593,1057.4,300.3,1813.5,13353.0,62455.8,261750.8,0,64,250.6,806.8
+postgresql,hikari,readMostly,96,501352,1573.9,286.7,2363.4,17104.9,169738.2,519831.6,0,112,20.9,1553.0

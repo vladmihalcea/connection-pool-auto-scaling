@@ -1,0 +1,9 @@
+policy,phase,clients,reps,steady_pool,steady_pool_ci95,connection_seconds,connection_seconds_ci95,tps,tps_ci95,response_mean_ms,response_mean_ms_ci95,response_p99_ms,response_p99_ms_ci95,failures
+static-10,0,8,1,10.0000,NaN,135.000,NaN,1243.86,NaN,6.43181,NaN,10.7315,NaN,0
+static-10,1,64,1,10.0000,NaN,150.000,NaN,1470.73,NaN,43.5678,NaN,1093.66,NaN,0
+usl-response-time,0,8,1,10.0000,NaN,128.000,NaN,1208.79,NaN,6.62035,NaN,7.06970,NaN,0
+usl-response-time,1,64,1,33.0000,NaN,411.000,NaN,2288.46,NaN,27.9773,NaN,540.017,NaN,0
+genetic,0,8,1,60.7500,NaN,114.000,NaN,1090.46,NaN,7.33825,NaN,7.10656,NaN,0
+genetic,1,64,1,48.1250,NaN,620.000,NaN,2482.79,NaN,25.7907,NaN,372.507,NaN,0
+usl-plateau,0,8,1,10.0000,NaN,128.000,NaN,1209.59,NaN,6.61525,NaN,7.13523,NaN,0
+usl-plateau,1,64,1,66.0000,NaN,760.000,NaN,2596.32,NaN,24.6576,NaN,106.496,NaN,0

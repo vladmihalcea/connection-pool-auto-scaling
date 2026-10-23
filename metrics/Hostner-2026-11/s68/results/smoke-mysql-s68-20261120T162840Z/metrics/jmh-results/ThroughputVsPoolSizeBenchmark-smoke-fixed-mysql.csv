@@ -1,0 +1,3 @@
+benchmark,mode,database,pool,poolSize,workload,threads,score,score_error,unit
+transaction,thrpt,mysql,hikari,4,readMostly,128,5812.33,NaN,ops/s
+transaction,thrpt,mysql,hikari,32,readMostly,128,35093.3,NaN,ops/s

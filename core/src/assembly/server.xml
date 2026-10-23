@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  The self-contained bundle of the Linux server campaign (mvn -pl core -P testbed -DskipTests package): the main and
+  test classes, every test-scope dependency in lib/, and the scripts of the repository's server/ folder, with Unix
+  line endings whatever the checkout used. A server needs only Java 25.
+-->
+<assembly xmlns="http://maven.apache.org/ASSEMBLY/2.2.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/ASSEMBLY/2.2.0 https://maven.apache.org/xsd/assembly-2.2.0.xsd">
+    <id>server</id>
+    <formats>
+        <format>tar.gz</format>
+    </formats>
+    <includeBaseDirectory>true</includeBaseDirectory>
+    <baseDirectory>usl-server</baseDirectory>
+    <files>
+        <file>
+            <source>${project.build.directory}/${project.build.finalName}.jar</source>
+            <destName>core.jar</destName>
+        </file>
+        <file>
+            <source>${project.build.directory}/${project.build.finalName}-tests.jar</source>
+            <destName>core-tests.jar</destName>
+        </file>
+    </files>
+    <fileSets>
+        <fileSet>
+            <directory>${project.build.directory}/testbed-lib</directory>
+            <outputDirectory>lib</outputDirectory>
+        </fileSet>
+        <fileSet>
+            <directory>${project.basedir}/../server</directory>
+            <outputDirectory></outputDirectory>
+            <includes>
+                <include>*.sh</include>
+            </includes>
+            <lineEnding>unix</lineEnding>
+            <fileMode>0755</fileMode>
+        </fileSet>
+        <fileSet>
+            <directory>${project.basedir}/../server</directory>
+            <outputDirectory></outputDirectory>
+            <excludes>
+                <exclude>*.sh</exclude>
+            </excludes>
+            <lineEnding>unix</lineEnding>
+        </fileSet>
+    </fileSets>
+</assembly>

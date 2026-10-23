@@ -1,12 +1,19 @@
 package com.vladmihalcea.phd.pool.jmh;
 
 import com.vladmihalcea.phd.pool.common.util.AbstractBenchmarkTest;
-import com.vladmihalcea.phd.pool.common.util.PostgreSqlSupport;
+import com.vladmihalcea.phd.pool.common.util.Database;
+
+import java.io.IOException;
+import java.io.UncheckedIOException;
+import java.nio.file.Files;
+import java.util.Locale;
 
 /**
  * Failsafe entry point for {@link ThroughputVsPoolSizeBenchmark} (experiment E1). Writes JSON + a tidy
- * long-format CSV under {@code metrics/jmh-results/}; the E2/E3 report tests pick that CSV up
- * automatically. Skipped when neither a local PostgreSQL server nor Docker is available.
+ * long-format CSV under {@code metrics/jmh-results/}, plus the response-time percentiles of
+ * {@link ThroughputVsPoolSizeBenchmark#latencyCsv()}; the E2/E3 report tests pick the CSV up automatically.
+ * Skipped when a requested database ({@code -Djmh.param.database}, PostgreSQL by default) is available
+ * neither locally nor through Docker.
  *
  * @author Vlad Mihalcea
  */
@@ -19,7 +26,19 @@ public class ThroughputVsPoolSizeBenchmarkTest extends AbstractBenchmarkTest {
 
     @Override
     protected void checkPreconditions() {
-        PostgreSqlSupport.assumeDatabaseAvailable();
+        for (String database : expandParamValues(System.getProperty(PARAM_PREFIX + "database", "postgresql"))) {
+            Database.valueOf(database.toUpperCase(Locale.ROOT)).assumeAvailable();
+        }
+    }
+
+    /** The forks append to the latency CSV, so a previous run's rows are removed first. */
+    @Override
+    protected void beforeRun() {
+        try {
+            Files.deleteIfExists(ThroughputVsPoolSizeBenchmark.latencyCsv());
+        } catch (IOException e) {
+            throw new UncheckedIOException(e);
+        }
     }
 
     @Override

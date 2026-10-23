@@ -23,7 +23,8 @@ import java.sql.SQLException;
  *       cap.</li>
  * </ol>
  * The local URL/credentials can be overridden with the {@code usl.db.url}, {@code usl.db.username} and
- * {@code usl.db.password} system properties.
+ * {@code usl.db.password} system properties; the password also comes from the {@code JDBC_PASSWORD}
+ * environment variable, which keeps it off the command line of the server campaign.
  * <p>
  * DB-backed tests must first call {@link #assumeDatabaseAvailable()} so that, on a host without a local
  * server <em>and</em> without Docker, they are skipped rather than failed — the USL math and
@@ -41,7 +42,9 @@ public final class PostgreSqlSupport {
     private static final String LOCAL_JDBC_URL =
             System.getProperty("usl.db.url", "jdbc:postgresql://localhost/uslpool");
     private static final String LOCAL_USERNAME = System.getProperty("usl.db.username", "postgres");
-    private static final String LOCAL_PASSWORD = System.getProperty("usl.db.password", "admin");
+    // The password may come from the environment, so that it never appears on a command line (ps, pidstat).
+    private static final String LOCAL_PASSWORD = System.getProperty("usl.db.password",
+            System.getenv().getOrDefault("JDBC_PASSWORD", "admin"));
 
     private static volatile Boolean localAvailable;
     private static volatile PostgreSQLContainer<?> container;
@@ -61,6 +64,12 @@ public final class PostgreSqlSupport {
                 localAvailable = Boolean.TRUE;
                 LOGGER.info("Using local PostgreSQL database at {}", LOCAL_JDBC_URL);
             } catch (SQLException e) {
+                // An explicitly configured server (e.g. the remote database host of the two-machine testbed)
+                // must never be silently replaced by a local container, or a run would measure the wrong database.
+                if (System.getProperty("usl.db.url") != null) {
+                    throw new IllegalStateException("usl.db.url is set to " + LOCAL_JDBC_URL
+                            + ", but the server does not answer; refusing to fall back to Docker", e);
+                }
                 localAvailable = Boolean.FALSE;
                 LOGGER.info("Local PostgreSQL database not reachable at {} ({}) - will fall back to Docker",
                         LOCAL_JDBC_URL, e.getMessage());

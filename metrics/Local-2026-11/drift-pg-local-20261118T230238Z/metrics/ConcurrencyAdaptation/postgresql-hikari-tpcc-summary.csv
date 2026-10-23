@@ -1,0 +1,5 @@
+policy,phase,clients,reps,steady_pool,steady_pool_ci95,connection_seconds,connection_seconds_ci95,tps,tps_ci95,response_mean_ms,response_mean_ms_ci95,response_p99_ms,response_p99_ms_ci95,failures
+usl-plateau,0,64,2,96.0000,0.00000,38577.5,222.359,2006.34,904.682,31.9392,14.4079,392.167,189.859,0
+usl-response-time@drift:rescale,0,64,2,16.8083,61.0957,9083.50,16626.1,2211.56,262.573,28.6687,2.06331,453.247,719.465,36
+usl-plateau@drift:rescale,0,64,2,96.0000,0.00000,38578.5,196.946,1965.58,295.032,32.5658,4.88916,396.493,81.6060,0
+usl-response-time,0,64,2,12.5000,44.4717,7394.50,21797.5,2188.35,821.895,25.3806,45.2648,41.6399,290.721,521

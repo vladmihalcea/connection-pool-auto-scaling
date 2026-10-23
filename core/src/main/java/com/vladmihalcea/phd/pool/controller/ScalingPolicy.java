@@ -25,4 +25,9 @@ public interface ScalingPolicy {
      * Short identifier used as a CSV series name and figure legend entry.
      */
     String id();
+
+    /** The policy's current phase for the traces (for example {@code sweep} or {@code hold}), or empty. */
+    default String state() {
+        return "";
+    }
 }

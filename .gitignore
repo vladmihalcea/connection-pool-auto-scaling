@@ -17,6 +17,7 @@
 *.nar
 *.ear
 *.zip
+!metrics/**/*.zip
 *.tar.gz
 *.rar
 

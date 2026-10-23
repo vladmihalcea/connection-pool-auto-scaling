@@ -1,0 +1,7 @@
+benchmark,mode,database,policy,pool,profile,workload,threads,score,score_error,unit
+transaction,thrpt,mysql,static-96,hikari,increasing,oltpReadWrite,64,2057.38,5984.23,ops/s
+transaction,thrpt,mysql,static-96,hikari,steady,oltpReadWrite,64,2823.97,46.3642,ops/s
+transaction,thrpt,mysql,static-96,hikari,shrinking,oltpReadWrite,64,2034.64,5730.54,ops/s
+transaction,thrpt,mysql,usl-response-time,hikari,increasing,oltpReadWrite,64,2182.28,8805.77,ops/s
+transaction,thrpt,mysql,usl-response-time,hikari,steady,oltpReadWrite,64,2609.63,1586.12,ops/s
+transaction,thrpt,mysql,usl-response-time,hikari,shrinking,oltpReadWrite,64,1938.69,5052.07,ops/s

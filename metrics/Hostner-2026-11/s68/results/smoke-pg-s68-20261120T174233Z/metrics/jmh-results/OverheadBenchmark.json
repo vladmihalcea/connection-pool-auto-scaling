@@ -1,0 +1,279 @@
+[
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.OverheadBenchmark.controllerDecision",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/opt/temurin-25/bin/java",
+        "jvmArgs" : [
+            "-Xms4g",
+            "-Xmx4g",
+            "-Dusl.db.url=jdbc:postgresql://37.148.161.24/uslpool",
+            "-Djmh.forks=1",
+            "-Djmh.warmup=1",
+            "-Djmh.iters=1",
+            "-Djmh.secs=1",
+            "-Dusl.db.url=jdbc:postgresql://37.148.161.24/uslpool"
+        ],
+        "jdkVersion" : "25.0.3",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "25.0.3+9-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 37176.91941119619,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 37176.91941119619,
+                "50.0" : 37176.91941119619,
+                "90.0" : 37176.91941119619,
+                "95.0" : 37176.91941119619,
+                "99.0" : 37176.91941119619,
+                "99.9" : 37176.91941119619,
+                "99.99" : 37176.91941119619,
+                "99.999" : 37176.91941119619,
+                "99.9999" : 37176.91941119619,
+                "100.0" : 37176.91941119619
+            },
+            "scoreUnit" : "ns/op",
+            "rawData" : [
+                [
+                    37176.91941119619
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.OverheadBenchmark.geneticDecision",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/opt/temurin-25/bin/java",
+        "jvmArgs" : [
+            "-Xms4g",
+            "-Xmx4g",
+            "-Dusl.db.url=jdbc:postgresql://37.148.161.24/uslpool",
+            "-Djmh.forks=1",
+            "-Djmh.warmup=1",
+            "-Djmh.iters=1",
+            "-Djmh.secs=1",
+            "-Dusl.db.url=jdbc:postgresql://37.148.161.24/uslpool"
+        ],
+        "jdkVersion" : "25.0.3",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "25.0.3+9-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 8.067901609944029,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 8.067901609944029,
+                "50.0" : 8.067901609944029,
+                "90.0" : 8.067901609944029,
+                "95.0" : 8.067901609944029,
+                "99.0" : 8.067901609944029,
+                "99.9" : 8.067901609944029,
+                "99.99" : 8.067901609944029,
+                "99.999" : 8.067901609944029,
+                "99.9999" : 8.067901609944029,
+                "100.0" : 8.067901609944029
+            },
+            "scoreUnit" : "ns/op",
+            "rawData" : [
+                [
+                    8.067901609944029
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.OverheadBenchmark.leaseTimeRefit",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/opt/temurin-25/bin/java",
+        "jvmArgs" : [
+            "-Xms4g",
+            "-Xmx4g",
+            "-Dusl.db.url=jdbc:postgresql://37.148.161.24/uslpool",
+            "-Djmh.forks=1",
+            "-Djmh.warmup=1",
+            "-Djmh.iters=1",
+            "-Djmh.secs=1",
+            "-Dusl.db.url=jdbc:postgresql://37.148.161.24/uslpool"
+        ],
+        "jdkVersion" : "25.0.3",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "25.0.3+9-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 5074.690931417321,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 5074.690931417321,
+                "50.0" : 5074.690931417321,
+                "90.0" : 5074.690931417321,
+                "95.0" : 5074.690931417321,
+                "99.0" : 5074.690931417321,
+                "99.9" : 5074.690931417321,
+                "99.99" : 5074.690931417321,
+                "99.999" : 5074.690931417321,
+                "99.9999" : 5074.690931417321,
+                "100.0" : 5074.690931417321
+            },
+            "scoreUnit" : "ns/op",
+            "rawData" : [
+                [
+                    5074.690931417321
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.OverheadBenchmark.responseTimeDecision",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/opt/temurin-25/bin/java",
+        "jvmArgs" : [
+            "-Xms4g",
+            "-Xmx4g",
+            "-Dusl.db.url=jdbc:postgresql://37.148.161.24/uslpool",
+            "-Djmh.forks=1",
+            "-Djmh.warmup=1",
+            "-Djmh.iters=1",
+            "-Djmh.secs=1",
+            "-Dusl.db.url=jdbc:postgresql://37.148.161.24/uslpool"
+        ],
+        "jdkVersion" : "25.0.3",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "25.0.3+9-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 60.54435985197249,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 60.54435985197249,
+                "50.0" : 60.54435985197249,
+                "90.0" : 60.54435985197249,
+                "95.0" : 60.54435985197249,
+                "99.0" : 60.54435985197249,
+                "99.9" : 60.54435985197249,
+                "99.99" : 60.54435985197249,
+                "99.999" : 60.54435985197249,
+                "99.9999" : 60.54435985197249,
+                "100.0" : 60.54435985197249
+            },
+            "scoreUnit" : "ns/op",
+            "rawData" : [
+                [
+                    60.54435985197249
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.OverheadBenchmark.uslRefit",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/opt/temurin-25/bin/java",
+        "jvmArgs" : [
+            "-Xms4g",
+            "-Xmx4g",
+            "-Dusl.db.url=jdbc:postgresql://37.148.161.24/uslpool",
+            "-Djmh.forks=1",
+            "-Djmh.warmup=1",
+            "-Djmh.iters=1",
+            "-Djmh.secs=1",
+            "-Dusl.db.url=jdbc:postgresql://37.148.161.24/uslpool"
+        ],
+        "jdkVersion" : "25.0.3",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "25.0.3+9-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 26174.7973567129,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 26174.7973567129,
+                "50.0" : 26174.7973567129,
+                "90.0" : 26174.7973567129,
+                "95.0" : 26174.7973567129,
+                "99.0" : 26174.7973567129,
+                "99.9" : 26174.7973567129,
+                "99.99" : 26174.7973567129,
+                "99.999" : 26174.7973567129,
+                "99.9999" : 26174.7973567129,
+                "100.0" : 26174.7973567129
+            },
+            "scoreUnit" : "ns/op",
+            "rawData" : [
+                [
+                    26174.7973567129
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    }
+]
+
+

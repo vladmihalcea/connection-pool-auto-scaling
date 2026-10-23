@@ -1,0 +1,4 @@
+test,start_utc,end_utc,exit_code
+ConcurrencySimulationExperimentTest,2026-11-18T21:05:30Z,2026-11-18T21:05:31Z,0
+PlateauTrackingExperimentTest,2026-11-18T21:05:31Z,2026-11-18T21:05:32Z,0
+DriftSimulationExperimentTest,2026-11-18T21:05:32Z,2026-11-18T21:05:33Z,0

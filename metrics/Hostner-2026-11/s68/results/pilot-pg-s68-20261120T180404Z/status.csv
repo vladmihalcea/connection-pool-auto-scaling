@@ -1,0 +1,7 @@
+test,start_utc,end_utc,exit_code
+DatabaseSettingsReportTest,2026-11-20T18:04:04Z,2026-11-20T18:04:05Z,0
+LinkCheckExperimentTest,2026-11-20T18:04:05Z,2026-11-20T18:04:26Z,0
+ThroughputVsPoolSizeBenchmarkTest,2026-11-20T18:04:26Z,2026-11-20T18:58:26Z,0
+ThroughputVsPoolSizeBenchmarkTest,2026-11-20T18:58:26Z,2026-11-20T20:13:56Z,0
+ConcurrencyAdaptationExperimentTest,2026-11-20T20:13:56Z,2026-11-20T21:38:24Z,0
+SharedDatabaseExperimentTest,2026-11-20T21:38:24Z,2026-11-20T22:50:26Z,0

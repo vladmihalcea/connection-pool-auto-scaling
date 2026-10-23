@@ -1,0 +1,279 @@
+[
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.OverheadBenchmark.controllerDecision",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/opt/temurin-25/bin/java",
+        "jvmArgs" : [
+            "-Xms4g",
+            "-Xmx4g",
+            "-Dusl.mysql.url=jdbc:mysql://37.148.161.24/uslpool?useSSL=false&allowPublicKeyRetrieval=true&rewriteBatchedStatements=true",
+            "-Djmh.forks=1",
+            "-Djmh.warmup=1",
+            "-Djmh.iters=1",
+            "-Djmh.secs=1",
+            "-Dusl.mysql.url=jdbc:mysql://37.148.161.24/uslpool?useSSL=false&allowPublicKeyRetrieval=true&rewriteBatchedStatements=true"
+        ],
+        "jdkVersion" : "25.0.3",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "25.0.3+9-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 38346.427881297444,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 38346.427881297444,
+                "50.0" : 38346.427881297444,
+                "90.0" : 38346.427881297444,
+                "95.0" : 38346.427881297444,
+                "99.0" : 38346.427881297444,
+                "99.9" : 38346.427881297444,
+                "99.99" : 38346.427881297444,
+                "99.999" : 38346.427881297444,
+                "99.9999" : 38346.427881297444,
+                "100.0" : 38346.427881297444
+            },
+            "scoreUnit" : "ns/op",
+            "rawData" : [
+                [
+                    38346.427881297444
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.OverheadBenchmark.geneticDecision",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/opt/temurin-25/bin/java",
+        "jvmArgs" : [
+            "-Xms4g",
+            "-Xmx4g",
+            "-Dusl.mysql.url=jdbc:mysql://37.148.161.24/uslpool?useSSL=false&allowPublicKeyRetrieval=true&rewriteBatchedStatements=true",
+            "-Djmh.forks=1",
+            "-Djmh.warmup=1",
+            "-Djmh.iters=1",
+            "-Djmh.secs=1",
+            "-Dusl.mysql.url=jdbc:mysql://37.148.161.24/uslpool?useSSL=false&allowPublicKeyRetrieval=true&rewriteBatchedStatements=true"
+        ],
+        "jdkVersion" : "25.0.3",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "25.0.3+9-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 8.068467041538788,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 8.068467041538788,
+                "50.0" : 8.068467041538788,
+                "90.0" : 8.068467041538788,
+                "95.0" : 8.068467041538788,
+                "99.0" : 8.068467041538788,
+                "99.9" : 8.068467041538788,
+                "99.99" : 8.068467041538788,
+                "99.999" : 8.068467041538788,
+                "99.9999" : 8.068467041538788,
+                "100.0" : 8.068467041538788
+            },
+            "scoreUnit" : "ns/op",
+            "rawData" : [
+                [
+                    8.068467041538788
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.OverheadBenchmark.leaseTimeRefit",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/opt/temurin-25/bin/java",
+        "jvmArgs" : [
+            "-Xms4g",
+            "-Xmx4g",
+            "-Dusl.mysql.url=jdbc:mysql://37.148.161.24/uslpool?useSSL=false&allowPublicKeyRetrieval=true&rewriteBatchedStatements=true",
+            "-Djmh.forks=1",
+            "-Djmh.warmup=1",
+            "-Djmh.iters=1",
+            "-Djmh.secs=1",
+            "-Dusl.mysql.url=jdbc:mysql://37.148.161.24/uslpool?useSSL=false&allowPublicKeyRetrieval=true&rewriteBatchedStatements=true"
+        ],
+        "jdkVersion" : "25.0.3",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "25.0.3+9-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 5114.0441501329515,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 5114.0441501329515,
+                "50.0" : 5114.0441501329515,
+                "90.0" : 5114.0441501329515,
+                "95.0" : 5114.0441501329515,
+                "99.0" : 5114.0441501329515,
+                "99.9" : 5114.0441501329515,
+                "99.99" : 5114.0441501329515,
+                "99.999" : 5114.0441501329515,
+                "99.9999" : 5114.0441501329515,
+                "100.0" : 5114.0441501329515
+            },
+            "scoreUnit" : "ns/op",
+            "rawData" : [
+                [
+                    5114.0441501329515
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.OverheadBenchmark.responseTimeDecision",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/opt/temurin-25/bin/java",
+        "jvmArgs" : [
+            "-Xms4g",
+            "-Xmx4g",
+            "-Dusl.mysql.url=jdbc:mysql://37.148.161.24/uslpool?useSSL=false&allowPublicKeyRetrieval=true&rewriteBatchedStatements=true",
+            "-Djmh.forks=1",
+            "-Djmh.warmup=1",
+            "-Djmh.iters=1",
+            "-Djmh.secs=1",
+            "-Dusl.mysql.url=jdbc:mysql://37.148.161.24/uslpool?useSSL=false&allowPublicKeyRetrieval=true&rewriteBatchedStatements=true"
+        ],
+        "jdkVersion" : "25.0.3",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "25.0.3+9-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 60.50428049688793,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 60.50428049688793,
+                "50.0" : 60.50428049688793,
+                "90.0" : 60.50428049688793,
+                "95.0" : 60.50428049688793,
+                "99.0" : 60.50428049688793,
+                "99.9" : 60.50428049688793,
+                "99.99" : 60.50428049688793,
+                "99.999" : 60.50428049688793,
+                "99.9999" : 60.50428049688793,
+                "100.0" : 60.50428049688793
+            },
+            "scoreUnit" : "ns/op",
+            "rawData" : [
+                [
+                    60.50428049688793
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.vladmihalcea.phd.pool.jmh.OverheadBenchmark.uslRefit",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/opt/temurin-25/bin/java",
+        "jvmArgs" : [
+            "-Xms4g",
+            "-Xmx4g",
+            "-Dusl.mysql.url=jdbc:mysql://37.148.161.24/uslpool?useSSL=false&allowPublicKeyRetrieval=true&rewriteBatchedStatements=true",
+            "-Djmh.forks=1",
+            "-Djmh.warmup=1",
+            "-Djmh.iters=1",
+            "-Djmh.secs=1",
+            "-Dusl.mysql.url=jdbc:mysql://37.148.161.24/uslpool?useSSL=false&allowPublicKeyRetrieval=true&rewriteBatchedStatements=true"
+        ],
+        "jdkVersion" : "25.0.3",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "25.0.3+9-LTS",
+        "warmupIterations" : 1,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "1 s",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 30698.456445672193,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 30698.456445672193,
+                "50.0" : 30698.456445672193,
+                "90.0" : 30698.456445672193,
+                "95.0" : 30698.456445672193,
+                "99.0" : 30698.456445672193,
+                "99.9" : 30698.456445672193,
+                "99.99" : 30698.456445672193,
+                "99.999" : 30698.456445672193,
+                "99.9999" : 30698.456445672193,
+                "100.0" : 30698.456445672193
+            },
+            "scoreUnit" : "ns/op",
+            "rawData" : [
+                [
+                    30698.456445672193
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    }
+]
+
+

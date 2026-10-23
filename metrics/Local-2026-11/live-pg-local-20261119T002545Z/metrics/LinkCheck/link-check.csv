@@ -1,0 +1,2 @@
+database,server,rtt_p50_us,rtt_p90_us,rtt_p99_us,rtt_mean_us,ceiling_tx_per_s,pool_size,threads,seconds,client_cpu_load
+postgresql,127.0.0.1,32.5,59.3,88.9,40.6,70474,64,128,10,1.00

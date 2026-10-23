@@ -1,0 +1,3 @@
+policy,rep,phase,clients,seconds,mean_pool,steady_pool,connection_seconds,tps,steady_tps,response_mean_ms,response_p50_ms,response_p99_ms,response_p999_ms,acquire_mean_ms,committed,failures,retries,failure_types
+usl-plateau@drift:rescale,0,0,64,20.0003,62.1000,92.8000,915.0000,1796.6256,1679.2773,35.7070,7.2008,395.0510,753.9261,10.9551,35933,0,0,
+usl-response-time@drift:rescale,0,0,64,20.0009,15.1000,14.7000,302.0000,1902.2120,1768.9367,33.6744,5.6689,530.5795,1213.2024,26.0258,38046,0,0,

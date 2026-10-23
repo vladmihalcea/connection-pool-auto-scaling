@@ -1,0 +1,6 @@
+benchmark,mode,threads,score,score_error,unit
+controllerDecision,avgt,1,10385.4,NaN,ns/op
+geneticDecision,avgt,1,4.10978,NaN,ns/op
+leaseTimeRefit,avgt,1,1390.14,NaN,ns/op
+responseTimeDecision,avgt,1,29.3229,NaN,ns/op
+uslRefit,avgt,1,6961.60,NaN,ns/op
